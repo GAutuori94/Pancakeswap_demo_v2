@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { Home } from './components/shared/Home';
+import { Home } from './components/shared/homeTest';
 
 export default function Router () {
     return (

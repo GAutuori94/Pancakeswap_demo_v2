@@ -1,11 +1,12 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
+import { Home } from './components/shared/Home';
 
 export default function Router () {
     return (
     <Routes>
         <Route path='home' element={<Home />} />
-        <Route path='trade' element={<Trade />}>
+        {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />
             <Route path='/liquidity' element={<Liquidity />} />
@@ -23,7 +24,7 @@ export default function Router () {
             <Route path='/overwiev' element={<Overwiev />} />
             <Route path='/collections' element={<Collections />} />
             <Route path='/activity' element={<Activity />} />
-        </Route>
+        </Route> */}
     </Routes>
     )
 }

@@ -1,48 +1,39 @@
-import { useFetchApi } from "../hooks/useFetch";
-// import { ResponseExchangeModel } from "../../types";
+/* eslint-disable react/jsx-key */
 import React from "react";
-import { ExchangeModel } from "../../types";
+import { useFetchApi } from "../hooks/useFetch";
+import { ExchangeModel, ExchangeInfoSymbol } from "../../types";
+import { useSymbols } from "../context/symbolsContext";
 
 
 export function Home(){
-    return <Test />
+    return <SymbolsRender />
 }
 
-export default function Test() {
-    const {loading, error, data: dataFetched} = useFetchApi<ExchangeModel>('/api/v3/exchangeInfo')
-    
-    console.log(dataFetched?.symbols)
+export default function SymbolsRender() {
 
-
-    const infosDestr = dataFetched?.symbols.map((info) => {
-        return {
-            symbol: info.symbol
-        }
-    })
-
+    const {dataFetchedLoading, dataFetchedError, dataFetched} = useSymbols()
 
 
     return (
-
-        <div className="data_container">
-            <h1>Fetch:</h1>
-            {/* {loading && <h1>Loading...</h1>}
-            {error && <h1>Errore nel fetch...</h1>}
-            {infos && infos.symbols.map(item => <InfoItem item={item} />)} */}
+        <div className="symbols_container">
+            {(dataFetchedLoading) && <h1>Loading ...</h1>}
+            {(dataFetchedError) && <h1>Errore nel fetch ...</h1>}
+            {dataFetched.map((item) => <SymbolsItem item={item}/>)}
         </div>
     )
 }
 
-// export function InfoItem ({item}: {item: ResponseExhangeModel}) {
 
-//     return (
-//         <>
-//             <div className="infoitem_card">
-//                 <h1>{item.response.symbols}</h1>
-//                 <h2>{item.baseAsset}</h2>
-//                 <h2>{item.quoteAsset}</h2>
-//             </div>
-//         </>
-//     )
 
-// }
+export function SymbolsItem ({item}: {item: ExchangeInfoSymbol}) {
+
+    return (
+        <>
+            <div>
+                <h1>{item.symbol}</h1>
+                <h1>{item.baseAsset}</h1>
+                <h1>{item.quoteAsset}</h1>
+            </div>
+        </>
+    )
+}

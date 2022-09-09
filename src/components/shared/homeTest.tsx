@@ -18,7 +18,7 @@ export default function SymbolsRender() {
         <div className="symbols_container">
             {(dataFetchedLoading) && <h1>Loading ...</h1>}
             {(dataFetchedError) && <h1>Errore nel fetch ...</h1>}
-            {dataFetched.map((item) => <SymbolsItem item={item}/>)}
+            {dataFetched.symbols?.map((item) => <SymbolsItem item={item}/>)}
         </div>
     )
 }

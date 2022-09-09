@@ -1,5 +1,5 @@
 export interface ExchangeModel {
-      symbols: ExchangeInfoSymbol[]
+      symbols?: ExchangeInfoSymbol[]
 }
 
 

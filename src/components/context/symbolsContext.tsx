@@ -6,21 +6,21 @@ import React, { createContext, useContext } from "react";
 export type SymbolsContextProps = {
     dataFetchedLoading: boolean,
     dataFetchedError: Error | undefined
-    dataFetched: ExchangeModel[],
+    dataFetched: ExchangeModel,
 }
 
 
 export const SymbolsContext = createContext<SymbolsContextProps | undefined>(undefined)
 
 export function SymbolsContextProvider({ children }: { children: React.ReactNode }) {
-    const {loading: dataFetchedLoading, error: dataFetchedError, data: dataFetched} = useFetchApi<ExchangeModel[]>('/api/v3/exchangeInfo')
+    const {loading: dataFetchedLoading, error: dataFetchedError, data: dataFetched} = useFetchApi<ExchangeModel>('/api/v3/exchangeInfo')
 
     return (
         <SymbolsContext.Provider
             value={{
                 dataFetchedLoading,
                 dataFetchedError,
-                dataFetched: dataFetched || []
+                dataFetched: dataFetched || {}
             }}>
             {children}
 

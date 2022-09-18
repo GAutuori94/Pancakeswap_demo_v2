@@ -1,10 +1,12 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { Home } from './components/shared/Home';
+import Nav from './components/shared/Nav';
 
 export default function Router () {
     return (
     <Routes>
+        <Nav/>
         <Route path='home' element={<Home />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />

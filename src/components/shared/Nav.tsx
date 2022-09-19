@@ -9,7 +9,6 @@ import ingranaggio from '../../assets/images/svg/utilities/ingranaggio.svg';
 const linksString = JSON.stringify(data);
 import { useState } from 'react';
 
-
 const links = JSON.parse(linksString).links;
 
 type Link = {
@@ -21,10 +20,14 @@ const Nav: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleDropdownHover = () => {
-    console.log(open);
+    
     setOpen(true);
   };
-  return (
+  const handleDropdownNotHover = () => {
+    
+    setOpen(false);
+  };
+  return ( <body>
     <nav className='navbar'>
       <div className='logo-container'>
         <img src={pancakeWritten} alt='pancakelogo' />
@@ -33,22 +36,18 @@ const Nav: React.FC = () => {
             return (
               <ul key={link.href} className='links'>
                 <div className='nav-li'>
-                  <li
-                    onMouseOver={() => handleDropdownHover}
-                    className='nav-li'
-                  >
-                    <Link key={link.href} to={link.href}>
+                  <li onMouseEnter={() => handleDropdownHover()}
+                      onMouseLeave={() => handleDropdownNotHover()} className='nav-li'>
+                    <Link
+                    
+                      key={link.href}
+                      to={link.href}
+                    >
                       {link.label}
                     </Link>
+                
                   </li>
-                  {open && (
-                    <ul>
-                      <li>Item 1</li>
-                      <li>Item 2</li>
-                      <li>Item 3</li>
-                      <li>Item 4</li>
-                    </ul>
-                  )}
+                 
                 </div>
               </ul>
             );
@@ -65,7 +64,15 @@ const Nav: React.FC = () => {
         <button className='connectWalletButton'>Connect Wallet</button>
       </div>
     </nav>
+    {open && (
+              <ul>
+                      <li>Item 1</li>
+                      <li>Item 2</li>
+                      <li>Item 3</li>
+                      <li>Item 4</li>
+                    </ul>
+                    )}   
+   </body>   
   );
 };
-
 export default Nav;

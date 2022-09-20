@@ -1,11 +1,14 @@
 import React from 'react'
+
 import { Routes, Route } from "react-router-dom";
-import { Home } from './components/shared/Home';
+import Footer from './components/shared/Footer';
+
 
 export default function Router () {
     return (
     <Routes>
-        <Route path='home' element={<Home />} />
+        {/* <Route path='home' element={<Home />} /> */}
+        <Route path='/' element={<Footer />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

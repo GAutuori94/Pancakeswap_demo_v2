@@ -17,17 +17,14 @@ type Link = {
 };
 
 const Nav: React.FC = () => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [hover, setHover] = useState<boolean>(false);
 
-  const handleDropdownHover = () => {
+  const handleDropdownHover = ( boolValue = false) => {
     
-    setOpen(true);
+    setHover(boolValue);
   };
-  const handleDropdownNotHover = () => {
-    
-    setOpen(false);
-  };
-  return ( <body>
+  
+  return ( 
     <nav className='navbar'>
       <div className='logo-container'>
         <img src={pancakeWritten} alt='pancakelogo' />
@@ -36,15 +33,21 @@ const Nav: React.FC = () => {
             return (
               <ul key={link.href} className='links'>
                 <div className='nav-li'>
-                  <li onMouseEnter={() => handleDropdownHover()}
-                      onMouseLeave={() => handleDropdownNotHover()} className='nav-li'>
-                    <Link
-                    
+                  <li onMouseEnter={() => handleDropdownHover(true)}
+                      onMouseLeave={() => handleDropdownHover(false)} className='nav-li'>
+                    <a className='link'
                       key={link.href}
-                      to={link.href}
+                      href={link.href}
                     >
-                      {link.label}
-                    </Link>
+                      {link.label}{hover && (
+              <ul>
+                      <li>Item 1</li>
+                      <li>Item 2</li>
+                      <li>Item 3</li>
+                      <li>Item 4</li>
+                    </ul>
+                    )}  
+                    </a>
                 
                   </li>
                  
@@ -63,16 +66,15 @@ const Nav: React.FC = () => {
 
         <button className='connectWalletButton'>Connect Wallet</button>
       </div>
+      
     </nav>
-    {open && (
-              <ul>
-                      <li>Item 1</li>
-                      <li>Item 2</li>
-                      <li>Item 3</li>
-                      <li>Item 4</li>
-                    </ul>
-                    )}   
-   </body>   
-  );
+   
+    
+  ); 
+  
 };
+
+
+// un altro componente che sia il singolo a della nav, ciò deve renderizzare i figli dei link 
+// questo sarà il secondo map
 export default Nav;

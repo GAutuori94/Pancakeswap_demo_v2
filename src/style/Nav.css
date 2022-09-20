@@ -1,15 +1,13 @@
 html {
   height: 100%;
-  width: 100%;  
-  
+  width: 100%;
 }
-body{
+body {
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 * {
   font-family: kanit;
-
 }
 nav {
   background-color: white;
@@ -22,6 +20,17 @@ nav {
   height: 3rem;
   overflow: hidden;
   padding: 0px;
+}
+.nav-li {
+  width: 1.5rem;
+  height: 1.2rem;
+  position: relative;
+}
+.nav-li li {
+  position: absolute;
+}
+.link .nav-li li {
+  z-index: 0;
 }
 .logo-container {
   margin: 10px;
@@ -36,7 +45,6 @@ nav {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-
 }
 .links-container > .links {
   list-style-type: none;

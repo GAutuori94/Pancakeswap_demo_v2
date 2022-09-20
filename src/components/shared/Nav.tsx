@@ -19,12 +19,11 @@ type Link = {
 const Nav: React.FC = () => {
   const [hover, setHover] = useState<boolean>(false);
 
-  const handleDropdownHover = ( boolValue = false) => {
-    
+  const handleDropdownHover = (boolValue = false) => {
     setHover(boolValue);
   };
-  
-  return ( 
+
+  return (
     <nav className='navbar'>
       <div className='logo-container'>
         <img src={pancakeWritten} alt='pancakelogo' />
@@ -33,24 +32,23 @@ const Nav: React.FC = () => {
             return (
               <ul key={link.href} className='links'>
                 <div className='nav-li'>
-                  <li onMouseEnter={() => handleDropdownHover(true)}
-                      onMouseLeave={() => handleDropdownHover(false)} className='nav-li'>
-                    <a className='link'
-                      key={link.href}
-                      href={link.href}
-                    >
-                      {link.label}{hover && (
-              <ul>
-                      <li>Item 1</li>
-                      <li>Item 2</li>
-                      <li>Item 3</li>
-                      <li>Item 4</li>
-                    </ul>
-                    )}  
+                  <li
+                    onMouseEnter={() => handleDropdownHover(true)}
+                    onMouseLeave={() => handleDropdownHover(false)}
+                    className='nav-li'
+                  >
+                    <a className='link' key={link.href} href={link.href}>
+                      {link.label}
+                      {hover && (
+                        <ul>
+                          <li>Item 1</li>
+                          <li>Item 2</li>
+                          <li>Item 3</li>
+                          <li>Item 4</li>
+                        </ul>
+                      )}
                     </a>
-                
                   </li>
-                 
                 </div>
               </ul>
             );
@@ -66,15 +64,10 @@ const Nav: React.FC = () => {
 
         <button className='connectWalletButton'>Connect Wallet</button>
       </div>
-      
     </nav>
-   
-    
-  ); 
-  
+  );
 };
 
-
-// un altro componente che sia il singolo a della nav, ciò deve renderizzare i figli dei link 
+// un altro componente che sia il singolo a della nav, ciò deve renderizzare i figli dei link
 // questo sarà il secondo map
 export default Nav;

@@ -13,6 +13,7 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: kanit;
 }
 .container {
     display: flex;
@@ -222,15 +223,15 @@ input:checked + .slider {
 }
 
 input:not(:checked) + .slider {
-  background-image: url("");
+  background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
   background-repeat: no-repeat;
   background-position: right;
   background-color: #bdc2c4;
 }
 
 input:checked + .slider:before {
-  background-color: #000000;
-  background-image: url("");
+  background-color: black;
+  background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
   background-position: center;
   margin: auto;
   display: flex;

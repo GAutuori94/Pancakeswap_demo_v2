@@ -121,9 +121,9 @@ const Footer: React.FC = () => {
             <p>$3.333</p>
             <div className='buyCake'>
               <button>
-                Buy CAKE{' '}
+                Buy CAKE
                 <img
-                  src='../../assets/images/svg/utilities/arrowright.svg'
+                  src='../../src/assets/images/svg/utilities/arrowright.svg'
                   alt='arrow right'
                 />
               </button>

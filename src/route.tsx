@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home } from './components/shared/Home';
+import Home from "./components/pages/home/index";
 
-export default function Router () {
-    return (
+export default function Router() {
+  return (
     <Routes>
-        <Route path='home' element={<Home />} />
-        {/* <Route path='trade' element={<Trade />}>
+      <Route path="/" element={<Home />} />
+      {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />
             <Route path='/liquidity' element={<Liquidity />} />
@@ -26,5 +26,5 @@ export default function Router () {
             <Route path='/activity' element={<Activity />} />
         </Route> */}
     </Routes>
-    )
+  );
 }

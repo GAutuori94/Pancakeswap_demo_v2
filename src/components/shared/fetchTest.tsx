@@ -4,7 +4,7 @@ import { ExchangeInfoSymbol } from "../../types";
 import { useSymbols } from "../context/symbolsContext";
 
 
-export function Home(){
+export function ResponseRender(){
     return <SymbolsRender />
 }
 

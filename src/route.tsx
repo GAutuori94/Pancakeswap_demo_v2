@@ -1,11 +1,11 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { Home } from './components/shared/homeTest';
+import { ResponseRender } from './components/shared/fetchTest';
 
 export default function Router () {
     return (
     <Routes>
-        <Route path='home' element={<Home />} />
+        <Route path='fetched-data' element={<ResponseRender />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

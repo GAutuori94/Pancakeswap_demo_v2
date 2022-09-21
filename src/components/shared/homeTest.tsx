@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { useFetchApi } from "../hooks/useFetch";
-import { ExchangeModel, ExchangeInfoSymbol } from "../../types";
+import { ExchangeInfoSymbol } from "../../types";
 import { useSymbols } from "../context/symbolsContext";
 
 

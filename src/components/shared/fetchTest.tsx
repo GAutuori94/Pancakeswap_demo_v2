@@ -1,10 +1,19 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
+<<<<<<< HEAD:src/components/shared/homeTest.tsx
 import { ExchangeModel, ExchangeInfoSymbol } from "../../types";
 import { useSymbols } from "../context/symbolsContext";
 
 export function Home() {
   return <SymbolsRender />;
+=======
+import { ExchangeInfoSymbol } from "../../types";
+import { useSymbols } from "../context/symbolsContext";
+
+
+export function ResponseRender(){
+    return <SymbolsRender />
+>>>>>>> develop:src/components/shared/fetchTest.tsx
 }
 
 export default function SymbolsRender() {
@@ -21,6 +30,7 @@ export default function SymbolsRender() {
   );
 }
 
+<<<<<<< HEAD:src/components/shared/homeTest.tsx
 export function SymbolsItem({ item }: { item: ExchangeInfoSymbol }) {
   return (
     <>
@@ -34,4 +44,19 @@ export function SymbolsItem({ item }: { item: ExchangeInfoSymbol }) {
       </div>
     </>
   );
+=======
+
+
+export function SymbolsItem ({item}: {item: ExchangeInfoSymbol}) {
+
+    return (
+        <>
+            <div>
+                <h1>{item.symbol}</h1>
+                <h1>{item.baseAsset}</h1>
+                <h1>{item.quoteAsset}</h1>
+            </div>
+        </>
+    )
+>>>>>>> develop:src/components/shared/fetchTest.tsx
 }

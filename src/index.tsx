@@ -4,6 +4,7 @@ import './style/index.css';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './route';
 import { SymbolsContextProvider } from './components/context/symbolsContext';
+import './style/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

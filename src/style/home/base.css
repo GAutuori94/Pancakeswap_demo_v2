@@ -1,0 +1,19 @@
+/*Reset*/
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/*Px to rem conversion function*/
+/* COLORS VARIABLES*/
+/*-------baseColors-----------*/
+/*-------brandColors-----------*/
+/*-------lightColors-----------*/
+/*-------darkColors-----------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*FONT*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*SHADOWS*//*# sourceMappingURL=base.css.map */

@@ -1,11 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./components/shared/homeTest";
+// import { Test } from "./components/animation/test";
+import Home from "./components/pages/home/index";
 
 export default function Router() {
   return (
     <Routes>
-      <Route path="home" element={<Home />} />
+      <Route path="/" element={<Home />} />
+      {/* <Route path="animation" element={<Test />}></Route> */}
       {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

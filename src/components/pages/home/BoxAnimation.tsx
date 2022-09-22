@@ -1,18 +1,17 @@
 import React from "react";
-import * as S from "./Image.styles";
 
-const bunnyHero1 = "../../../assets/image/png/bunnyHero1.png";
-const bunnyHero1Start1 = "../../assets/image/png/bunnyHero1Start1.png";
-const bunnyHero1Start2 = "../../assets/image/png/bunnyHero1Start2.png";
-const bunnyHero1Start3 = "../../assets/image/png/bunnyHero1Start3.png/";
+import bunnyHero1 from "../../../assets/images/png/bunnyHero1.png";
+import bunnyHero1star1 from "../../../assets/images/png/bunnyHero1star1.png";
+import bunnyHero1star2 from "../../../assets/images/png/bunnyHero1star2.png";
+import bunnyHero1star3 from "../../../assets/images/png/bunnyHero1star3.png";
 
-export default function BoxAnimation() {
+export default function ImageComponent() {
   return (
-    <S.ImageWrapper>
-      <S.Image src={bunnyHero1} />
-      <S.Image src={bunnyHero1Start1} />
-      <S.Image src={bunnyHero1Start2} />
-      <S.Image src={bunnyHero1Start3} />
-    </S.ImageWrapper>
+    <>
+      <img className="absolute w-full" src={bunnyHero1} />
+      <img className="absolute w-full" src={bunnyHero1star1} />
+      <img className="absolute w-full" src={bunnyHero1star3} />
+      <img className="absolute w-full" src={bunnyHero1star2} /> 
+    </>
   );
 }

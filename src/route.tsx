@@ -1,23 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-<<<<<<< HEAD
 // import { Test } from "./components/animation/test";
 import Home from "./components/pages/home/index";
-=======
-import { ResponseRender } from './components/shared/fetchTest';
->>>>>>> develop
 
 export default function Router() {
   return (
     <Routes>
-<<<<<<< HEAD
       <Route path="/" element={<Home />} />
       {/* <Route path="animation" element={<Test />}></Route> */}
       {/* <Route path='trade' element={<Trade />}>
-=======
-        <Route path='fetched-data' element={<ResponseRender />} />
-        {/* <Route path='trade' element={<Trade />}>
->>>>>>> develop
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />
             <Route path='/liquidity' element={<Liquidity />} />
@@ -37,9 +28,5 @@ export default function Router() {
             <Route path='/activity' element={<Activity />} />
         </Route> */}
     </Routes>
-<<<<<<< HEAD
   );
-=======
-    )
->>>>>>> develop
 }

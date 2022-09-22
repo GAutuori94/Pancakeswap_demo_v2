@@ -16,8 +16,8 @@ module.exports = {
         },
       },
       animation: {
-        ghosting: "ghost 2s ease-in-out infinite",
-        floating: "float 3s ease-in-out 1s infinite",
+        ghosting: "2s ghost ease-in-out infinite",
+        floating: "float 3s ease-in-out infinite",
       },
     },
   },

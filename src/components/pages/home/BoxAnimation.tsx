@@ -10,15 +10,15 @@ export default function ImageComponent() {
     <>
       <img className="absolute w-96 animate-floating" src={bunnyHero1} />
       <img
-        className="absolute w-96 animate-ghosting duration-75"
+        className="absolute w-96 animate-pulse animate-bounce"
         src={bunnyHero1star1}
       />
       <img
-        className="absolute w-96 animate-ghosting duration-200"
+        className="absolute w-96 animate-pulse delay-300"
         src={bunnyHero1star3}
       />
       <img
-        className="absolute w-96 animate-ghosting duration-500"
+        className="absolute w-96 animate-pulse delay-700"
         src={bunnyHero1star2}
       />
     </>

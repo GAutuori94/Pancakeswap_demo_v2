@@ -1,11 +1,11 @@
 import * as React from "react";
 import "../../../style/index.css";
-import BoxAnimation from "./BoxAnimation";
+import ImgComponent from "./ImgComponent";
 
 export default function CtaTrade() {
   return (
     <section id="flex flex-col">
-      <div className="flex flex-row justify-between items-center mx-96">
+      <div className="flex flex-row justify-between items-center  mx-96">
         <div className="flex flex-col flex-1 items-center justify-center h-screen py-3 gap-6 md:py-4 md:gap-0">
           <h2 className="text-4xl font-bold">
             <span>Trade</span> anything. No registration, no hassle.
@@ -21,7 +21,7 @@ export default function CtaTrade() {
               Trade Now
             </button>
             <a
-              className="border-2 border-purple-600 rounded-lg py-1 px-4 mx-4"
+              className="border-2 border-purple-600 rounded-lg p-1 px-4 mx-4"
               href=""
               target="_blank"
             >
@@ -30,7 +30,7 @@ export default function CtaTrade() {
           </div>
         </div>
         <div className="flex flex-row flex-1 items-center justify-center relative h-screen py-3 gap-6 md:py-4 md:gap-0">
-          <BoxAnimation />
+          <ImgComponent />
         </div>
       </div>
     </section>

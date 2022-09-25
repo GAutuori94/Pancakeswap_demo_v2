@@ -1,16 +1,47 @@
 import React from 'react';
 import '../../style/Nav.css';
 import { Link } from 'react-router-dom';
-import * as data from './links.json';
 import pancakeWritten from '../../assets/images/svg/utilities/pancakeWritten.svg';
 import logoPancake from '../../assets/images/svg/utilities/logoPancake.svg';
 import logoNET from '../../assets/images/svg/utilities/logoNET.svg';
 import ingranaggio from '../../assets/images/svg/utilities/ingranaggio.svg';
-const linksString = JSON.stringify(data);
+
 import { useState } from 'react';
 
-const links = JSON.parse(linksString).links;
+type menuItem = {
+  label: string;
+  href: string;
+  sub?: menuItem[]
+};
 
+const links: menuItem[] = [
+  {
+    label: 'Trade',
+    href: '/trade',
+    sub: [
+      {
+        label: 'Earn',
+        href: '/earn',
+      },
+    ],
+  },
+  {
+    label: 'Earn',
+    href: '/earn',
+  },
+  {
+    label: 'Win',
+    href: '/win',
+  },
+  {
+    label: 'NFT',
+    href: '/nft',
+  },
+  {
+    label: '⋯',
+    href: '/info',
+  },
+];
 type Link = {
   label: string;
   href: string;

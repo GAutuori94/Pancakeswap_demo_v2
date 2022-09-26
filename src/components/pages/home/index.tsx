@@ -1,6 +1,6 @@
 import React from "react";
 import TopCardSection from "./top-card-section";
-import "../../../style/home/index.css";
+import "../../../style/css/index.css";
 
 export default function Home() {
   return (

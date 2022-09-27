@@ -1,66 +1,24 @@
 import React from "react";
-import { UsersIcon, TradesIcon, StackedIcon } from "./card-icons";
+import TopCard from "./top-card";
 
-import purpleBunnyIcon from "../../../assets/images/svg/icons/purpleBunnyIcon.svg";
-
-interface TopCardProps {
-  children: JSX.Element;
-  color?: string;
-  blackText: string;
-  coloredText: string;
-  subtleText: string;
-}
+import {
+  PurpleBunnyIcon,
+  UsersIcon,
+  TradesIcon,
+  StackedIcon,
+} from "./card-icons";
 
 /* TODO: there needs to be a way to style these cards conditionally,
   either with props or with custom styling rules */
 
-function TopCard({
-  children,
-  blackText,
-  coloredText,
-  subtleText,
-}: TopCardProps) {
-  return (
-    <div
-      id="card-border"
-      className="bg-cardBorder rounded-3xl overflow-hidden relative mr-4 mb-0 h-fit px-px pb-1"
-    >
-      <div id="inner-box" className="w-full h-full bg-white rounded-3xl">
-        <div id="card-body" className="p-6">
-          <div id="icon-container" className="absolute top-6 right-6">
-            {children}
-          </div>
-          <div
-            id="card-text"
-            className="min-w-[232px] min-h-[168px] w-fit mt-16 flex flex-col box justify-end"
-          >
-            <h2 className="text-[40px] leading-[1.1] font-semibold">
-              {blackText}
-            </h2>
-            <h2 className="mb-6 font-semibold leading-[1.1] text-[40px] text-secondary">
-              {coloredText}
-            </h2>
-            <div
-              id="card-footer"
-              className="text-[1rem] leading-normal font-normal text-textSubtle"
-            >
-              {subtleText}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default function TopCardSection() {
+export default function TopCardSection(): JSX.Element {
   return (
     <section id="top-card-section">
       <div
         id="top-cards-background"
         className="bg-gradient-to-b from-[#fff] to-[#d7caec] py-12 flex flex-col items-center z-10 relative"
       >
-        <img alt="purple bunny icon" src={purpleBunnyIcon} />
+        <PurpleBunnyIcon />
         <div id="card-section-text" className="text-center">
           <h2 className="font-semibold text-4xl">Used by millions.</h2>
           <h2 className="font-semibold text-4xl mb-8">

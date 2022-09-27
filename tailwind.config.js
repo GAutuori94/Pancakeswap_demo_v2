@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       colors: {
         cardBorder: "#e7e3eb",
+        failure: "#ed4b9e",
+        primary: "#1fc7d4",
+        secondary: "#7645d9",
         text: "#280d5f",
         textSubtle: "#7a6eaa",
       },

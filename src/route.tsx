@@ -1,14 +1,12 @@
 import React from 'react'
 
 import { Routes, Route } from "react-router-dom";
-import Footer from './components/shared/Footer';
-
+import { ResponseRender } from './components/shared/fetchTest';
 
 export default function Router () {
     return (
     <Routes>
-        {/* <Route path='home' element={<Home />} /> */}
-        <Route path='/' element={<Footer />} />
+        <Route path='fetched-data' element={<ResponseRender />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

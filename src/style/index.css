@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom proprieties of tailwind for animation delay */
+
+@layer utilities {
+  .animation-delay-33 {
+    animation-delay: 0.33s;
+  }
+  .animation-delay-66 {
+    animation-delay: 0.66s;
+  }
+  .animation-delay-100 {
+    animation-delay: 1s;
+  }
+}

@@ -10,6 +10,82 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@layer utilities {
+  /*----------------------lightGradients----------------------------*/
+
+  .lightGradientBubblegum {
+    background-image: linear-gradient(180deg, #a7e8f1 0%, #94e1f2 100%);
+  }
+
+  .lightGradientInverseBubblegum {
+    background-image: linear-gradient(139.73deg, #f3efff 0%, #e5fdff 100%);
+  }
+
+  .lightGradientCardHeader {
+    background-image: linear-gradient(111.68deg, #f2ecf2 0%, #e8f2f6 100%);
+  }
+
+  .lightGradientBlue {
+    background-image: linear-gradient(180deg, #a7e8f1 0%, #94e1f2 100%);
+  }
+
+  .lightGradientViolet {
+    background-image: linear-gradient(180deg, #e2c9fb 0%, #cdb8fa 100%);
+  }
+
+  .lightGradientVioletAlt {
+    background-image: linear-gradient(180deg, #cbd7ef 0%, #9a9fd0 100%);
+  }
+
+  .lightGradientGold {
+    background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
+  }
+
+  /*----------------------darkGradients----------------------------*/
+
+  .darkGradientBubblegum {
+    background-image: linear-gradient(139.73deg, #313d5c 0%, #3d2a54 100%);
+  }
+
+  .darkGradientInverseBubblegum {
+    background-image: linear-gradient(139.73deg, #3d2a54 0%, #313d5c 100%);
+  }
+
+  .darkGradientCardHeader {
+    background-image: linear-gradient(166.77deg, #3b4155 0%, #3a3045 100%);
+  }
+
+  .darkGradientBlue {
+    background-image: linear-gradient(180deg, #00707f 0%, #19778c 100%);
+  }
+
+  .darkGradientViolet {
+    background-image: linear-gradient(180deg, #6c4999 0%, #6d4db2 100%);
+  }
+
+  .darkGradientVioletAlt {
+    background-image: linear-gradient(180deg, #434575 0%, #66578d 100%);
+  }
+
+  .darkGradientGold {
+    background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
+  }
+
+  /*----------------------animationDelay----------------------------*/
+
+  .animation-delay-33 {
+    animation-delay: 0.33s;
+  }
+  .animation-delay-66 {
+    animation-delay: 0.66s;
+  }
+  .animation-delay-100 {
+    animation-delay: 1s;
+  }
 }

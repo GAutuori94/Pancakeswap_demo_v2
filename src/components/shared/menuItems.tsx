@@ -11,7 +11,7 @@ type subMenuItem = {
 export const links: menuItem[] = [
   {
     label: 'Trade',
-    href: '/trade',
+    href: 'trade',
     sub: [
       {
         label: 'Swap',

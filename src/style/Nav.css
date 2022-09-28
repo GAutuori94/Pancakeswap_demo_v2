@@ -10,7 +10,7 @@ body {
   font-family: kanit;
 }
 nav {
-  z-index: 999;
+ 
   background-color: white;
   border-bottom: 1px solid grey;
   width: 100%;
@@ -18,20 +18,14 @@ nav {
   display: flex;  
   justify-content: space-between;
   align-items: center;
-  height: 30rem;
-  overflow: hidden;
-  padding: 0px;
+  height: 3rem;
+  
+
 }
 .nav-li {
   width: 1.5rem;
   height: 1.2rem;
-  position: relative;
-}
-.nav-li li {
-  position: absolute;
-}
-.link .nav-li li {
-  z-index: 0;
+
 }
 .logo-container {
   margin: 10px;
@@ -40,6 +34,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+
 
 .links-container {
   display: flex;
@@ -64,6 +59,11 @@ nav {
   color: #7a6eea;
   font-weight: 500;
   
+}
+.dropdownContainer{
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column wrap;
 }
 
 .interactionsContainer {

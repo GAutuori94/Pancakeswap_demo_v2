@@ -11,6 +11,7 @@ import { useState } from 'react';
 
 import { links } from './menuItems';
 
+
 type Link = {
   label: string;
   href: string;
@@ -22,39 +23,44 @@ const Nav: React.FC = () => {
   const handleDropdownHover = (boolValue = false) => {
     setHover(boolValue);
   };
-  const subItems = links.map((item) => {
-    return item.sub;
-  });
 
-  console.log(subItems);
+
+
 
   return (
+
+    // if ()
     <nav className='navbar'>
       <div className='logo-container'>
         <img src={pancakeWritten} alt='pancakelogo' />
         <div className='links-container'>
-          {links.map((link: Link, index) => {
+          {links.map((link: Link, i) => {
             return (
-              <ul key={index} className='links'>
+              <ul key={i} className='links'>
                 <div className='nav-li'>
-                  <li
-                    onMouseEnter={() => handleDropdownHover(true)}
+                  <li onMouseEnter={() => handleDropdownHover(true)}
                     onMouseLeave={() => handleDropdownHover(false)}
+                   
                     className='nav-li'
                   >
-                    <a className='link' key={index} href={link.href}>
+                    <a href={link.href}>
                       {link.label}
                       {hover && (
-                        <ul key={index}>
-                          <li key={index}>
-                            {subItems.map((item, index) => {
-                              return <ul key={index}>
-                                
-                                <li key={index}>{item}</li>
-                                </ul>;
-                            })}
-                          </li>
-                        </ul>
+                        <div className={`dropdown`}>
+
+                          {
+                          links.map((item) => {
+                            return item.sub?.map((item, index) => (
+                              <ul className={`${item.href}-ul`} key={index}>
+                                <li key={index} className={`${item.href}-li`}
+                                 onMouseEnter={() => handleDropdownHover(true)}
+                                 onMouseLeave={() => handleDropdownHover(false)}>
+                                  {item.label}
+                                </li>
+                              </ul>
+                            ));
+                          })}
+                        </div>
                       )}
                     </a>
                   </li>

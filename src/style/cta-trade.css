@@ -1,4 +1,4 @@
-#CTA-trade_section {
+/* #CTA-trade_section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,4 +180,4 @@
   .animation-box
   .floatEl:nth-child(3) {
   animation-duration: 2.5s;
-}
+} */

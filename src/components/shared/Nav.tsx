@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../style/Nav.css';
 import { Link } from 'react-router-dom';
+
 import pancakeWritten from '../../assets/images/svg/utilities/pancakeWritten.svg';
 import logoPancake from '../../assets/images/svg/utilities/logoPancake.svg';
 import logoNET from '../../assets/images/svg/utilities/logoNET.svg';
@@ -8,40 +9,8 @@ import ingranaggio from '../../assets/images/svg/utilities/ingranaggio.svg';
 
 import { useState } from 'react';
 
-type menuItem = {
-  label: string;
-  href: string;
-  sub?: menuItem[]
-};
+import { links } from './menuItems';
 
-const links: menuItem[] = [
-  {
-    label: 'Trade',
-    href: '/trade',
-    sub: [
-      {
-        label: 'Earn',
-        href: '/earn',
-      },
-    ],
-  },
-  {
-    label: 'Earn',
-    href: '/earn',
-  },
-  {
-    label: 'Win',
-    href: '/win',
-  },
-  {
-    label: 'NFT',
-    href: '/nft',
-  },
-  {
-    label: '⋯',
-    href: '/info',
-  },
-];
 type Link = {
   label: string;
   href: string;
@@ -53,29 +22,38 @@ const Nav: React.FC = () => {
   const handleDropdownHover = (boolValue = false) => {
     setHover(boolValue);
   };
+  const subItems = links.map((item) => {
+    return item.sub;
+  });
+
+  console.log(subItems);
 
   return (
     <nav className='navbar'>
       <div className='logo-container'>
         <img src={pancakeWritten} alt='pancakelogo' />
         <div className='links-container'>
-          {links.map((link: Link) => {
+          {links.map((link: Link, index) => {
             return (
-              <ul key={link.href} className='links'>
+              <ul key={index} className='links'>
                 <div className='nav-li'>
                   <li
                     onMouseEnter={() => handleDropdownHover(true)}
                     onMouseLeave={() => handleDropdownHover(false)}
                     className='nav-li'
                   >
-                    <a className='link' key={link.href} href={link.href}>
+                    <a className='link' key={index} href={link.href}>
                       {link.label}
                       {hover && (
-                        <ul>
-                          <li>Item 1</li>
-                          <li>Item 2</li>
-                          <li>Item 3</li>
-                          <li>Item 4</li>
+                        <ul key={index}>
+                          <li key={index}>
+                            {subItems.map((item, index) => {
+                              return <ul key={index}>
+                                
+                                <li key={index}>{item}</li>
+                                </ul>;
+                            })}
+                          </li>
                         </ul>
                       )}
                     </a>
@@ -99,6 +77,4 @@ const Nav: React.FC = () => {
   );
 };
 
-// un altro componente che sia il singolo a della nav, ciò deve renderizzare i figli dei link
-// questo sarà il secondo map
 export default Nav;

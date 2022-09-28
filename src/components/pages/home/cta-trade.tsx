@@ -18,11 +18,9 @@ export default function CtaTrade() {
             </p>
           </div>
           <div className="flex flex-row ">
-            <button className="rounded-lg bg-green-400  hover:opacity-60 text-white font-bold py-2 px-4 ">
-              Trade Now
-            </button>
+            <button className="btn-main bg-green-400">Trade Now</button>
             <a
-              className="text-green-400 rounded-lg font-bold hover:underline decoration-2 py-1 px-4 "
+              className="text-green-400 btn-transparent"
               href=""
               target="_blank"
             >

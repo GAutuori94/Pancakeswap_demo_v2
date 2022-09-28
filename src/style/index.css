@@ -15,3 +15,14 @@
     animation-delay: 1s;
   }
 }
+
+/* button custom class without color  */
+
+@layer components {
+  .btn-main {
+    @apply rounded-lg hover:opacity-60 text-white font-bold py-2 px-4;
+  }
+  .btn-transparent {
+    @apply rounded-lg font-bold hover:underline decoration-2 py-1 px-4;
+  }
+}

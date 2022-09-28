@@ -47,7 +47,6 @@ const Nav: React.FC = () => {
                       {link.label}
                       {hover && (
                         <div className={`dropdown`}>
-
                           {
                           links.map((item) => {
                             return item.sub?.map((item, index) => (

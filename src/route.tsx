@@ -1,11 +1,15 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
+import { FullButton, OnlyBorderButton, VoidButton } from './components/shared/buttons';
 import { ResponseRender } from './components/shared/fetchTest';
 
 export default function Router () {
     return (
     <Routes>
         <Route path='fetched-data' element={<ResponseRender />} />
+        <Route path='/button1' element={<FullButton />} />
+        <Route path='/button2' element={<VoidButton />} />
+        <Route path='/button3' element={<OnlyBorderButton />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

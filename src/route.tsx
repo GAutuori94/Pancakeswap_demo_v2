@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { ResponseRender } from './components/shared/fetchTest';
+import ChartLayoutComponent from "./components/pages/trade/ChartLayoutComponent";
+import { ResponseRender } from "./components/shared/fetchTest";
 
-export default function Router () {
-    return (
+export default function Router() {
+  return (
     <Routes>
-        <Route path='fetched-data' element={<ResponseRender />} />
-        {/* <Route path='trade' element={<Trade />}>
+      <Route path="fetched-data" element={<ResponseRender />} />
+      <Route path="trade" element={<ChartLayoutComponent />} />
+      {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />
             <Route path='/liquidity' element={<Liquidity />} />
@@ -26,5 +28,5 @@ export default function Router () {
             <Route path='/activity' element={<Activity />} />
         </Route> */}
     </Routes>
-    )
+  );
 }

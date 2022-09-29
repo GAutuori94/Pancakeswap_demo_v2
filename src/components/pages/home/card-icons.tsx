@@ -4,11 +4,8 @@ export function PurpleBunnyIcon() {
   return (
     <svg
       viewBox="0 0 48 48"
-      height="48px"
-      width="48px"
-      color="text"
       xmlns="http://www.w3.org/2000/svg"
-      className="sc-5a69fd5e-0 bWjixa"
+      className="mb-6 w-12 self-center fill-text shrink-0 filter-none"
     >
       <path
         fillRule="evenodd"

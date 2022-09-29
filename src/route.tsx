@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { ResponseRender } from './components/shared/fetchTest';
-
-export default function Router () {
-    return (
+// import { ResponseRender } from './components/shared/fetchTest';
+import Home from "./components/pages/home";
+export default function Router() {
+  return (
     <Routes>
-        <Route path='fetched-data' element={<ResponseRender />} />
-        {/* <Route path='trade' element={<Trade />}>
-            <Route path='/swap' element={<Swap />} />
+      <Route path="/" element={<Home />} />
+      {/* <Route path='fetched-data' element={<ResponseRender />} /> */}
+      {/* <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />
             <Route path='/liquidity' element={<Liquidity />} />
         </Route>
@@ -26,5 +26,5 @@ export default function Router () {
             <Route path='/activity' element={<Activity />} />
         </Route> */}
     </Routes>
-    )
+  );
 }

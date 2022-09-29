@@ -11,7 +11,6 @@ import { useState } from 'react';
 
 import { links } from './menuItems';
 
-
 type Link = {
   label: string;
   href: string;
@@ -24,11 +23,7 @@ const Nav: React.FC = () => {
     setHover(boolValue);
   };
 
-
-
-
   return (
-
     // if ()
     <nav className='navbar'>
       <div className='logo-container'>
@@ -38,22 +33,19 @@ const Nav: React.FC = () => {
             return (
               <ul key={i} className='links'>
                 <div className='nav-li'>
-                  <li onMouseEnter={() => handleDropdownHover(true)}
+                  <li
+                    onMouseEnter={() => handleDropdownHover(true)}
                     onMouseLeave={() => handleDropdownHover(false)}
-                   
                     className='nav-li'
                   >
                     <a href={link.href}>
                       {link.label}
                       {hover && (
                         <div className={`dropdown`}>
-                          {
-                          links.map((item) => {
+                          {links.map((item) => {
                             return item.sub?.map((item, index) => (
                               <ul className={`${item.href}-ul`} key={index}>
-                                <li key={index} className={`${item.href}-li`}
-                                 onMouseEnter={() => handleDropdownHover(true)}
-                                 onMouseLeave={() => handleDropdownHover(false)}>
+                                <li key={index} className={`${item.href}-li`}>
                                   {item.label}
                                 </li>
                               </ul>

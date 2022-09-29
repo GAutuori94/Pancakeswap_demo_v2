@@ -1,4 +1,10 @@
 @tailwind base;
+
+@font-face {
+  font-family: Kanit;
+  src: url("../assets/font/Kanit-Italic.ttf ") format("ttf");
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -13,8 +19,6 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @layer utilities {
   /*----------------------lightGradients----------------------------*/

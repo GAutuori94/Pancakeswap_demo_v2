@@ -76,16 +76,26 @@ module.exports = {
       },
 
       /*----------------fonts--------------------------- */
+
+      fontFamily: {
+        fontFamily: ["Kanit"],
+      },
+
       fontSize: {
-        fontFamily: "Kanit sans",
-        fontLightWeight: "400",
-        fontHeavyWeight: "600",
         fontSizeHeader: "64px",
         fontSizeSubheader: "40px",
         fontSizeParagraph: "20px",
         fontSizeCopy: "16px",
         fontSizeButton: "16px",
         fontSizeGeneral: "12px",
+      },
+
+      fontWeight: {
+        fontLightWeight: 400,
+        fontHeavyWeight: 600,
+      },
+
+      lineHeight: {
         lineHeightH1: "70.4px",
         lineHeightH2: "44px",
         lineHeightPar: "22px",
@@ -96,10 +106,8 @@ module.exports = {
 
       /*----------------boxShadows--------------------------- */
       boxShadow: {
-        level1:
-          "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
-        active:
-          "0px 0px 0px 1px #0098A1, 0px 0px 4px 8px rgba(31, 199, 212, 0.4)",
+        level1: "0px 2px 12px -8px (#191326, 0.1), 0px 1px 1px (#191326, 0.05)",
+        active: "0px 0px 0px 1px #0098A1, 0px 0px 4px 8px (#1FC7D4, 0.4)",
         success:
           "0px 0px 0px 1px #31D0AA, 0px 0px 0px 4px rgba(49, 208, 170, 0.2)",
         warning:
@@ -109,6 +117,7 @@ module.exports = {
         inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
         tooltip:
           "0px 0px 2px rgba(0, 0, 0, 0.2), 0px 4px 12px -8px rgba(14, 14, 44, 0.1)",
+        button: "0px -1px 0px 0px #0E0E2C66 inset",
       },
 
       /*----------------borderWidth--------------------------- */
@@ -128,24 +137,25 @@ module.exports = {
       },
 
       /*----------------keyframes--------------------------- */
+      keyframes: {
+        ghost: {
+          "0%": { opacity: "0.9" },
+          "50%": { opacity: "0.1" },
+          "100%": { opacity: "0.9" },
+        },
 
-      ghost: {
-        "0%": { opacity: "0.9" },
-        "50%": { opacity: "0.1" },
-        "100%": { opacity: "0.9" },
-      },
+        float: {
+          "0%": { transform: "translate(0px)" },
+          "50%": { transform: "translate(10px, 5px)" },
+          "100%": { transform: "translate(0px)" },
+        },
 
-      float: {
-        "0%": { transform: "translate(0px)" },
-        "50%": { transform: "translate(10px, 5px)" },
-        "100%": { transform: "translate(0px)" },
-      },
-
-      animation: {
-        ghosting: "2s ghost ease-in-out infinite",
-        floating: "3s ease-in-out infinite none running float",
+        animation: {
+          ghosting: "2s ghost ease-in-out infinite",
+          floating: "3s ease-in-out infinite none running float",
+        },
       },
     },
+    plugins: [],
   },
-  plugins: [],
 };

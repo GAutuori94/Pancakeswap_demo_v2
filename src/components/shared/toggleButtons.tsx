@@ -7,7 +7,7 @@ export function GraphIntervalsToggleButton() {
         if (focusRef) {
             focusRef.current?.focus()
         }
-    })
+    }, [])
 
 
 

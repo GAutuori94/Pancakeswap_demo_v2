@@ -4,19 +4,17 @@ type menuItem = {
   sub?: subMenuItem[];
 };
 type subMenuItem = {
+  type?: string;
   label: string;
-  href:string;
-}
+  href: string;
+};
 
-export const links: menuItem[] = [
+export const linkTrade: menuItem[] = [
   {
     label: 'Trade',
     href: 'trade',
     sub: [
-      {
-        label: 'Swap',
-        href: 'swap',
-      },
+      { type: 'Trade', label: 'Swap', href: 'swap' },
       {
         label: 'Limit',
         href: 'limit',
@@ -32,9 +30,11 @@ export const links: menuItem[] = [
       {
         label: 'Bridge',
         href: 'bridge',
-      }
+      },
     ],
   },
+];
+export const linkEarn: menuItem[] = [
   {
     label: 'Earn',
     href: '/earn',
@@ -46,9 +46,11 @@ export const links: menuItem[] = [
       {
         label: 'Pool',
         href: 'pool',
-      }
-    ]
+      },
+    ],
   },
+];
+export const linkWin: menuItem[] = [
   {
     label: 'Win',
     href: '/win',
@@ -71,6 +73,9 @@ export const links: menuItem[] = [
       },
     ],
   },
+];
+
+export const linksNFT: menuItem[] = [
   {
     label: 'NFT',
     href: '/nft',
@@ -89,6 +94,9 @@ export const links: menuItem[] = [
       },
     ],
   },
+];
+
+export const linksInfo: menuItem[] = [
   {
     label: '⋯',
     href: '/info',

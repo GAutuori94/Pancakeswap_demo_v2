@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
 /*Reset*/
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -16,22 +16,25 @@
   font-family: kanit;
 }
 .container {
-    display: flex;
+  display: flex;
 }
+
 footer {
-  width: 100vw;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
   background-color: #27262c;
   display: flex;
   flex-flow: column;
-  padding: 1.5625rem;
 }
 footer .services {
-  margin-top: 1.875rem;
+  
   display: flex;
   justify-content: space-between;
-  padding: 1.875rem;
+  margin: 25px;  
+  padding: 0px;  
 }
-footer .services ul li:first-child {
+  footer .services div ul.footer-li>a:nth-child(1) {
   color: #9a6aff;
   font-weight: 600;
 }
@@ -200,11 +203,11 @@ footer .lasts .selectors .buttonContainer .svg:hover {
 }
 
 .slider:before {
-  background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+  background-image: url('../../src/assets/images/svg/icons/lightModeIcon.svg');
   background-position: center;
   position: absolute;
   background-repeat: no-repeat;
-  content: "";
+  content: '';
   height: 24px;
   width: 24px;
   left: 4px;
@@ -215,15 +218,15 @@ footer .lasts .selectors .buttonContainer .svg:hover {
 }
 
 input:checked + .slider {
- width: 100%;
-  background-image: url("../../src/assets/images/svg/icons/lightModeIconSlided.svg");
+  width: 100%;
+  background-image: url('../../src/assets/images/svg/icons/lightModeIconSlided.svg');
   background-repeat: no-repeat;
   background-position: left;
   background-color: #666171;
 }
 
 input:not(:checked) + .slider {
-  background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+  background-image: url('../../src/assets/images/svg/icons/nightModeIcon.svg');
   background-repeat: no-repeat;
   background-position: right;
   background-color: #bdc2c4;
@@ -231,7 +234,7 @@ input:not(:checked) + .slider {
 
 input:checked + .slider:before {
   background-color: black;
-  background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
+  background-image: url('../../src/assets/images/svg/icons/nightModeIconSlided.svg');
   background-position: center;
   margin: auto;
   display: flex;

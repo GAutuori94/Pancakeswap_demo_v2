@@ -10,22 +10,19 @@ body {
   font-family: kanit;
 }
 nav {
- 
+  position: relative;
   background-color: white;
   border-bottom: 1px solid grey;
-  width: 100%;
-    font-weight: 400;
-  display: flex;  
+  width: 100vw;
+  font-weight: 400;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 3rem;
-  
-
 }
 .nav-li {
   width: 1.5rem;
   height: 1.2rem;
-
 }
 .logo-container {
   margin: 10px;
@@ -34,7 +31,6 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-
 
 .links-container {
   display: flex;
@@ -48,7 +44,7 @@ nav {
 }
 
 .logoPriceContainer {
-  display: flex; 
+  display: flex;
 }
 .logoPriceContainer img {
   display: block;
@@ -58,9 +54,8 @@ nav {
   text-decoration: none;
   color: #7a6eea;
   font-weight: 500;
-  
 }
-.dropdownContainer{
+.dropdownContainer {
   display: flex;
   align-items: flex-start;
   flex-flow: column wrap;

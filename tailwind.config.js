@@ -7,6 +7,7 @@ module.exports = {
         128: "32rem",
         144: "36rem",
         30: "30%",
+        32: "32px",
       },
       colors: {
         /*-------baseColors-----------*/

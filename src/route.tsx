@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { FullButton, OnlyBorderButton, VoidButton } from './components/shared/buttons';
 import { ResponseRender } from './components/shared/fetchTest';
+import { GraphIntervalsToggleButton } from './components/shared/toggleButtons';
 
 export default function Router () {
     return (
@@ -10,6 +11,7 @@ export default function Router () {
         <Route path='/button1' element={<FullButton />} />
         <Route path='/button2' element={<VoidButton />} />
         <Route path='/button3' element={<OnlyBorderButton />} />
+        <Route path='/togglebuttongraph' element={<GraphIntervalsToggleButton />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

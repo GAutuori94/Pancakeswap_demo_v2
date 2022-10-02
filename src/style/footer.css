@@ -31,8 +31,8 @@ footer .services {
   
   display: flex;
   justify-content: space-between;
-  margin: 25px;  
-  padding: 0px;  
+  margin: 1.563rem;  
+  padding: 0rem;  
 }
   footer .services div ul.footer-li>a:nth-child(1) {
   color: #9a6aff;
@@ -53,42 +53,42 @@ footer .services ul li a:hover {
   text-decoration: underline;
 }
 footer .partnerSvgIcons {
-  padding-left: 33px;
+  padding-left: 2.063rem;
   display: flex;
   align-items: flex-start;
 }
 footer .partnerSvgIcons div {
-  width: 40px;
+  width: 2.5rem;
 }
 footer .lasts {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
-  border-top: 1px solid grey;
-  margin-top: 20px;
+  border-top: 0.063rem solid grey;
+  margin-top: 1.25rem;
 }
 footer .lasts button {
   align-items: center;
-  border: 0px;
+  border: 0rem;
   border-radius: 1rem;
-  box-shadow: 0px -1px 0px 0px inset;
+  box-shadow: 0rem -0.063rem 0rem 0rem inset;
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   justify-content: center;
   letter-spacing: 0.03em;
   line-height: 1;
   opacity: 1;
-  outline: 0px;
+  outline: 0rem;
   transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
   height: 3rem;
-  padding: 0px remConverter(24px);
+  padding: 0px 1.5rem;
   background-color: #1fc7d4;
   color: #ffffff;
   margin-right: 0.5rem;
-  box-shadow: #452a7a 0px -1px 0px 0px inset;
+  box-shadow: #452a7a 0rem -0.063rem 0rem 0rem inset;
   height: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -99,13 +99,13 @@ footer .lasts button:hover {
 }
 footer .lasts .modeSelector {
   display: flex;
-  width: 100px;
+  width: 6.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 footer .lasts .modeSelector div {
-  padding: 5px;
+  padding: 0.313rem;
 }
 footer .lasts .modeSelector .languageSelector {
   display: flex;
@@ -117,7 +117,7 @@ footer .lasts .modeSelector .languageSelector .net {
   background-position: left;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: 0.313rem;
 }
 footer .lasts .modeSelector .languageSelector .net:hover {
   opacity: 70%;
@@ -126,10 +126,10 @@ footer .lasts .modeSelector .languageSelector .net:hover {
   transition-duration: 0.5s;
 }
 footer .lasts .modeSelector .languageSelector .net p {
-  margin-left: 20px;
+  margin-left: 1.25rem;
   align-items: center;
   color: #b8add2;
-  padding: 5px;
+  padding: 0.313rem;
   font-family: 'Kanit', 'sans';
 }
 footer .lasts .selectors .buttonContainer {
@@ -140,7 +140,7 @@ footer .lasts .selectors .buttonContainer p {
   color: #b8add2;
   font-family: inherit;
   font-weight: 900;
-  margin: 0px 20px 0px 0px;
+  margin: 0rem 1.25rem 0rem 0rem;
 }
 footer .lasts .selectors .buttonContainer .svg {
   margin-top: 0.5rem;
@@ -171,8 +171,8 @@ footer .lasts .selectors .buttonContainer .svg:hover {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 28px;
+  width: 3.75rem;
+  height: 1.75rem;
 }
 
 .slider {
@@ -200,10 +200,10 @@ footer .lasts .selectors .buttonContainer .svg:hover {
   position: absolute;
   background-repeat: no-repeat;
   content: '';
-  height: 24px;
-  width: 24px;
-  left: 2.8px;
-  bottom: 3.5px;
+  height: 1.5rem;
+  width: 1.5rem;
+  left: 0.175rem;
+  bottom: 0.219rem;
   background-color: #ffffff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -232,11 +232,11 @@ input:checked + .slider:before {
   background-color: black;
   background-image: url('../../src/assets/images/svg/icons/nightModeIconSlided.svg');
   background-position: center;
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(1.625rem);
+  -ms-transform: translateX(1.625rem);
+  transform: translateX(1.625rem);
   margin: auto;
-  margin-right: 2px;  
+  margin-right: 0.125rem;  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,25 +244,25 @@ input:checked + .slider:before {
 }
 
 input:focus:checked + .slider:before {
-  box-shadow: 0 0 2px 4px rgb(122, 110, 170);
+  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
 }
 
 input:hover:checked + .slider:before {
-  box-shadow: 0 0 2px 4px rgb(122, 110, 170);
+  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
 }
 
 input:hover:not(:checked) + .slider:before {
-  box-shadow: 0 0 2px 4px rgb(122, 110, 170);
+  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
 }
 
 input:focus:not(:checked) + .slider:before {
-  box-shadow: 0 0 2px 4px rgb(122, 110, 170);
+  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
 }
 
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 30px;
+  border-radius: 1.875rem;
 }
 
 .slider.round:before {
@@ -273,8 +273,8 @@ input:focus:not(:checked) + .slider:before {
 .toggleDarkBtn {
   position: relative;
   display: inline-block;
-  width: 55px;
-  height: 31px;
+  width: 3.438rem;
+  height: 1.938rem;
 }
 .toggleDarkBtn input {
   opacity: 0;

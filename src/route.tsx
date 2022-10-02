@@ -1,11 +1,13 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
+import { VerticalCarousel } from './components/pages/home/verticalCarousel';
 import { ResponseRender } from './components/shared/fetchTest';
 
 export default function Router () {
     return (
     <Routes>
         <Route path='fetched-data' element={<ResponseRender />} />
+        <Route path='vertical-carousel' element={<VerticalCarousel />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

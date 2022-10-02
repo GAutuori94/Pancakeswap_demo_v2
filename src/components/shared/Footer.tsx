@@ -11,6 +11,7 @@ import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWhiteW
 import arrowright from '../../assets/images/svg/utilities/arrowright.svg';  
 
 import { developer, help, services } from './footerItems';
+import Toggle from './Toggle';
 // import help from './footerItems';
 // import developer from './footerItems';
 
@@ -112,13 +113,7 @@ const Footer: React.FC = () => {
       {
         <div className='lasts'>
           <div className='modeSelector'>
-            <div className='dayOrNight'>
-              <label className='switch'>
-                <input type='checkbox' id='darkToggle' className='darkToggle' />
-                <span className='slider round'></span>
-              </label>
-            </div>
-
+           <Toggle/>  
             <div className='languageSelector'>
               <div className='net'>
                 <p>EN</p>

@@ -79,7 +79,7 @@ module.exports = {
       /*----------------fonts--------------------------- */
 
       fontFamily: {
-        "fontFamily": ['Kanit']
+        "sans": ["Kanit"],
       },
 
       fontSize: {
@@ -118,7 +118,7 @@ module.exports = {
         inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
         tooltip:
           "0px 0px 2px rgba(0, 0, 0, 0.2), 0px 4px 12px -8px rgba(14, 14, 44, 0.1)",
-        button: "0px -1px 0px 0px #0E0E2C66 inset"
+        button: "0px -1px 0px 0px #0E0E2C66 inset",
       },
 
       /*----------------borderWidth--------------------------- */
@@ -138,22 +138,23 @@ module.exports = {
       },
 
       /*----------------keyframes--------------------------- */
+      keyframes: {
+        ghost: {
+          "0%": { opacity: "0.9" },
+          "50%": { opacity: "0.1" },
+          "100%": { opacity: "0.9" },
+        },
 
-      ghost: {
-        "0%": { opacity: "0.9" },
-        "50%": { opacity: "0.1" },
-        "100%": { opacity: "0.9" },
-      },
+        float: {
+          "0%": { transform: "translate(0px)" },
+          "50%": { transform: "translate(10px, 5px)" },
+          "100%": { transform: "translate(0px)" },
+        },
 
-      float: {
-        "0%": { transform: "translate(0px)" },
-        "50%": { transform: "translate(10px, 5px)" },
-        "100%": { transform: "translate(0px)" },
-      },
-
-      animation: {
-        ghosting: "2s ghost ease-in-out infinite",
-        floating: "3s ease-in-out infinite none running float",
+        animation: {
+          ghosting: "2s ghost ease-in-out infinite",
+          floating: "3s ease-in-out infinite none running float",
+        },
       },
     },
   },

@@ -1,4 +1,12 @@
 @tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: "Kanit";
+    src: local('Kanit') url("../assets/font/Kanit-Regular.ttf") format("ttf");
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -13,8 +21,6 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @layer utilities {
   /*----------------------lightGradients----------------------------*/
@@ -89,3 +95,98 @@ input[type="number"] {
     animation-delay: 1s;
   }
 }
+
+@layer components {
+  /*----------------------Primary full button--------------------------------------------------------------------------------------*/
+  .full-primary-button {
+    background-color: theme(colors.primary);
+    box-shadow: theme(boxShadow.button);
+    opacity: 1;
+    height: 48px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Kanit;
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border: 0px;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .full-primary-button:hover {
+    opacity: 75%;
+  }
+
+  /*----------------------Primary void button--------------------------------------------------------------------------------------*/
+  .void-primary-button {
+    background-color: none;
+    box-shadow: none;
+    opacity: 1;
+    height: 48px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: theme(colors.primary);
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border: 0px;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .void-primary-button:hover {
+    text-decoration: underline;
+  }
+
+  /*----------------------Primary border button--------------------------------------------------------------------------------------*/
+  .border-primary-button {
+    box-shadow: none;
+    border-style: solid;
+    border-color: theme(colors.primary);
+    border-width: theme(borderWidth.2);
+    opacity: 1;
+    height: 48px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: theme(colors.primary);
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .border-primary-button:hover {
+    opacity: 75%;
+  }
+
+    /*----------------------Interval toggle button--------------------------------------------------------------------------------------*/
+    .btn_interval__container {
+      height: theme(spacing.32);
+      padding: 0px 16px;
+      border-radius: theme(borderRadius.default);
+      /* background-color: theme(colors.primary); */
+      font-size: theme(fontSize.fontSizeButton);
+      color: theme(colors.primary);
+      font-weight: theme(fontWeight.fontHeavyWeight);
+      transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+      cursor: pointer
+    }
+
+    .btn_interval__container:focus{
+      background-color: theme(colors.primary);
+      color: #ffff;
+      outline: none
+    }
+}
+
+
+

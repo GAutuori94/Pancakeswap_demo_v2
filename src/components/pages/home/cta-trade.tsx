@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../../../style/index.css";
-import ImageComponent from "./ImageComponent";
+import ImageComponent from "./ImageComponentCoinTrade";
 
 export default function CtaTrade() {
   return (

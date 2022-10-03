@@ -4,7 +4,7 @@ import coinTrade1 from "../../../assets/images/png/coinTrade1.png";
 import coinTrade2 from "../../../assets/images/png/coinTrade2.png";
 import coinTrade3 from "../../../assets/images/png/coinTrade3.png";
 
-export default function ImageComponent() {
+export default function ImageComponentCoinTrade() {
   return (
     <>
       <img

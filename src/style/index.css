@@ -93,3 +93,19 @@ input[type="number"] {
     animation-delay: 1s;
   }
 }
+
+@layer components {
+  .column__gridView{
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  .data__column__gridView{
+    position: absolut;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
+    padding-right: 16px
+  }
+}

@@ -79,7 +79,7 @@ module.exports = {
       /*----------------fonts--------------------------- */
 
       fontFamily: {
-        fontFamily: ["Kanit"],
+        "sans": ["Kanit"],
       },
 
       fontSize: {

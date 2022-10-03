@@ -1,10 +1,10 @@
 @tailwind base;
 
-@layer base{
-@font-face {
-  font-family: Kanit;
-  src: url("../assets/font/Kanit-Italic.ttf ") format("ttf");
-}
+@layer base {
+  @font-face {
+    font-family: "Kanit";
+    src: local('Kanit') url("../assets/font/Kanit-Regular.ttf") format("ttf");
+  }
 }
 
 @tailwind components;

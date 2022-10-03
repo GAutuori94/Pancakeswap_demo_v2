@@ -74,7 +74,7 @@ export default function ChartLayoutComponent() {
       parsedData.map((item) => ({
         close: item.close,
         open: item.open,
-        date: dayjs(item.closeTime).format("DD MMM"),
+        date: dayjs(item.closeTime).format(" DD MMM"),
       }))
     );
   }, [parsedData]);
@@ -83,11 +83,11 @@ export default function ChartLayoutComponent() {
 
   const { percDiff: percDifference } = usePercDiff(parsedData);
 
-  function percentualDiff() {
+  function percentualDiffNumber() {
     return (
       <span
-        className={`px-1 py-2 border border-black rounded ${
-          percDifference > 0 ? "bg-green-300" : "bg-red-300"
+        className={` font-extrabold ${
+          percDifference > 0 ? "text-success" : "text-failure"
         }`}
       >
         {" "}
@@ -96,52 +96,59 @@ export default function ChartLayoutComponent() {
     );
   }
 
-  percentualDiff();
+  function bigCloseNumber() {
+    const lastElement = parsedData.pop();
+    return lastElement?.close;
+  }
 
   const lines = [
     {
       value: "close",
-      color: percDifference > 0 ? "#0098a1" : "#ed4b9e",
+      color: percDifference > 0 ? "#31d0aa" : "#ed4b9e",
     },
-    // { value: 'open', color: 'green' },
   ];
 
   return (
-    <div className="w-full h-[50vh] py-2 px-4">
-      <div className="flex justify-between items-center w-full my-4">
-        <div className="flex flex-col justify-start">
-          <div className="flex gap-2 items-center">
-            <h3 className="font-bold text-xl ">
-              {selectedSymbol} ({selectedInterval}){" "}
-            </h3>
-            {parsedData.length > 2 && percentualDiff()}
-          </div>
-          {parsedData.length > 2 && (
-            <div className="text-xs text-lg ">
-              {" "}
-              {dayjs(parsedData[parsedData.length - 1].closeTime).format(
-                "DD, MMM, YYYY"
-              )}{" "}
-              {dayjs(parsedData[parsedData.length - 1].closeTime).format(
-                "HH:MM A"
-              )}{" "}
+    <div className="h-[100vh] w-[auto]">
+      <div className="w-[47%] h-[60%]">
+        <div className="flex justify-between items-center w-full  ">
+          <div className="flex flex-col justify-start">
+            <div className="flex gap-2 items-center">
+              <h1 className="text-3xl font-semibold font-['Kanit'] text-lightText ml-2">
+                {bigCloseNumber()}
+              </h1>
+              <h3 className="text-lg font-semibold font-['Kanit'] text-lightTextSubtle ml-2.5 ">
+                {selectedSymbol}{" "}
+              </h3>
+              {parsedData.length > 2 && percentualDiffNumber()}
             </div>
-          )}
+            {parsedData.length > 2 && (
+              <div className="text-xs text-lg text-lightSecondary font-['Kanit'] ml-2.5">
+                {" "}
+                {dayjs(parsedData[parsedData.length - 1].closeTime).format(
+                  "DD, MMM, YYYY"
+                )}{" "}
+                {dayjs(parsedData[parsedData.length - 1].closeTime).format(
+                  "HH:MM A"
+                )}{" "}
+              </div>
+            )}
+          </div>
+          <select
+            value={selectedInterval}
+            onChange={(e) => setSelectedInterval(e.target.value)}
+          >
+            {intervals.map((interval, idx) => {
+              return (
+                <option key={idx} value={interval}>
+                  {interval}
+                </option>
+              );
+            })}
+          </select>
         </div>
-        <select
-          value={selectedInterval}
-          onChange={(e) => setSelectedInterval(e.target.value)}
-        >
-          {intervals.map((interval, idx) => {
-            return (
-              <option key={idx} value={interval}>
-                {interval}
-              </option>
-            );
-          })}
-        </select>
+        <AreaChart lines={lines} data={chartData} />
       </div>
-      <AreaChart lines={lines} data={chartData} />
     </div>
   );
 }

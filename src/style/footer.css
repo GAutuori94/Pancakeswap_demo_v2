@@ -278,26 +278,14 @@ input:focus:not(:checked) + .slider:before {
 }
 
 
-footer .services .servicesContainer ul:nth-child(1) li a{
+footer .services .helpContainer ul:nth-child(1) li a, footer .services .developerContainer ul:nth-child(1) li a, footer .services .servicesContainer ul:nth-child(1) li a {
   color: #7a6eaa;
-  font-weight: 600;  
-  cursor: text;
+  font-weight: 600;
+  pointer-events: none;  
   text-decoration: none;
+      
 }
 
-footer .services .developerContainer ul:nth-child(1) li a{
-  color: #7a6eaa;
-  font-weight: 600;  
-  cursor: text;
-  text-decoration: none;
-}
-
-footer .services .helpContainer ul:nth-child(1) li a{
-  color: #7a6eaa;
-  font-weight: 600;  
-  cursor: text;
-  text-decoration: none;
-}
 footer .services .servicesContainer ul:nth-child(2) li a{
   color: gold;  
   

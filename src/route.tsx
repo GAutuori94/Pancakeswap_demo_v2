@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { FullButton, OnlyBorderButton, VoidButton } from './components/shared/buttons';
 import { ResponseRender } from './components/shared/fetchTest';
 import { GraphIntervalsToggleButton } from './components/shared/toggleButtons';
-import { TestDarkMode } from './components/shared/darkModeToggle'
+import Home from './components/shared/darkModeToggle'
 
 export default function Router () {
     return (
@@ -13,7 +13,7 @@ export default function Router () {
         <Route path='/button2' element={<VoidButton />} />
         <Route path='/button3' element={<OnlyBorderButton />} />
         <Route path='/togglebuttongraph' element={<GraphIntervalsToggleButton />} />
-        <Route path='/toggledarkmode' element={<TestDarkMode />} />
+        <Route path='/toggledarkmode' element={<Home />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

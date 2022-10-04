@@ -3,7 +3,7 @@
 @layer base {
   @font-face {
     font-family: "Kanit";
-    src: local('Kanit') url("../assets/font/Kanit-Regular.ttf") format("ttf");
+    src: local("Kanit") url("../assets/font/Kanit-Regular.ttf") format("ttf");
   }
 }
 
@@ -168,107 +168,118 @@ input[type="number"] {
     opacity: 75%;
   }
 
-    /*----------------------Interval toggle button--------------------------------------------------------------------------------------*/
-    .btn_interval__container {
-      height: theme(spacing.32);
-      padding: 0px 16px;
-      border-radius: theme(borderRadius.default);
-      /* background-color: theme(colors.primary); */
-      font-size: theme(fontSize.fontSizeButton);
-      color: theme(colors.primary);
-      font-weight: theme(fontWeight.fontHeavyWeight);
-      transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-      cursor: pointer
-    }
+  /*----------------------Interval toggle button--------------------------------------------------------------------------------------*/
+  .btn_interval__container {
+    height: theme(spacing.32);
+    padding: 0px 16px;
+    border-radius: theme(borderRadius.default);
+    /* background-color: theme(colors.primary); */
+    font-size: theme(fontSize.fontSizeButton);
+    color: theme(colors.primary);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    cursor: pointer;
+  }
 
-    .btn_interval__container:focus{
-      background-color: theme(colors.primary);
-      color: #ffff;
-      outline: none
-    }
+  .btn_interval__container:focus {
+    background-color: theme(colors.primary);
+    color: #ffff;
+    outline: none;
+  }
 
-/*TEST DARK MODE TOGGLE*/
+  /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
+  .toggleDarkBtn {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .sliderDarkMode {
+    position: absolute;
+    height: 32px;
+    width: 56px;
+    background-color: theme(colors.darkTextDisabled);
+    align-items: center;
+    border-radius: theme(borderRadius.card);
+    box-shadow: theme(boxShadow.button);
+    transition: background-color 200ms ease 0s;
+  }
 
-    .toggle-switch {
-      position: relative;
-      width: 75px;
-      display: inline-block;
-      vertical-align: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      text-align: left;
-   }
-    .toggle-switch-checkbox {
-      display: none;
-   }
-    .toggle-switch-label {
-      display: block;
-      overflow: hidden;
-      cursor: pointer;
-      border: 0 solid #bbb;
-      border-radius: 20px;
-      margin: 0;
-   }
-    .toggle-switch-inner {
-      display: block;
-      width: 200%;
-      margin-left: -100%;
-      transition: margin 0.3s ease-in 0s;
-   }
-    .toggle-switch-inner:before, .toggle-switch-inner:after {
-      display: block;
-      float: left;
-      width: 50%;
-      height: 34px;
-      padding: 0;
-      line-height: 34px;
-      font-size: 14px;
-      color: white;
-      font-weight: bold;
-      box-sizing: border-box;
-   }
-    .toggle-switch-inner:before {
-      content: "Yes";
-      text-transform: uppercase;
-      padding-left: 10px;
-      background-color: #f90;
-      color: #fff;
-   }
-    .toggle-switch-disabled {
-      background-color: #ddd;
-      cursor: not-allowed;
-   }
-    .toggle-switch-disabled:before {
-      background-color: #ddd;
-      cursor: not-allowed;
-   }
-    .toggle-switch-inner:after {
-      content: "No";
-      text-transform: uppercase;
-      padding-right: 10px;
-      background-color: #bbb;
-      color: #fff;
-      text-align: right;
-   }
-    .toggle-switch-switch {
-      display: block;
-      width: 24px;
-      margin: 5px;
-      background: #fff;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 40px;
-      border: 0 solid #bbb;
-      border-radius: 20px;
-      transition: all 0.3s ease-in 0s;
-   }
-    .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
-      margin-left: 0;
-   }
-    .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
-      right: 0px;
-   }
+  /* Rounded sliders */
+  .sliderDarkMode {
+    border-radius: 1.875rem;
+  }
+
+  .sliderDarkMode:before {
+    border-radius: 50%;
+  }
+
+  .sliderDarkMode::before {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 0.175rem;
+    bottom: 0.219rem;
+    background-color: theme(colors.darkBackgroundAlt);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .input_darkMode:checked + .sliderDarkMode {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 0.33rem;
+    background-position-y: 0.33rem;
+    background-color: theme(colors.darkTextDisabled);
+  }
+
+  .input_darkMode:not(:checked) {
+    background-color: theme(colors.darkBackgroundAlt);
+  }
+
+  .input_darkMode:not(:checked) + .sliderDarkMode{
+    background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 2rem;
+    background-position-y: 0.35rem;
+  }
+
+  .input_darkMode:checked + .sliderDarkMode:before {
+    background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+    background-position: center;
+    -webkit-transform: translateX(1.625rem);
+    -ms-transform: translateX(1.625rem);
+    transform: translateX(1.625rem);
+    margin: auto;
+    margin-right: 0.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .input_darkMode:focus:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:not(:checked) + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:focus:not(:checked) + .sliderDarkMod:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode {
+    cursor: pointer;
+  }
 }

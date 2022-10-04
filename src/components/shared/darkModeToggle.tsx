@@ -5,19 +5,28 @@ function Home() {
   return (
     <div>
       <h1>Prova dark mode</h1>
-      <div className="w-[200px] h-[200px] bg-primary dark:bg-failure">
-      </div>
-      <button><Toggle /></button>
+      <div className="w-[200px] h-[200px] bg-primary dark:bg-failure"></div>
+      <Toggle />
     </div>
-  )
+  );
 }
-export default Home
+export default Home;
+
 
 
 export function Toggle() {
-  const {theme, toggleTheme} = useContext(ThemeContext)
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
-  return <>
-  <button onClick={toggleTheme}>Click to change mode</button>
-  </>
+  return (
+    <>
+      <label className="toggleDarkBtn">
+        <input
+          type="checkbox"
+          className="input_darkMode"
+          onClick={toggleTheme}
+        />
+        <span className="sliderDarkMode"></span>
+      </label>
+    </>
+  );
 }

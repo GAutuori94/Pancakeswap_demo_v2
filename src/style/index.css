@@ -205,7 +205,7 @@ input[type="number"] {
     align-items: center;
     border-radius: theme(borderRadius.card);
     /* box-shadow: theme(boxShadow.button); */
-    transition: left 200ms ease 0s;
+    transition: left 200ms ease-in 0s;
   }
 
   /* Rounded sliders */

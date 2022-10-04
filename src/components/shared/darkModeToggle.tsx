@@ -19,7 +19,7 @@ export function Toggle() {
 
   return (
     <>
-      <label className="toggleDarkBtn">
+      <label className="toggleDarkBtn ml-10">
         <input
           type="checkbox"
           className="input_darkMode"

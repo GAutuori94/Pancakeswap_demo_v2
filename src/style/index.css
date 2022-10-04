@@ -189,6 +189,8 @@ input[type="number"] {
 
   /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
   .toggleDarkBtn {
+    width: 56px;
+    height: 32px;
     display: flex;
     cursor: pointer;
     align-items: center;

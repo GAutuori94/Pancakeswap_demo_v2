@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
             );
-          })}
+          })}  
         </div>
 
         <div>
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
       {
         <div className='lasts'>
           <div className='modeSelector'>
-           <Toggle/>  
+           <Toggle  />  
             <div className='languageSelector'>
               <div className='net'>
                 <p>EN</p>
@@ -142,44 +142,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-{
-  /*
-      
 
-        
-      
-      <div className='lasts'>
-        <div className='modeSelector'>
-          <div className='dayOrNight'>
-            <label className='switch'>
-              <input type='checkbox' id='darkToggle' className='darkToggle' />
-              <span className='slider round'></span>
-            </label>
-          </div>
-
-          <div className='languageSelector'>
-            <div className='net'>
-              <p>EN</p>
-            </div>
-
-            <div className='language'></div>
-          </div>
-        </div>
-
-        <div className='selectors'>
-          <div className='buttonContainer'>
-            <div className='svg'></div>
-            <p>$3.333</p>
-            <div className='buyCake'>
-              <button>
-                Buy CAKE
-                <img
-                  src='../../src/assets/images/svg/utilities/arrowright.svg'
-                  alt='arrow right'
-                />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */
-}

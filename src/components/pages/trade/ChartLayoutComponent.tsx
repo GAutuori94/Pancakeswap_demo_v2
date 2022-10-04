@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { HtmlHTMLAttributes, useEffect, useRef, useState } from "react";
 import AreaChart, { PriceChartProps } from "../../shared/AreaChart";
 import dayjs from "dayjs";
 import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
+import { GraphIntervalsToggleButton } from "../../shared/toggleButtons";
 
 type BinanceKline = [
   number,
@@ -36,6 +37,13 @@ export default function ChartLayoutComponent() {
   const [selectedInterval, setSelectedInterval] = useState<string>(
     intervals[intervals.length - 1]
   );
+  const focusRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (focusRef) {
+      focusRef.current?.focus();
+    }
+  }, []);
 
   const [selectedSymbol, setSelectedSymbol] = useState<string>("BTCBUSD");
 
@@ -114,16 +122,16 @@ export default function ChartLayoutComponent() {
         <div className="flex justify-between items-center w-full  ">
           <div className="flex flex-col justify-start">
             <div className="flex gap-2 items-center">
-              <h1 className="text-3xl font-semibold font-['Kanit'] text-lightText ml-2">
+              <h1 className="text-3xl font-semibold text-lightText ml-2">
                 {bigCloseNumber()}
               </h1>
-              <h3 className="text-lg font-semibold font-['Kanit'] text-lightTextSubtle ml-2.5 ">
+              <h3 className="text-lg font-semibold  text-lightTextSubtle ml-2.5 ">
                 {selectedSymbol}{" "}
               </h3>
               {parsedData.length > 2 && percentualDiffNumber()}
             </div>
             {parsedData.length > 2 && (
-              <div className="text-xs text-lg text-lightSecondary font-['Kanit'] ml-2.5">
+              <div className="text-xs text-lg text-lightSecondary ml-2.5">
                 {" "}
                 {dayjs(parsedData[parsedData.length - 1].closeTime).format(
                   "DD, MMM, YYYY"
@@ -134,18 +142,22 @@ export default function ChartLayoutComponent() {
               </div>
             )}
           </div>
-          <select
-            value={selectedInterval}
-            onChange={(e) => setSelectedInterval(e.target.value)}
-          >
+          <div className="btn_container bg-[#EFF4F5] rounded-default border-1 border-solid border-[#E9EAEB] box-border w-max flex ">
             {intervals.map((interval, idx) => {
               return (
-                <option key={idx} value={interval}>
-                  {interval}
-                </option>
+                <input
+                  key={idx}
+                  type="button"
+                  value={interval}
+                  ref={focusRef}
+                  onClick={(e) => {
+                    setSelectedInterval((e.target as HTMLInputElement).value);
+                  }}
+                  className="btn_interval__container uppercase"
+                />
               );
             })}
-          </select>
+          </div>
         </div>
         <AreaChart lines={lines} data={chartData} />
       </div>

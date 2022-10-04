@@ -19,7 +19,7 @@ export default function CustomAreaChart({ lines, data }: Props) {
       <AreaChart
         // width={500}
         // height={400}
-        className="text-base font-['Kanit'] font-normal"
+        className="text-base font-normal"
         data={data}
         margin={{
           top: 0,

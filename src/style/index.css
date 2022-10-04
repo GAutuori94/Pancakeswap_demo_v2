@@ -3,7 +3,7 @@
 @layer base {
   @font-face {
     font-family: "Kanit";
-    src: local('Kanit') url("../assets/font/Kanit-Regular.ttf") format("ttf");
+    src: url("../assets/font/Kanit-Regular.ttf");
   }
 }
 
@@ -168,25 +168,22 @@ input[type="number"] {
     opacity: 75%;
   }
 
-    /*----------------------Interval toggle button--------------------------------------------------------------------------------------*/
-    .btn_interval__container {
-      height: theme(spacing.32);
-      padding: 0px 16px;
-      border-radius: theme(borderRadius.default);
-      /* background-color: theme(colors.primary); */
-      font-size: theme(fontSize.fontSizeButton);
-      color: theme(colors.primary);
-      font-weight: theme(fontWeight.fontHeavyWeight);
-      transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-      cursor: pointer
-    }
+  /*----------------------Interval toggle button--------------------------------------------------------------------------------------*/
+  .btn_interval__container {
+    height: theme(spacing.32);
+    padding: 0px 16px;
+    border-radius: theme(borderRadius.default);
+    /* background-color: theme(colors.primary); */
+    font-size: theme(fontSize.fontSizeButton);
+    color: theme(colors.primary);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    cursor: pointer;
+  }
 
-    .btn_interval__container:focus{
-      background-color: theme(colors.primary);
-      color: #ffff;
-      outline: none
-    }
+  .btn_interval__container:focus {
+    background-color: theme(colors.primary);
+    color: #ffff;
+    outline: none;
+  }
 }
-
-
-

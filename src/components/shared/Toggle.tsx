@@ -7,6 +7,7 @@ function Toggle() {
 
   return (
 
+
     // <div className=''>
     //           <label className='switch'>
     //             <input type='checkbox' id='darkToggle' className='darkToggle' />

@@ -11,9 +11,9 @@ import { useState } from 'react';
 
 import { linkWin, linkEarn, linksInfo, linksNFT, linkTrade } from './menuItems';
 
-type Link = {
+type Link = { 
   label: string;
-  href: string;
+  href: string; 
 };
 
 const Nav: React.FC = () => {

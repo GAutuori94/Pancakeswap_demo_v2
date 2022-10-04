@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div className='services'>
-        <div>
+        <div className='servicesContainer'>
           {services.map((link: Link, index) => {
             return (
               <ul key={index}>
@@ -35,20 +35,20 @@ const Footer: React.FC = () => {
             );
           })}
         </div>
-        <div>
+        <div className='developerContainer'>
           {developer.map((link: Link, index) => {
             return (
-              <div key={index} className='developer'>
-                <ul className='developer'>
+             
+                <ul key={index}>
                   <li>
                     <a href={link.href}> {link.label} </a>
                   </li>
                 </ul>
-              </div>
+              
             );
           })}
         </div>
-        <div>
+        <div className='helpContainer'>
           {help.map((link: Link, index) => {
             return (
               <ul key={index} className='developer'>
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
         <div>
           <ul>
             <li>
-              <a href=''>
+              <a>
                 <img src={pancakeWhiteWritten} alt='pancakelogo' />
               </a>
             </li>

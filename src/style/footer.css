@@ -34,13 +34,8 @@ footer .services {
   margin: 1.563rem;  
   padding: 0rem;  
 }
-  footer .services div ul.footer-li>a:nth-child(1) {
-  color: #9a6aff;
-  font-weight: 600;
-}
-footer .services ul .gold a {
-  color: #f0b90b;
-}
+ 
+
 footer .services ul li {
   list-style-type: none;
   margin: 0.1875rem;
@@ -49,6 +44,7 @@ footer .services ul li a {
   text-decoration: none;
   color: #faf9fa;
 }
+
 footer .services ul li a:hover {
   text-decoration: underline;
 }
@@ -86,7 +82,6 @@ footer .lasts button {
   height: 3rem;
   padding: 0px 1.5rem;
   background-color: #1fc7d4;
-  color: #ffffff;
   margin-right: 0.5rem;
   box-shadow: #452a7a 0rem -0.063rem 0rem 0rem inset;
   height: 2rem;
@@ -283,4 +278,29 @@ input:focus:not(:checked) + .slider:before {
 }
 
 
+footer .services .servicesContainer ul:nth-child(1) li a{
+  color: #7a6eaa;
+  font-weight: 600;  
+  cursor: text;
+  text-decoration: none;
+}
 
+footer .services .developerContainer ul:nth-child(1) li a{
+  color: #7a6eaa;
+  font-weight: 600;  
+  cursor: text;
+  text-decoration: none;
+}
+
+footer .services .helpContainer ul:nth-child(1) li a{
+  color: #7a6eaa;
+  font-weight: 600;  
+  cursor: text;
+  text-decoration: none;
+}
+footer .services .servicesContainer ul:nth-child(2) li a{
+  color: gold;  
+  cursor: text;
+  text-decoration: none;
+}
+  

@@ -186,4 +186,10 @@ input[type="number"] {
     color: #ffff;
     outline: none;
   }
+
+  /* OVERFLOW RULES */
+
+  .overflow-inherit {
+    overflow: inherit;
+  }
 }

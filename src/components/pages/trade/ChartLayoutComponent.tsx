@@ -5,6 +5,7 @@ import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
 import { GraphIntervalsToggleButton } from "../../shared/toggleButtons";
+import ChartSideCard from "./ChartSideCard";
 
 type BinanceKline = [
   number,
@@ -117,8 +118,8 @@ export default function ChartLayoutComponent() {
   ];
 
   return (
-    <div className="h-[100vh] w-[auto]">
-      <div className="w-[47%] h-[60%]">
+    <div className="h-[100vh] w-full flex flex-row justify-center relative">
+      <div className="w-1/2 h-3/4">
         <div className="flex justify-between items-center w-full  ">
           <div className="flex flex-col justify-start">
             <div className="flex gap-2 items-center">
@@ -161,6 +162,7 @@ export default function ChartLayoutComponent() {
         </div>
         <AreaChart lines={lines} data={chartData} />
       </div>
+      <ChartSideCard />
     </div>
   );
 }

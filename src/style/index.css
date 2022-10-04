@@ -202,8 +202,8 @@ input[type="number"] {
     background-color: theme(colors.darkTextDisabled);
     align-items: center;
     border-radius: theme(borderRadius.card);
-    box-shadow: theme(boxShadow.button);
-    transition: background-color 200ms ease 0s;
+    /* box-shadow: theme(boxShadow.button); */
+    transition: left 200ms ease 0s;
   }
 
   /* Rounded sliders */
@@ -216,7 +216,7 @@ input[type="number"] {
   }
 
   .sliderDarkMode::before {
-    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-image: url("../../src/assets/images/svg/icons/lightModeIconSlided.svg");
     background-position: center;
     position: absolute;
     background-repeat: no-repeat;
@@ -226,8 +226,8 @@ input[type="number"] {
     left: 0.175rem;
     bottom: 0.219rem;
     background-color: theme(colors.darkBackgroundAlt);
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    /* -webkit-transition: 0.4s;
+    transition: 0.4s; */
   }
 
   .input_darkMode:checked + .sliderDarkMode {
@@ -239,10 +239,11 @@ input[type="number"] {
   }
 
   .input_darkMode:not(:checked) {
-    background-color: theme(colors.darkBackgroundAlt);
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    /* background-color: theme(colors.darkBackgroundAlt); */
   }
 
-  .input_darkMode:not(:checked) + .sliderDarkMode{
+  .input_darkMode:not(:checked) + .sliderDarkMode {
     background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
     background-repeat: no-repeat;
     background-position-x: 2rem;
@@ -250,7 +251,7 @@ input[type="number"] {
   }
 
   .input_darkMode:checked + .sliderDarkMode:before {
-    background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+    background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
     background-position: center;
     -webkit-transform: translateX(1.625rem);
     -ms-transform: translateX(1.625rem);

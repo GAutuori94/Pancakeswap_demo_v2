@@ -300,7 +300,6 @@ footer .services .helpContainer ul:nth-child(1) li a{
 }
 footer .services .servicesContainer ul:nth-child(2) li a{
   color: gold;  
-  cursor: text;
-  text-decoration: none;
+  
 }
   

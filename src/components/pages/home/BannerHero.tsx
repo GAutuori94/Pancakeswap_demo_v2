@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FullButton } from "../../shared/buttons";
-
+import "../../../style/bannerHero.css";
 import "../../../style/index.css";
 
 import bannerLottery from "../../../assets/images/png/lotteryBanner.png";
@@ -15,7 +15,7 @@ function BannerHeroLeft() {
           <h2 className="text-base color-(var[#ED4B9E]) ">Win 11000$</h2>
           <img src={board} alt="board" />
           <h2 className="text-xl font-bold text-[lightGradientGold]">time</h2>
-          
+
           <FullButton />
         </div>
         <span className="">

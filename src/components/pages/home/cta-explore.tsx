@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./cta-explore.css";
+import "../../../style/cta-explore.css";
 export default function CtaExplore() {
   return (
     <section id="CTA-explore_section">

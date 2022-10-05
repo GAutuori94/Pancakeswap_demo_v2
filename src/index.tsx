@@ -6,6 +6,7 @@ import { SymbolsContextProvider } from './components/context/symbolsContext';
 import './style/index.css';
 import Nav from './components/shared/Nav';
 import Footer from './components/shared/Footer';
+import { ThemeProvider } from './components/context/themeContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -13,12 +14,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ThemeProvider>
       <SymbolsContextProvider>
         <Nav />
         <Router />
         <Footer />
-        
       </SymbolsContextProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );

@@ -1,27 +1,19 @@
-import React from 'react'
-function Toggle() {
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 
-  const [darkToggle, setDarkToggle] = React.useState(false)
-  
-  
+export function Toggle() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-
-
-    // <div className=''>
-    //           <label className='switch'>
-    //             <input type='checkbox' id='darkToggle' className='darkToggle' />
-    //             <span className='slider round'></span>
-    //           </label>
-    //         </div>
-
-    <div>
+    <>
       <label className="toggleDarkBtn">
-        <input type="checkbox" onClick={() => setDarkToggle(!darkToggle)} />
-        <span className=" slider slideBtnTg round"></span>
+        <input
+          type="checkbox"
+          className="input_darkMode"
+          onClick={toggleTheme}
+        />
+        <span className="sliderDarkMode"></span>
       </label>
-         </div>
-  )
+    </>
+  );
 }
-
-export default Toggle; 

@@ -8,10 +8,10 @@ import github from '../../assets/images/svg/social/gitHub.svg';
 import discord from '../../assets/images/svg/social/discord.svg';
 import medium from '../../assets/images/svg/social/medium.svg';
 import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWhiteWritten.svg';
-import arrowright from '../../assets/images/svg/utilities/arrowright.svg';  
+import arrowright from '../../assets/images/svg/utilities/arrowright.svg';
 
 import { developer, help, services } from './footerItems';
-import Toggle from './Toggle';
+import {Toggle} from './Toggle';
 // import help from './footerItems';
 // import developer from './footerItems';
 
@@ -38,13 +38,13 @@ const Footer: React.FC = () => {
         <div className='developerContainer'>
           {developer.map((link: Link, index) => {
             return (
-             
+
                 <ul key={index}>
                   <li>
                     <a href={link.href}> {link.label} </a>
                   </li>
                 </ul>
-              
+
             );
           })}
         </div>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
             );
-          })}  
+          })}
         </div>
 
         <div>
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
       {
         <div className='lasts'>
           <div className='modeSelector'>
-           <Toggle  />  
+           <Toggle  />
             <div className='languageSelector'>
               <div className='net'>
                 <p>EN</p>

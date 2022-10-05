@@ -5,7 +5,6 @@ import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
 import ChartSideCard from "./chart_side_card/ChartSideCard";
-import { useSymbols } from "../../context/symbolsContext";
 
 type BinanceKline = [
   number,
@@ -39,10 +38,6 @@ export default function ChartLayoutComponent(): JSX.Element {
     intervals[intervals.length - 1]
   );
   const focusRef = useRef<HTMLInputElement | null>(null);
-
-  const { dataFetched } = useSymbols();
-
-  console.log("symbols", dataFetched.symbols);
 
   useEffect(() => {
     if (focusRef) {

@@ -1,7 +1,45 @@
 import React from "react";
 import { NoGraphIcon } from "./SideCardIcons";
+import { useSymbols } from "../../../context/symbolsContext";
 
 export default function ChartSideCard(): JSX.Element {
+  const { dataFetched } = useSymbols();
+
+  const completeBaseAssetsList = dataFetched.symbols?.map((market) => {
+    return market.baseAsset;
+  });
+  const completeQuoteAssetsList = dataFetched.symbols?.map((market) => {
+    return market.quoteAsset;
+  });
+
+  const filteredBaseAssetsList = completeBaseAssetsList?.filter(
+    (baseAsset, index) => {
+      return completeBaseAssetsList.indexOf(baseAsset) === index;
+    }
+  );
+
+  const filteredQuoteAssetsList = completeQuoteAssetsList?.filter(
+    (quoteAsset, index) => {
+      return completeQuoteAssetsList.indexOf(quoteAsset) === index;
+    }
+  );
+
+  const baseAssetList = filteredBaseAssetsList
+    ?.slice(0, 10)
+    .map((baseAsset) => (
+      <option key={baseAsset} value={baseAsset}>
+        {baseAsset}
+      </option>
+    ));
+
+  const quoteAssetList = filteredQuoteAssetsList
+    ?.slice(0, 10)
+    .map((quoteAsset) => (
+      <option key={quoteAsset} value={quoteAsset}>
+        {quoteAsset}
+      </option>
+    ));
+
   return (
     <div className="flex flex-col">
       <div className="flex shrink-0 h-fit px-10">
@@ -44,7 +82,18 @@ export default function ChartSideCard(): JSX.Element {
                   <div className="relative">
                     <div className="flex items-center justify-between">
                       <div className="flex">
-                        <select className="py-0 px-2"></select>
+                        <select
+                          title="base-asset-selector"
+                          className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
+                        >
+                          {baseAssetList}
+                        </select>
+                        <select
+                          title="quote-asset-selector"
+                          className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
+                        >
+                          {quoteAssetList}
+                        </select>
                       </div>
                     </div>
                   </div>

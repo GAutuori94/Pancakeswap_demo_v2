@@ -17,8 +17,6 @@ export default function CustomAreaChart({ lines, data }: Props) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <AreaChart
-        // width={500}
-        // height={400}
         className="text-base font-normal"
         data={data}
         margin={{
@@ -35,7 +33,7 @@ export default function CustomAreaChart({ lines, data }: Props) {
           dy={-25}
           dx={-25}
         />
-        <Tooltip contentStyle={{ display: "none" }} />
+        <Tooltip />
 
         {lines &&
           lines.map((line, idx) => {

@@ -1,10 +1,9 @@
-import React, { HtmlHTMLAttributes, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AreaChart, { PriceChartProps } from "../../shared/AreaChart";
 import dayjs from "dayjs";
 import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
-import { GraphIntervalsToggleButton } from "../../shared/toggleButtons";
 
 type BinanceKline = [
   number,
@@ -142,14 +141,16 @@ export default function ChartLayoutComponent() {
               </div>
             )}
           </div>
-          <div className="btn_container bg-[#EFF4F5] rounded-default border-1 border-solid border-[#E9EAEB] box-border w-max flex ">
+          <div
+            className="btn_container bg-[#EFF4F5] rounded-default border-1 border-solid border-[#E9EAEB] box-border w-max flex "
+            ref={focusRef}
+          >
             {intervals.map((interval, idx) => {
               return (
                 <input
                   key={idx}
                   type="button"
                   value={interval}
-                  ref={focusRef}
                   onClick={(e) => {
                     setSelectedInterval((e.target as HTMLInputElement).value);
                   }}
@@ -157,6 +158,14 @@ export default function ChartLayoutComponent() {
                 />
               );
             })}
+            <input
+              type="button"
+              value="1Y"
+              onClick={(e) => {
+                setSelectedInterval((e.target as HTMLInputElement).value);
+              }}
+              className="btn_interval__container uppercase"
+            />
           </div>
         </div>
         <AreaChart lines={lines} data={chartData} />

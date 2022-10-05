@@ -1,5 +1,5 @@
 import { useFetchApi } from "../hooks/useFetch";
-import { ExchangeModel } from "../../types";
+import { ExchangeModel } from "../../types/exchangeModelTypes";
 import React, { createContext, useContext } from "react";
 
 

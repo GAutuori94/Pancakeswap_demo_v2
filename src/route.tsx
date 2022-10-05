@@ -1,11 +1,13 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { ResponseRender } from './components/shared/fetchTest';
+import KlineRender from './components/shared/klineFetchTest';
 
 export default function Router () {
     return (
     <Routes>
         <Route path='fetched-data' element={<ResponseRender />} />
+        <Route path='fetched-kline' element={<KlineRender />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

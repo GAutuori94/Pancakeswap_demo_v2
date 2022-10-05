@@ -6,8 +6,8 @@ import { ResponseRender } from "./components/shared/fetchTest";
 export default function Router() {
   return (
     <Routes>
+      <Route path="/" element={<ChartLayoutComponent />} />
       <Route path="fetched-data" element={<ResponseRender />} />
-      <Route path="trade" element={<ChartLayoutComponent />} />
       {/* <Route path='trade' element={<Trade />}>
         <Route path='fetched-data' element={<ResponseRender />} />
         <Route path='/button1' element={<FullButton />} />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FullButton } from "../../shared/buttons";
 
 import "../../../style/index.css";
-
+import "../../../style/bannerHero.css";
 import bannerLottery from "../../../assets/images/png/lotteryBanner.png";
 import bannerPerpetual from "../../../assets/images/png/perpetualBanner.png";
 import board from "../../../assets/images/png/bannerBord.png";
@@ -10,7 +10,7 @@ import board from "../../../assets/images/png/bannerBord.png";
 function BannerHeroLeft() {
   return (
     <>
-      <div className="relative h-fit   flex flex-row p-5">
+      <div className="relative h-fit flex flex-row p-5">
         <div className=" flex flex-col justify-between">
           <h2 className="text-base color-(var[#ED4B9E]) ">Win 11000$</h2>
           <img src={board} alt="board" />
@@ -57,13 +57,13 @@ export function BannerHero() {
           <input
             type="button"
             onClick={() => setIsShown("rightBanner")}
-            className="bg-white cursor-pointer rounded-l-lg w-10 "
+            className="bg-white cursor-pointer rounded-l-lg w-10 h-3"
           />
 
           <input
             type="button"
             onClick={() => setIsShown("leftBanner")}
-            className="bg-white cursor-pointer rounded-r-lg w-10 checked:bg-black "
+            className="bg-white cursor-pointer rounded-r-lg w-10 h-3"
           />
         </div>
       </div>

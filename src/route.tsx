@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import { Test } from "./components/animation/test";
 import Home from "./components/pages/home/index";
 
 export default function Router() {

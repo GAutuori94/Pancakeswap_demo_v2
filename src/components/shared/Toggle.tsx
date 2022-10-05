@@ -1,26 +1,17 @@
-import React from 'react'
-function Toggle() {
+import React, { useContext } from 'react'
 
-  const [darkToggle, setDarkToggle] = React.useState(false)
-  
-  
+
+function Toggle() {
 
   return (
 
-
-    // <div className=''>
-    //           <label className='switch'>
-    //             <input type='checkbox' id='darkToggle' className='darkToggle' />
-    //             <span className='slider round'></span>
-    //           </label>
-    //         </div>
-
-    <div>
+   <div>
       <label className="toggleDarkBtn">
-        <input type="checkbox" onClick={() => setDarkToggle(!darkToggle)} />
+        <input type="checkbox"  />
         <span className=" slider slideBtnTg round"></span>
       </label>
-         </div>
+       </div>
+       
   )
 }
 

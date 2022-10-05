@@ -8,10 +8,13 @@ import github from '../../assets/images/svg/social/gitHub.svg';
 import discord from '../../assets/images/svg/social/discord.svg';
 import medium from '../../assets/images/svg/social/medium.svg';
 import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWhiteWritten.svg';
-import arrowright from '../../assets/images/svg/utilities/arrowright.svg';  
+import arrowright from '../../assets/images/svg/utilities/arrowright.svg';
 
 import { developer, help, services } from './footerItems';
 import Toggle from './Toggle';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/themeContext';
+const {theme, toggleTheme} = useContext(ThemeContext); 
 // import help from './footerItems';
 // import developer from './footerItems';
 
@@ -22,7 +25,7 @@ type Link = {
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className='bg-primary dark:bg-failure'>
       <div className='services'>
         <div className='servicesContainer'>
           {services.map((link: Link, index) => {
@@ -38,13 +41,11 @@ const Footer: React.FC = () => {
         <div className='developerContainer'>
           {developer.map((link: Link, index) => {
             return (
-             
-                <ul key={index}>
-                  <li>
-                    <a href={link.href}> {link.label} </a>
-                  </li>
-                </ul>
-              
+              <ul key={index}>
+                <li>
+                  <a href={link.href}> {link.label} </a>
+                </li>
+              </ul>
             );
           })}
         </div>
@@ -52,12 +53,12 @@ const Footer: React.FC = () => {
           {help.map((link: Link, index) => {
             return (
               <ul key={index} className='developer'>
-                <li >
+                <li>
                   <a href={link.href}> {link.label} </a>
                 </li>
               </ul>
             );
-          })}  
+          })}
         </div>
 
         <div>
@@ -71,7 +72,8 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {<div className='partnerSvgIcons'>
+      {
+        <div className='partnerSvgIcons'>
           <div className='twitter'>
             <a href=''>
               <img src={twitter} alt='twitter icon' />
@@ -113,7 +115,9 @@ const Footer: React.FC = () => {
       {
         <div className='lasts'>
           <div className='modeSelector'>
-           <Toggle  />  
+
+            <button onClick={toggleTheme}><Toggle /></button>
+            
             <div className='languageSelector'>
               <div className='net'>
                 <p>EN</p>
@@ -142,4 +146,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-

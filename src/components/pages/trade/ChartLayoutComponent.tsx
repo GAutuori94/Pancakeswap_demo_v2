@@ -49,7 +49,7 @@ export default function ChartLayoutComponent() {
 
   const { data, trigger: fetchNewData } =
     useLazyFetch<BinanceKline[]>("/api/v3/klines?");
-  console.log("data before useEffect: ", data);
+  /* console.log("data before useEffect: ", data); */
   useEffect(() => {
     if (data) {
       const parsedData: ParsedBinanceKline[] = data.map((item) => {
@@ -66,7 +66,7 @@ export default function ChartLayoutComponent() {
       setParsedData(parsedData);
     }
   }, [data]);
-  console.log("parsedData after 1st useEffect: ", parsedData);
+  /* console.log("parsedData after 1st useEffect: ", parsedData); */
 
   useEffect(() => {
     const reqParams = new URLSearchParams({
@@ -87,7 +87,7 @@ export default function ChartLayoutComponent() {
     );
   }, [parsedData]);
 
-  console.log("parsedData: ", parsedData);
+  /* console.log("parsedData: ", parsedData); */
 
   const { percDiff: percDifference } = usePercDiff(parsedData);
 

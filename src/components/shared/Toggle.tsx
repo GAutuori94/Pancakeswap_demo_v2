@@ -1,18 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 
-
-function Toggle() {
+export function Toggle() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-
-   <div>
+    <>
       <label className="toggleDarkBtn">
-        <input type="checkbox"  />
-        <span className=" slider slideBtnTg round"></span>
+        <input
+          type="checkbox"
+          className="input_darkMode"
+          onClick={toggleTheme}
+        />
+        <span className="sliderDarkMode"></span>
       </label>
-       </div>
-       
-  )
+    </>
+  );
 }
-
-export default Toggle; 

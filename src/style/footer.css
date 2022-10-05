@@ -8,6 +8,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
+
+@tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: "Kanit";
+    src: local("Kanit") url("../assets/font/Kanit-Regular.ttf") format("ttf");
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -28,13 +43,13 @@ footer {
   flex-flow: column;
 }
 footer .services {
-  
+
   display: flex;
   justify-content: space-between;
-  margin: 1.563rem;  
-  padding: 0rem;  
+  margin: 1.563rem;
+  padding: 0rem;
 }
- 
+
 
 footer .services ul li {
   list-style-type: none;
@@ -94,7 +109,7 @@ footer .lasts button:hover {
 }
 footer .lasts .modeSelector {
   display: flex;
-  width: 6.25rem;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -150,10 +165,10 @@ footer .lasts .selectors .buttonContainer .svg {
 footer .lasts .selectors .buttonContainer .svg:hover {
   transform: scale(1.2);
 }
- 
 
 
 
+/*
 .dark {
   color: white;
   background: #444;
@@ -218,12 +233,12 @@ input:not(:checked) + .slider {
   background-image: url('../../src/assets/images/svg/icons/nightModeIcon.svg');
   background-repeat: no-repeat;
   background-position-x: 2rem;
-  background-position-y: 0.35rem; 
+  background-position-y: 0.35rem;
   background-color: #bdc2c4;
 }
 
 input:checked + .slider:before {
-  
+
   background-color: black;
   background-image: url('../../src/assets/images/svg/icons/nightModeIconSlided.svg');
   background-position: center;
@@ -231,7 +246,7 @@ input:checked + .slider:before {
   -ms-transform: translateX(1.625rem);
   transform: translateX(1.625rem);
   margin: auto;
-  margin-right: 0.125rem;  
+  margin-right: 0.125rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -255,7 +270,7 @@ input:focus:not(:checked) + .slider:before {
 }
 
 
-/* Rounded sliders */
+Rounded sliders
 .slider.round {
   border-radius: 1.875rem;
 }
@@ -276,18 +291,133 @@ input:focus:not(:checked) + .slider:before {
   width: 0;
   height: 0;
 }
-
+*/
 
 footer .services .helpContainer ul:nth-child(1) li a, footer .services .developerContainer ul:nth-child(1) li a, footer .services .servicesContainer ul:nth-child(1) li a {
   color: #7a6eaa;
   font-weight: 600;
-  pointer-events: none;  
+  cursor: text;
   text-decoration: none;
       
 }
 
-footer .services .servicesContainer ul:nth-child(2) li a{
-  color: gold;  
-  
+footer .services .developerContainer ul:nth-child(1) li a{
+  color: #7a6eaa;
+  font-weight: 600;
+  cursor: text;
+  text-decoration: none;
 }
-  
+
+footer .services .helpContainer ul:nth-child(1) li a{
+  color: #7a6eaa;
+  font-weight: 600;
+  cursor: text;
+  text-decoration: none;
+}
+footer .services .servicesContainer ul:nth-child(2) li a{
+  color: gold;
+
+}
+
+
+  /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
+
+  @layer components {
+  .toggleDarkBtn {
+    width: 56px;
+    height: 32px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sliderDarkMode {
+    position: absolute;
+    height: 32px;
+    width: 56px;
+    background-color: theme(colors.darkTextDisabled);
+    align-items: center;
+    border-radius: theme(borderRadius.card);
+    /* box-shadow: theme(boxShadow.button); */
+    transition: left 200ms ease-in 0s;
+  }
+
+  /* Rounded sliders */
+  .sliderDarkMode {
+    border-radius: 1.875rem;
+  }
+
+  .sliderDarkMode:before {
+    border-radius: 50%;
+  }
+
+  .sliderDarkMode::before {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIconSlided.svg");
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 0.175rem;
+    bottom: 0.219rem;
+    background-color: theme(colors.darkBackgroundAlt);
+    /* -webkit-transition: 0.4s;
+    transition: 0.4s; */
+  }
+
+  .input_darkMode:checked + .sliderDarkMode {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 0.33rem;
+    background-position-y: 0.33rem;
+    background-color: theme(colors.darkTextDisabled);
+  }
+
+  .input_darkMode:not(:checked) {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    /* background-color: theme(colors.darkBackgroundAlt); */
+  }
+
+  .input_darkMode:not(:checked) + .sliderDarkMode {
+    background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 2rem;
+    background-position-y: 0.35rem;
+  }
+
+  .input_darkMode:checked + .sliderDarkMode:before {
+    background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
+    background-position: center;
+    -webkit-transform: translateX(1.625rem);
+    -ms-transform: translateX(1.625rem);
+    transform: translateX(1.625rem);
+    margin: auto;
+    margin-right: 0.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .input_darkMode:focus:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:not(:checked) + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:focus:not(:checked) + .sliderDarkMod:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode {
+    cursor: pointer;
+  }
+}

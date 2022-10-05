@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './style/index.css';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './route';
 import { SymbolsContextProvider } from './components/context/symbolsContext';
 import './style/index.css';
 import Nav from './components/shared/Nav';
 import Footer from './components/shared/Footer';
-import {ThemeProvider} from "./components/context/themeContext"
+import { ThemeProvider } from './components/context/themeContext';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
@@ -15,12 +15,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <ThemeProvider>
-
       <SymbolsContextProvider>
         <Nav />
         <Router />
         <Footer />
-        
       </SymbolsContextProvider>
       </ThemeProvider>
     </BrowserRouter>

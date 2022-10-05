@@ -11,10 +11,7 @@ import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWhiteW
 import arrowright from '../../assets/images/svg/utilities/arrowright.svg';
 
 import { developer, help, services } from './footerItems';
-import Toggle from './Toggle';
-import { useContext } from 'react';
-import { ThemeContext } from '../context/themeContext';
-const {theme, toggleTheme} = useContext(ThemeContext); 
+import {Toggle} from './Toggle';
 // import help from './footerItems';
 // import developer from './footerItems';
 
@@ -41,11 +38,13 @@ const Footer: React.FC = () => {
         <div className='developerContainer'>
           {developer.map((link: Link, index) => {
             return (
-              <ul key={index}>
-                <li>
-                  <a href={link.href}> {link.label} </a>
-                </li>
-              </ul>
+
+                <ul key={index}>
+                  <li>
+                    <a href={link.href}> {link.label} </a>
+                  </li>
+                </ul>
+
             );
           })}
         </div>
@@ -115,9 +114,7 @@ const Footer: React.FC = () => {
       {
         <div className='lasts'>
           <div className='modeSelector'>
-
-            <button onClick={toggleTheme}><Toggle /></button>
-            
+           <Toggle  />
             <div className='languageSelector'>
               <div className='net'>
                 <p>EN</p>

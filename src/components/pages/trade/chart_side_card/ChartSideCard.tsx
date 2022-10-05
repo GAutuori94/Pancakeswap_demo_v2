@@ -1,6 +1,7 @@
 import React from "react";
+import { NoGraphIcon } from "./SideCardIcons";
 
-export default function ChartSideCard() {
+export default function ChartSideCard(): JSX.Element {
   return (
     <div className="flex flex-col">
       <div className="flex shrink-0 h-fit px-10">
@@ -25,7 +26,14 @@ export default function ChartSideCard() {
                   StableSwap
                 </button>
               </div>
-              <div className="flex flex-col items-center p-6 w-full border-b border-lightCardBorder dark:border-darkCardBorder"></div>
+              <div className="flex flex-col items-center p-6 w-full border-b border-lightCardBorder dark:border-darkCardBorder">
+                <div className="flex items-center justify-between w-full">
+                  <button className="text-lightTextSubtle dark:text-darkTextSubtle w-8 relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent shadow-none">
+                    <NoGraphIcon />
+                  </button>
+                </div>
+              </div>
+              <div></div>
             </div>
           </div>
         </div>

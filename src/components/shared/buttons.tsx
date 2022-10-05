@@ -1,44 +1,53 @@
 import React from "react";
 import { useCustomNav } from "../hooks/useButtonNavigation";
 
-
 export function FullButton() {
+  const navigator = useCustomNav();
 
-    const navigator = useCustomNav()
-
-    function handleNav(url: string) {
-        navigator.goTo(url)
-    }
+  function handleNav(url: string) {
+    navigator.goTo(url);
+  }
 
   return (
-    <button className="full-primary-button" onClick={() => handleNav("/insertNavigationUrlHer")}>
+    <button
+      className="full-primary-button"
+      onClick={() => handleNav("/insertNavigationUrlHer")}
+    >
       Trade now
     </button>
   );
 }
 
 export function VoidButton() {
+  const navigator = useCustomNav();
 
-    const navigator = useCustomNav()
+  function handleNav(url: string) {
+    navigator.goTo(url);
+  }
 
-    function handleNav(url: string) {
-        navigator.goTo(url)
-    }
-
-  return <button className="void-primary-button" onClick={() => handleNav("/insertNavigationUrlHer")}>Learn</button>;
+  return (
+    <button
+      className="void-primary-button"
+      onClick={() => handleNav("/insertNavigationUrlHer")}
+    >
+      Learn
+    </button>
+  );
 }
 
 export function OnlyBorderButton() {
+  const navigator = useCustomNav();
 
-    const navigator = useCustomNav()
-
-    function handleNav(url: string) {
-        navigator.goTo(url)
-    }
+  function handleNav(url: string) {
+    navigator.goTo(url);
+  }
 
   return (
     <div>
-      <button className="border-primary-button flex align-center" onClick={() => handleNav("/insertNavigationUrlHer")}>
+      <button
+        className="border-primary-button flex align-center"
+        onClick={() => handleNav("/insertNavigationUrlHer")}
+      >
         Start earning
         <svg
           viewBox="0 0 24 24"

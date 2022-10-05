@@ -18,7 +18,7 @@ export default function CtaTrade() {
               your wallet.
             </p>
           </div>
-          <div className="flex flex-row ">
+          <div className="flex flex-row gap-4">
             <FullButton />
             <OnlyBorderButton />
           </div>

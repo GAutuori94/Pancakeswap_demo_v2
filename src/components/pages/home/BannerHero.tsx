@@ -10,11 +10,11 @@ import board from "../../../assets/images/png/bannerBord.png";
 function BannerHeroLeft() {
   return (
     <>
-      <div className="relative h-fit flex flex-row p-5">
-        <div className=" flex flex-col justify-between">
-          <h2 className="text-base color-(var[#ED4B9E]) ">Win 11000$</h2>
+      <div className="relative h-fit flex flex-row p-5 ">
+        <div className=" flex flex-col justify-between lightGradientGold">
+          <h2 className="text-base">Win 11000$</h2>
           <img src={board} alt="board" />
-          <h2 className="text-xl font-bold text-[lightGradientGold]">time</h2>
+          <h2 className="text-xl font-bold text-gold">time</h2>
 
           <FullButton />
         </div>

@@ -26,14 +26,30 @@ export default function ChartSideCard(): JSX.Element {
                   StableSwap
                 </button>
               </div>
-              <div className="flex flex-col items-center p-6 w-full border-b border-lightCardBorder dark:border-darkCardBorder">
+              <div
+                id="card-header"
+                className="flex flex-col items-center p-6 w-full border-b border-lightCardBorder dark:border-darkCardBorder"
+              >
                 <div className="flex items-center justify-between w-full">
                   <button className="text-lightTextSubtle dark:text-darkTextSubtle w-8 relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent shadow-none">
                     <NoGraphIcon />
                   </button>
                 </div>
               </div>
-              <div></div>
+              <div
+                id="card-body"
+                className="flex flex-col relative justify-between p-4"
+              >
+                <div className="grid auto-rows-auto gap-y-2">
+                  <div className="relative">
+                    <div className="flex items-center justify-between">
+                      <div className="flex">
+                        <select className="py-0 px-2"></select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

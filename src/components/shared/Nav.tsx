@@ -2,7 +2,7 @@ import React from "react";
 import "../../style/Nav.css";
 import { Link } from "react-router-dom";
 
-import pancakeWritten from "../../assets/images/svg/utilities/pancakeWritten.svg";
+
 import logoPancake from "../../assets/images/svg/utilities/logoPancake.svg";
 import logoNET from "../../assets/images/svg/utilities/logoNET.svg";
 import ingranaggio from "../../assets/images/svg/utilities/ingranaggio.svg";
@@ -16,11 +16,38 @@ type Link = {
 };
 
 const Nav: React.FC = () => {
-  const [hover, setHover] = useState<boolean>(false);
+  const [hoverTrade, setHoverTrade] = useState<boolean>(false);
+  const [hoverEarn, setHoverEarn] = useState<boolean>(false);
+  const [hoverWin, setHoverWin] = useState<boolean>(false);
+  const [hoverNFT, setHoverNFT] = useState<boolean>(false);
+  const [hoverInfo, setHoverInfo] = useState<boolean>(false);
 
-  const handleDropdownHover = (boolValue = false) => {
-    setHover(boolValue);
+  const handleDropdownHoverTrade = (boolValue = false) => {
+    
+   setHoverTrade(boolValue);
+
   };
+  const handleDropdownHoverEarn = (boolValue = false) => {
+
+   setHoverEarn(boolValue);
+
+  };
+  const handleDropdownHoverWin = (boolValue = false) => {
+
+   setHoverWin(boolValue);
+
+  };
+  const handleDropdownHoverNFT = (boolValue = false) => {
+
+   setHoverNFT(boolValue);
+
+  };
+  const handleDropdownHoverInfo = (boolValue = false) => {
+
+   setHoverInfo(boolValue);
+
+  };
+
 
   return (
     <nav className="navbar border-[1.5px] dark:bg-darkBackgroundAlt dark:border-darkCardBorder">
@@ -56,7 +83,7 @@ const Nav: React.FC = () => {
             d="M74.85 117.896c0 9.718-4.546 14.779-10.154 14.779s-10.154-5.061-10.154-14.779 4.546-14.779 10.154-14.779 10.154 5.061 10.154 14.779zM140.851 117.896c0 9.718-4.546 14.779-10.154 14.779s-10.154-5.061-10.154-14.779 4.546-14.779 10.154-14.779 10.154 5.061 10.154 14.779z"
             fill="#633001"
           ></path>
-        </svg>{" "}
+        </svg>
         <div className="links-container">
           {linkTrade.map((link: Link, i) => {
             return (
@@ -65,11 +92,11 @@ const Nav: React.FC = () => {
                   <li className="nav-li">
                     <a
                       href={link.href}
-                      onMouseEnter={() => handleDropdownHover(true)}
-                      onMouseLeave={() => handleDropdownHover(false)}
+                      onMouseEnter={() => handleDropdownHoverTrade(true)}
+                      onMouseLeave={() => handleDropdownHoverTrade(false)}
                     >
                       {link.label}
-                      {hover && (
+                      {hoverTrade && (
                         <div className={`dropdown`}>
                           {linkTrade.map((item) => {
                             return item.sub?.map((item, index) => (
@@ -77,6 +104,7 @@ const Nav: React.FC = () => {
                                 <li key={index} className={`${item.href}-li`}>
                                   {item.label}
                                 </li>
+                            <hr />
                               </ul>
                             ));
                           })}
@@ -97,11 +125,11 @@ const Nav: React.FC = () => {
                   <li className="nav-li">
                     <a
                       href={link.href}
-                      onMouseEnter={() => handleDropdownHover(true)}
-                      onMouseLeave={() => handleDropdownHover(false)}
+                      onMouseEnter={() => handleDropdownHoverWin(true)}
+                      onMouseLeave={() => handleDropdownHoverWin(false)}
                     >
                       {link.label}
-                      {hover && (
+                      {hoverWin && (
                         <div className={`dropdown`}>
                           {linkWin.map((item) => {
                             return item.sub?.map((item, index) => (
@@ -129,11 +157,11 @@ const Nav: React.FC = () => {
                   <li className="nav-li">
                     <a
                       href={link.href}
-                      onMouseEnter={() => handleDropdownHover(true)}
-                      onMouseLeave={() => handleDropdownHover(false)}
+                      onMouseEnter={() => handleDropdownHoverEarn(true)}
+                      onMouseLeave={() => handleDropdownHoverEarn(false)}
                     >
                       {link.label}
-                      {hover && (
+                      {hoverEarn && (
                         <div className={`dropdown`}>
                           {linkEarn.map((item) => {
                             return item.sub?.map((item, index) => (
@@ -161,24 +189,11 @@ const Nav: React.FC = () => {
                   <li className="nav-li">
                     <a
                       href={link.href}
-                      onMouseEnter={() => handleDropdownHover(true)}
-                      onMouseLeave={() => handleDropdownHover(false)}
+                      onMouseEnter={() => handleDropdownHoverNFT(true)}
+                      onMouseLeave={() => handleDropdownHoverNFT(false)}
                     >
                       {link.label}
-                      {hover && (
-                        <div className={`dropdown`}>
-                          {linksNFT.map((item) => {
-                            return item.sub?.map((item, index) => (
-                              <ul className={`${item.href}-ul`} key={index}>
-                                <li key={index} className={`${item.href}-li`}>
-                                  {item.label}
-                                </li>
-                              </ul>
-                            ));
-                          })}
-                        </div>
-                      )}
-                      {hover && (
+                      {hoverNFT && (
                         <div className={`dropdown`}>
                           {linksNFT.map((item) => {
                             return item.sub?.map((item, index) => (
@@ -206,11 +221,11 @@ const Nav: React.FC = () => {
                   <li className="nav-li">
                     <a
                       href={link.href}
-                      onMouseEnter={() => handleDropdownHover(true)}
-                      onMouseLeave={() => handleDropdownHover(false)}
+                      onMouseEnter={() => handleDropdownHoverInfo(true)}
+                      onMouseLeave={() => handleDropdownHoverInfo(false)}
                     >
                       {link.label}
-                      {hover && (
+                      {hoverInfo && (
                         <div className={`dropdown`}>
                           {linksInfo.map((item) => {
                             return item.sub?.map((item, index) => (

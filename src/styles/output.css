@@ -46,7 +46,7 @@ nav {
 
 .links-container > .links {
   list-style-type: none;
-  margin: 20px;
+  margin: 30px;
 }
 
 .logoPriceContainer {
@@ -60,13 +60,28 @@ nav {
 .nav-li a {
   text-decoration: none;
   color: #7a6eea;
-  font-weight: 500;
+}
+
+.eye:hover  {
+  -webkit-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%)
 }
 
 .dropdownContainer {
   display: flex;
   align-items: flex-start;
   flex-flow: column wrap;
+}
+
+.dropdown {
+  box-sizing: border-box;
+  margin-top: 9px;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 180px;
 }
 
 .interactionsContainer {

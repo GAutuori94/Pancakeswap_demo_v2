@@ -13,8 +13,9 @@ export const linkTrade: menuItem[] = [
   {
     label: 'Trade',
     href: 'trade',
+    
     sub: [
-      { type: 'Trade', label: 'Swap', href: 'swap' },
+      
       {
         label: 'Limit',
         href: 'limit',

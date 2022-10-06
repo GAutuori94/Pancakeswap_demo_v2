@@ -7,7 +7,7 @@ import instagram from '../../assets/images/svg/social/instagram.svg';
 import github from '../../assets/images/svg/social/gitHub.svg';
 import discord from '../../assets/images/svg/social/discord.svg';
 import medium from '../../assets/images/svg/social/medium.svg';
-import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWhiteWritten.svg';
+import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWritten.svg';
 import arrowright from '../../assets/images/svg/utilities/arrowright.svg';
 
 import { developer, help, services } from './footerItems';
@@ -22,7 +22,7 @@ type Link = {
 
 const Footer: React.FC = () => {
   return (
-    <footer className='bg-primary dark:bg-failure'>
+    <footer>
       <div className='services'>
         <div className='servicesContainer'>
           {services.map((link: Link, index) => {

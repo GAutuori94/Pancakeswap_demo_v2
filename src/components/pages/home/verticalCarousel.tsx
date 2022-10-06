@@ -1,5 +1,6 @@
 import React from "react";
 import { useSymbols } from "../../context/symbolsContext";
+import { useKline } from "../../context/klineContext";
 
 // export function VerticalCarousel() {
 //   return (
@@ -88,6 +89,7 @@ import { useSymbols } from "../../context/symbolsContext";
 export function VerticalCarousel() {
 
   const {dataFetchedLoading, dataFetchedError, dataFetched} = useSymbols()
+  const {dataFetchedLoading: parsedDataFetchedLoading, dataFetchedError: parsedDataFetchedError, parsedData} = useKline();
 
 
 
@@ -115,8 +117,10 @@ export function VerticalCarousel() {
       </div>
 
       <div className="gridView__bottom__carousel_container grid grid-cols-5 gap-[32px]">
-        {dataFetched.symbols?.slice(0, 4).map((item) =>
+        {dataFetched.symbols?.slice(0, 5).map((item) =>
         <div key={item.symbol}> {item.symbol} </div>)}
+        {(parsedData.slice(0, 5).map((item) =>
+        <div key={item.volume}> {item.close} </div>))}
       </div>
     </div>
   );

@@ -2,14 +2,14 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { VerticalCarousel } from './components/pages/home/verticalCarousel';
 import { ResponseRender } from './components/shared/fetchTest';
-import KlineRender from './components/shared/klineFetchTest';
+import { KlineResponseRender } from './components/shared/klineFetchTest'
 
 export default function Router () {
     return (
     <Routes>
         <Route path='fetched-data' element={<ResponseRender />} />
         <Route path='vertical-carousel' element={<VerticalCarousel />} />
-        <Route path='fetched-kline' element={<KlineRender />} />
+        <Route path='fetched-kline' element={<KlineResponseRender />} />
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

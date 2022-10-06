@@ -119,6 +119,5 @@ export function VerticalCarousel() {
         <div key={item.symbol}> {item.symbol} </div>)}
       </div>
     </div>
-
   );
 }

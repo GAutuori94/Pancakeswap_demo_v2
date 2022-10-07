@@ -2,7 +2,7 @@ import React from "react";
 import { useCustomNav } from "../hooks/useButtonNavigation";
 
 
-export function FullButton() {
+export function FullButton({value}: {value: string}): JSX.Element {
 
     const navigator = useCustomNav()
 
@@ -12,7 +12,7 @@ export function FullButton() {
 
   return (
     <button className="full-primary-button" onClick={() => handleNav("/insertNavigationUrlHer")}>
-      Trade now
+      {value}
     </button>
   );
 }

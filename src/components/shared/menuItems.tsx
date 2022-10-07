@@ -17,6 +17,10 @@ export const linkTrade: menuItem[] = [
     sub: [
       
       {
+        label: 'Swap',
+        href: 'swap',
+      },
+      {
         label: 'Limit',
         href: 'limit',
       },

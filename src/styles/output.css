@@ -42,6 +42,11 @@ nav {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
+  height: 48px;
+}
+
+.links-container a {
+  margin-left: 15px;
 }
 
 .links-container > .links {
@@ -62,9 +67,10 @@ nav {
   color: #7a6eea;
 }
 
-.eye:hover  {
-  -webkit-transform:translate(-50%,-50%);
-          transform:translate(-50%,-50%)
+.eye:hover {
+  transition-delay: 1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .dropdownContainer {
@@ -73,15 +79,26 @@ nav {
   flex-flow: column wrap;
 }
 
+.dropdown ul li {
+  color: #7a6eea;
+  font-weight: 400;
+  font-size: medium;
+  border-radius: 10px;
+}
+
+.dropdown ul {
+  border-radius: 15px;
+}
+
 .dropdown {
   box-sizing: border-box;
   margin-top: 9px;
   display: flex;
   flex-flow: column wrap;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   border: 1px solid grey;
-  width: 180px;
+  width: 280px;
 }
 
 .interactionsContainer {

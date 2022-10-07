@@ -33,18 +33,19 @@ nav {
 }
 
 .links-container {
- 
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
+  height: 48px;
+}
+.links-container a {
+  margin-left: 15px;
 }
 .links-container > .links {
   list-style-type: none;
   margin: 30px;
-  
 }
-
 
 .logoPriceContainer {
   display: flex;
@@ -56,30 +57,35 @@ nav {
 .nav-li a {
   text-decoration: none;
   color: #7a6eea;
-  
 }
-.eye:hover  {	
-  transform:translate(-50%,-50%)
-	
-	}
+
+.eye:hover {
+  transition-delay: 1s;
+  transform: translate(-50%, -50%);
+}
 .dropdownContainer {
   display: flex;
   align-items: flex-start;
   flex-flow: column wrap;
 }
+.dropdown ul li {
+  color: #7a6eea;
+  font-weight: 400;
+  font-size: medium;
+  border-radius: 10px;
+}
+.dropdown ul {
+  border-radius: 15px;
+}
 .dropdown {
-  
   box-sizing: border-box;
   margin-top: 9px;
   display: flex;
   flex-flow: column wrap;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   border: 1px solid grey;
-  width: 180px;
-  
-
- 
+  width: 280px;
 }
 
 .interactionsContainer {

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { ParsedBinanceKline } from "../../types/tickerModelTypes";
+import { ParsedBinanceKline } from "../../types/klineModelTypes";
 import { useKline } from "../context/klineContext";
 
 

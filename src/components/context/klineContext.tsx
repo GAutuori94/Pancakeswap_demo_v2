@@ -1,7 +1,7 @@
 import {
   KlineResponseModel,
   ParsedBinanceKline,
-} from "../../types/tickerModelTypes";
+} from "../../types/klineModelTypes";
 import { useFetchApi } from "../hooks/useFetch";
 import React, { createContext, useContext, useEffect, useState } from "react";
 

@@ -1,24 +1,23 @@
-export type KlineResponseModel = [
-    number,
-    string,
-    string,
-    string,
-    string,
-    string,
-    number,
-    string,
-    number,
-    string,
-    string,
-    string
-  ];
-
-  export type ParsedBinanceKline = {
-    open: number;
-    close: number;
-    high: number;
-    low: number;
-    volume: number;
-    openTime: number;
-    closeTime: number;
-  };
+export type TickerModel = {
+    symbol: string,
+    priceChange: string,
+    priceChangePercent: string,
+    weightedAvgPrice: string,
+    prevClosePrice: string,
+    lastPrice: string,
+    lastQty: string,
+    bidPrice: string,
+    bidQty: string,
+    askPrice: string,
+    askQty: string,
+    openPrice: string,
+    highPrice: string,
+    lowPrice: string,
+    volume: string,
+    quoteVolume: string,
+    openTime: number,
+    closeTime: number,
+    firstId: number,   // First tradeId
+    lastId: number,    // Last tradeId
+    count: number         // Trade count
+}

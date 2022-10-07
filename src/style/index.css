@@ -83,7 +83,7 @@ input[type="number"] {
     background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
   }
 
-  /*----------------------animationDelay----------------------------*/
+  /*----------------------------------------animationDelay------------------------------------------------------------------*/
 
   .animation-delay-33 {
     animation-delay: 0.33s;
@@ -95,6 +95,9 @@ input[type="number"] {
     animation-delay: 1s;
   }
 }
+
+
+  /*----------------------------------------vertical carousel home------------------------------------------------------------------*/
 
 @layer components {
   .column__gridView{

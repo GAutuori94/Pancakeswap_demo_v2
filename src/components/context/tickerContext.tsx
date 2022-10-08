@@ -13,7 +13,7 @@ export type TickerContextProps = {
 export const TickerContext = createContext<TickerContextProps | undefined>(undefined)
 
 export function TickerContextProvider({ children }: { children: React.ReactNode }) {
-    const {loading: dataFetchedLoading, error: dataFetchedError, data: dataFetched} = useFetchApi<TickerModel[]>('/api/v3/ticker/24hr?symbols=["ETHBTC","BNBUSDT"]')
+    const {loading: dataFetchedLoading, error: dataFetchedError, data: dataFetched} = useFetchApi<TickerModel[]>('/api/v3/ticker/24hr?symbols=["ETHBTC","LTCBTC","BNBBTC","NEOBTC","QTUMETH"]')
 
     return (
         <TickerContext.Provider

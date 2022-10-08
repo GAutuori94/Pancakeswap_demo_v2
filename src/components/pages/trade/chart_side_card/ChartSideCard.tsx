@@ -1,38 +1,44 @@
 import React from "react";
 import { NoGraphIcon } from "./SideCardIcons";
 import { useSymbols } from "../../../context/symbolsContext";
+import { useMarketChange } from "../../../hooks/useMarketChange";
 
-export default function ChartSideCard(): JSX.Element {
+interface ChartSideCardProps {
+  changeMarket: (market: string) => void;
+}
+
+export default function ChartSideCard({
+  changeMarket,
+}: ChartSideCardProps): JSX.Element {
+  const { selectedMarket, setSelectedMarket } = useMarketChange("");
   const { dataFetched } = useSymbols();
 
-  const completeBaseAssetsList = dataFetched.symbols?.map((market) => {
-    return market.baseAsset;
-  });
-  const completeQuoteAssetsList = dataFetched.symbols?.map((market) => {
-    return market.quoteAsset;
-  });
+  const filteredList = (assetType: string) => {
+    const completeAssetsList = dataFetched.symbols?.map((market) => {
+      if (assetType === "baseAsset") {
+        return market.baseAsset;
+      } else if (assetType === "quoteAsset") {
+        return market.quoteAsset;
+      }
+    });
 
-  const filteredBaseAssetsList = completeBaseAssetsList?.filter(
-    (baseAsset, index) => {
-      return completeBaseAssetsList.indexOf(baseAsset) === index;
-    }
-  );
+    const filteredAssetsList = completeAssetsList?.filter((asset, index) => {
+      return completeAssetsList.indexOf(asset) === index;
+    });
 
-  const filteredQuoteAssetsList = completeQuoteAssetsList?.filter(
-    (quoteAsset, index) => {
-      return completeQuoteAssetsList.indexOf(quoteAsset) === index;
-    }
-  );
+    return filteredAssetsList;
+  };
 
-  const baseAssetList = filteredBaseAssetsList
-    ?.slice(0, 10)
-    .map((baseAsset) => (
-      <option key={baseAsset} value={baseAsset}>
-        {baseAsset}
-      </option>
-    ));
+  const baseAssetFilteredList = filteredList("baseAsset");
+  const quoteAssetFilteredList = filteredList("quoteAsset");
 
-  const quoteAssetList = filteredQuoteAssetsList
+  const baseAssetList = baseAssetFilteredList?.slice(0, 10).map((baseAsset) => (
+    <option key={baseAsset} value={baseAsset}>
+      {baseAsset}
+    </option>
+  ));
+
+  const quoteAssetList = quoteAssetFilteredList
     ?.slice(0, 10)
     .map((quoteAsset) => (
       <option key={quoteAsset} value={quoteAsset}>
@@ -88,6 +94,13 @@ export default function ChartSideCard(): JSX.Element {
                         >
                           {baseAssetList}
                         </select>
+                        <button
+                          className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
+                          value="ETHBTC"
+                          onClick={(e) => changeMarket(e.currentTarget.value)}
+                        >
+                          ETHBTC
+                        </button>
                         <select
                           title="quote-asset-selector"
                           className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"

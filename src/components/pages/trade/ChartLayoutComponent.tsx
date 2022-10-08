@@ -5,6 +5,7 @@ import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
 import ChartSideCard from "./chart_side_card/ChartSideCard";
+import { useMarketChange } from "../../hooks/useMarketChange";
 
 type BinanceKline = [
   number,
@@ -34,9 +35,15 @@ export type ParsedBinanceKline = {
 export default function ChartLayoutComponent(): JSX.Element {
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
   const [chartData, setChartData] = useState<PriceChartProps>([]);
+  const { selectedMarket, setSelectedMarket } = useMarketChange("BTCBUSD");
   const [selectedInterval, setSelectedInterval] = useState<string>(
     intervals[intervals.length - 1]
   );
+
+  function changeMarket(market: string): void {
+    setSelectedMarket(market);
+  }
+
   const focusRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
@@ -44,8 +51,6 @@ export default function ChartLayoutComponent(): JSX.Element {
       focusRef.current?.focus();
     }
   }, []);
-
-  const [selectedSymbol, setSelectedSymbol] = useState<string>("BTCBUSD");
 
   const { data, trigger: fetchNewData } =
     useLazyFetch<BinanceKline[]>("/api/v3/klines?");
@@ -70,12 +75,12 @@ export default function ChartLayoutComponent(): JSX.Element {
 
   useEffect(() => {
     const reqParams = new URLSearchParams({
-      symbol: selectedSymbol,
+      symbol: selectedMarket,
       interval: selectedInterval,
     });
 
     fetchNewData({}, reqParams);
-  }, [selectedInterval]);
+  }, [selectedMarket, selectedInterval]);
 
   useEffect(() => {
     setChartData(
@@ -126,7 +131,7 @@ export default function ChartLayoutComponent(): JSX.Element {
                 {bigCloseNumber()}
               </h1>
               <h3 className="text-lg font-semibold  text-lightTextSubtle ml-2.5 ">
-                {selectedSymbol}{" "}
+                {selectedMarket}{" "}
               </h3>
               {parsedData.length > 2 && percentualDiffNumber()}
             </div>
@@ -171,7 +176,7 @@ export default function ChartLayoutComponent(): JSX.Element {
         </div>
         <AreaChart lines={lines} data={chartData} />
       </div>
-      <ChartSideCard />
+      <ChartSideCard changeMarket={changeMarket} />
     </div>
   );
 }

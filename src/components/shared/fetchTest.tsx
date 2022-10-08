@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { ExchangeInfoSymbol } from "../../types";
+import { ExchangeInfoSymbol } from "../../types/exchangeModelTypes";
 import { useSymbols } from "../context/symbolsContext";
 
 export function ResponseRender() {
@@ -11,7 +11,7 @@ export default function SymbolsRender() {
   const { dataFetchedLoading, dataFetchedError, dataFetched } = useSymbols();
 
   return (
-    <div className="symbols_container">
+    <div className="">
       {dataFetchedLoading && <h1>Loading ...</h1>}
       {dataFetchedError && <h1>Errore nel fetch ...</h1>}
       {dataFetched.symbols?.map((item) => (
@@ -24,7 +24,7 @@ export default function SymbolsRender() {
 export function SymbolsItem({ item }: { item: ExchangeInfoSymbol }) {
   return (
     <>
-      <div>
+      <div className="">
         <h1>{item.symbol}</h1>
         <h1>{item.baseAsset}</h1>
         <h1>{item.quoteAsset}</h1>

@@ -1,11 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/home/index";
+import KlineRender from "./components/shared/klineFetchTest";
+import TickerRender from "./components/shared/tickerFetchTest";
 
 export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="fetched-kline" element={<KlineRender />} />
+      <Route path="fetched-ticker" element={<TickerRender />} />
       {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

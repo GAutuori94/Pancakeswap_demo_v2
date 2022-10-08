@@ -1,13 +1,17 @@
 import React from 'react';
 import '../../style/Nav.css';
 import { Link } from 'react-router-dom';
-
+import { intervals } from './constants';
 import logoPancake from '../../assets/images/svg/utilities/logoPancake.svg';
 import logoNET from '../../assets/images/svg/utilities/logoNET.svg';
 import ingranaggio from '../../assets/images/svg/utilities/ingranaggio.svg';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import { useLazyFetch } from '../hooks/useLazyFetch';
 import { linkWin, linkEarn, linksInfo, linksNFT, linkTrade } from './menuItems';
+import {
+  ParsedBinanceKline,
+  BinanceKline,
+} from '../pages/trade/ChartLayoutComponent';
 
 type Link = {
   label: string;
@@ -15,6 +19,40 @@ type Link = {
 };
 
 const Nav: React.FC = () => {
+  const { data, trigger: fetchNewData } =
+    useLazyFetch<BinanceKline[]>('/api/v3/klines?');
+  const [selectedSymbol, setSelectedSymbol] = useState<string>('CAKEUSDT');
+  const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
+  const [selectedInterval, setSelectedInterval] = useState<string>(
+    intervals[intervals.length - 1],
+  );
+
+  useEffect(() => {
+    if (data) {
+      const parsedData: ParsedBinanceKline[] = data.map((item) => {
+        return {
+          open: parseFloat(item[1]),
+          high: parseFloat(item[2]),
+          low: parseFloat(item[3]),
+          close: parseFloat(item[4]),
+          volume: parseFloat(item[5]),
+          openTime: item[0],
+          closeTime: item[6],
+        };
+      });
+      setParsedData(parsedData);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const reqParams = new URLSearchParams({
+      symbol: selectedSymbol,
+      interval: selectedInterval,
+    });
+
+    fetchNewData({}, reqParams);
+  }, [selectedInterval]);
+
   const [hoverTrade, setHoverTrade] = useState<boolean>(false);
   const [hoverEarn, setHoverEarn] = useState<boolean>(false);
   const [hoverWin, setHoverWin] = useState<boolean>(false);
@@ -37,6 +75,10 @@ const Nav: React.FC = () => {
     setHoverInfo(boolValue);
   };
 
+  const priceValue = () => {
+    const lastElement = parsedData.pop();
+    return lastElement?.close;
+  };
   return (
     <nav className='navbar dark:bg-darkBackgroundAlt dark:border-darkCardBorder'>
       <div className='logo-container'>
@@ -86,7 +128,9 @@ const Nav: React.FC = () => {
                     <a href={link.href}>
                       {link.label}
                       {hoverTrade && (
-                        <div className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}>
+                        <div
+                          className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}
+                        >
                           {linkTrade.map((item) => {
                             return item.sub?.map((item, index) => (
                               <ul
@@ -105,16 +149,16 @@ const Nav: React.FC = () => {
                                   className={`${item.href}-li  dropdown-item
                                   dark:bg-darkBackgroundAlt dark:border-darkCardBorder
                                   dark:hover:bg-darkTertiary
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-           
-              hover:bg-gray-100`}
+                                    text-sm
+                                    py-2
+                                    px-4
+                                    font-normal
+                                    block
+                                    w-full
+                                    whitespace-nowrap
+                                    bg-transparent
+                                 
+                                    hover:bg-gray-100`}
                                 >
                                   {item.label}
                                 </li>
@@ -144,7 +188,9 @@ const Nav: React.FC = () => {
                     <a href={link.href}>
                       {link.label}
                       {hoverWin && (
-                        <div className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}>
+                        <div
+                          className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}
+                        >
                           {linkWin.map((item) => {
                             return item.sub?.map((item, index) => (
                               <ul
@@ -206,7 +252,9 @@ const Nav: React.FC = () => {
                     <a href={link.href}>
                       {link.label}
                       {hoverEarn && (
-                        <div className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}>
+                        <div
+                          className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}
+                        >
                           {linkEarn.map((item) => {
                             return item.sub?.map((item, index) => (
                               <ul
@@ -260,7 +308,9 @@ const Nav: React.FC = () => {
                     <a href={link.href}>
                       {link.label}
                       {hoverNFT && (
-                        <div className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}>
+                        <div
+                          className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}
+                        >
                           {linksNFT.map((item) => {
                             return item.sub?.map((item, index) => (
                               <ul
@@ -314,7 +364,9 @@ const Nav: React.FC = () => {
                     <a href={link.href}>
                       {link.label}
                       {hoverInfo && (
-                        <div className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}>
+                        <div
+                          className={`dropdown  dark:bg-darkBackgroundAlt dark:border-darkCardBorder`}
+                        >
                           {linksInfo.map((item) => {
                             return item.sub?.map((item, index) => (
                               <ul
@@ -358,6 +410,7 @@ const Nav: React.FC = () => {
       </div>
       <div className='interactionsContainer'>
         <img className='growing' src={logoPancake} alt='logo Pancake' />
+        <p className='priceValueContainer'>{`$${priceValue()}`}</p>
         <button className='transparent'>
           <img className='tra' src={logoNET} alt='logo net' />
         </button>

@@ -9,9 +9,16 @@ import discord from '../../assets/images/svg/social/discord.svg';
 import medium from '../../assets/images/svg/social/medium.svg';
 import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWritten.svg';
 import arrowright from '../../assets/images/svg/utilities/arrowright.svg';
+import { useState, useEffect } from 'react';
+import { useLazyFetch } from '../hooks/useLazyFetch';
+import { intervals } from './constants';
+import {
+  ParsedBinanceKline,
+  BinanceKline,
+} from '../pages/trade/ChartLayoutComponent';
 
 import { developer, help, services } from './footerItems';
-import {Toggle} from './Toggle';
+import { Toggle } from './Toggle';
 // import help from './footerItems';
 // import developer from './footerItems';
 
@@ -21,6 +28,42 @@ type Link = {
 };
 
 const Footer: React.FC = () => {
+  const { data, trigger: fetchNewData } =
+  useLazyFetch<BinanceKline[]>('/api/v3/klines?');
+  const [selectedSymbol, setSelectedSymbol] = useState<string>('CAKEUSDT');
+  const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
+  const [selectedInterval, setSelectedInterval] = useState<string>(intervals[intervals.length - 1]);
+
+  useEffect(() => {
+    if (data) {
+      const parsedData: ParsedBinanceKline[] = data.map((item) => {
+        return {
+          open: parseFloat(item[1]),
+          high: parseFloat(item[2]),
+          low: parseFloat(item[3]),
+          close: parseFloat(item[4]),
+          volume: parseFloat(item[5]),
+          openTime: item[0],
+          closeTime: item[6],
+        };
+      });
+      setParsedData(parsedData);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const reqParams = new URLSearchParams({
+      symbol: selectedSymbol,
+      interval: selectedInterval,
+    });
+
+    fetchNewData({}, reqParams);
+  }, [selectedInterval]);
+
+  const priceValue = () => {
+    const lastElement = parsedData.pop();
+    return lastElement?.close;
+  };
   return (
     <footer>
       <div className='services'>
@@ -38,13 +81,11 @@ const Footer: React.FC = () => {
         <div className='developerContainer'>
           {developer.map((link: Link, index) => {
             return (
-
-                <ul key={index}>
-                  <li>
-                    <a href={link.href}> {link.label} </a>
-                  </li>
-                </ul>
-
+              <ul key={index}>
+                <li>
+                  <a href={link.href}> {link.label} </a>
+                </li>
+              </ul>
             );
           })}
         </div>
@@ -114,7 +155,7 @@ const Footer: React.FC = () => {
       {
         <div className='lasts'>
           <div className='modeSelector'>
-           <Toggle  />
+            <Toggle />
             <div className='languageSelector'>
               <div className='net'>
                 <p>EN</p>
@@ -127,7 +168,7 @@ const Footer: React.FC = () => {
           <div className='selectors'>
             <div className='buttonContainer'>
               <div className='svg'></div>
-              <p>$3.333</p>
+              <p className='priceValue'>{`$${priceValue()}`}</p>
               <div className='buyCake'>
                 <button>
                   Buy CAKE

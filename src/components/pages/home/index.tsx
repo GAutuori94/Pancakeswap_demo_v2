@@ -1,7 +1,13 @@
 import React from "react";
-import TopCardSection from "./top-card-section";
-import "../../../style/css/index.css";
+import TopCardSection from "./topCardSection";
+import BottomCardSection from "./bottomCardSection";
+import "../../../style/index.css";
 
 export default function Home() {
-  return <TopCardSection />;
+  return (
+    <>
+      <TopCardSection />
+      <BottomCardSection />
+    </>
+  );
 }

@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@import "abstracts/typography.css";
-@import "abstracts/colors.css";
-
 @import "pages/top-card-section.css";
 
 @tailwind base;
@@ -12,7 +9,7 @@
 @layer base {
   * {
     font-family: Kanit, sans-serif;
-    @apply text-text box-border;
+    /*@apply text-text box-border;*/
   }
 }
 

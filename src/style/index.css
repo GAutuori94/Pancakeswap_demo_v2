@@ -1,9 +1,11 @@
+@import "./css/pages/top-card-section.css";
+
 @tailwind base;
 
 @layer base {
   @font-face {
     font-family: "Kanit";
-    src: local('Kanit') url("../assets/font/Kanit-Regular.ttf") format("ttf");
+    src: local("Kanit") url("../assets/font/Kanit-Regular.ttf") format("ttf");
   }
 }
 
@@ -93,5 +95,11 @@ input[type="number"] {
   }
   .animation-delay-100 {
     animation-delay: 1s;
+  }
+
+  /* OVERFLOW: HIDDEN */
+
+  .overflow-inherit {
+    overflow: inherit;
   }
 }

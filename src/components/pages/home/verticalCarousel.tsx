@@ -10,31 +10,55 @@ export function VerticalCarousel() {
   const {dataFetchedLoading: parsedDataFetchedLoading, dataFetchedError: parsedDataFetchedError, parsedData} = useKline();
   const {dataFetchedLoading: tickerDataFetchedLoading, dataFetchedError: tickerDataFetchedError, dataFetched: tickerDataFetched} = useTicker();
 
-  const [showGrid, setShowGrid] = useState(false);
+  const [showGrid1, setShowGrid1] = useState(false);
+  const [showGrid2, setShowGrid2] = useState(true);
+
+
+ useEffect(() => {
+    const gridInterval1 = setInterval(() => {
+      setShowGrid1(true);
+      const gridTimeOut1 = setTimeout(() => {
+        setShowGrid1(false)
+      }, 4000)
+      return () => clearTimeout(gridTimeOut1);
+    }, 4000);
+    return () => {clearInterval(gridInterval1)};
+  }, [showGrid1]);
 
   useEffect(() => {
-    const gridInterval = setInterval(() => {
-      setShowGrid(true);
-      const gridTimeOut = setTimeout(() => {
-        setShowGrid(false)
-      }, 6000)
-      return () => clearTimeout(gridTimeOut);
-    }, 6000);
-    return () => {clearInterval(gridInterval)};
-  }, [showGrid]);
+    const gridInterval2 = setInterval(() => {
+      setShowGrid2(false);
+      const gridTimeOut2 = setTimeout(() => {
+        setShowGrid2(true)
+      }, 4000)
+      return () => clearTimeout(gridTimeOut2);
+    }, 4000);
+    return () => {clearInterval(gridInterval2)};
+  }, [showGrid2])
+
+
+  function handleGridChange() {
+    if(showGrid1 && !showGrid2 && dataFetched === true) {
+      setShowGrid1(false)
+      setShowGrid2(true)
+    } else
+    setShowGrid1(true)
+    setShowGrid2(false)
+  }
 
 
   return (
 <div>
-    <div className="vertical_carousel w-50 ml-10 bg-[#e9f1f5]">
+    <div className="vertical_carousel w-50 ml-10">
       <div className="carousel_container__vertical_carousel mt-[24px]">
         <div className="top__carousel_container__vertical_carousel mb-[24px] flex items-center">
           <h2 className="text-lightText text-fontSizeParagraph leading-lineHeightPar font-fontSizeParagraph font-fontHeavyWeight flex gap-0.5">
             Top
-            <span className="text-lightSecondary dark:text-darkSecondary">Farms</span>
+            {showGrid1? <span className="text-lightSecondary dark:text-darkSecondary">Farms</span> : <span className="text-lightSecondary dark:text-darkSecondary">Syrup Pools</span>}
           </h2>
-          <button >
+          <button onClick={handleGridChange}>
             <svg
+
               viewBox="0 0 24 25"
               height="24px"
               width="24px"
@@ -49,27 +73,26 @@ export function VerticalCarousel() {
       </div>
 
 
-    <div className="verticalCarousel_gridContainer h-[80px]">
+    <div className={showGrid2 ? "verticalCarousel_gridContainer h-[80px] relative" : "hidden"}>
       <div className="gridView__bottom__carousel_container grid grid-cols-5 gap-x-[70px]">
           {dataFetched.symbols?.slice(0, 5).map((item) =>
           <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}> {item.symbol} </div>)}
-          {(parsedData.slice(0, 5).map((item) =>
-          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.volume}> {item.close} </div>))}
+          {(tickerDataFetched.slice(0, 5).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice} </div>))}
           {dataFetched.symbols?.slice(0, 5).map((item) => <div key={item.symbol}> <SymbolsItem item={item} /> </div>)}
         </div>
       </div>
 
-    <div className={showGrid? "verticalCarousel_gridContainer h-[80px] bg-[#e9f1f5]" : "hidden"}>
+    <div className={showGrid1? "verticalCarousel_gridContainer h-[80px] relative" : "hidden"}>
       <div className="gridView__bottom__carousel_container grid grid-cols-5 gap-x-[70px]">
-          {tickerDataFetched.slice(0, 5).map((item) =>
+          {dataFetched.symbols?.slice(5, 10).map((item) =>
           <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}> {item.symbol} </div>)}
+          {tickerDataFetched.slice(5, 10).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice}</div>)}
+          {dataFetched.symbols?.slice(5, 10).map((item) => <div key={item.symbol}> <SymbolsItem item={item} /> </div>)}
         </div>
       </div>
     </div>
-
-
-
-
 </div>
   );
 }

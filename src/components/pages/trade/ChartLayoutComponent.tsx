@@ -5,7 +5,7 @@ import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
 
-type BinanceKline = [
+export type BinanceKline = [
   number,
   string,
   string,

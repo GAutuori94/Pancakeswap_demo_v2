@@ -6,17 +6,14 @@ body {
   margin: 0;
   padding: 0;
 }
-* {
-  font-family: kanit;
-}
 
 
 nav {
   position: relative;
   background-color: white;
-  border-bottom: 1px solid grey;
-  width: 100vw;
-  font-weight: 400;
+  border-bottom: theme(borderWidth.1) solid grey;
+  width: 100%;
+  font-weight: theme(fontWeight.fontLightWeight);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +25,7 @@ nav {
 }
 .priceValueContainer{
 align-self: center;
-color: #7a6eaa;
+color: theme(colors.lightTextSubtle);
 font-weight: 500;
 }
 
@@ -64,7 +61,7 @@ font-weight: 500;
 
 .nav-li a {
   text-decoration: none;
-  color: #7a6eea;
+  color: theme(colors.lightTextSubtle);
 }
 
 .eye:hover {
@@ -77,13 +74,13 @@ font-weight: 500;
   flex-flow: column wrap;
 }
 .dropdown ul li {
-  color: #7a6eea;
-  font-weight: 400;
+  color: theme(colors.lightTextSubtle);
+  font-weight: theme(fontWeight.fontLightWeight);
   font-size: medium;
   border-radius: 10px;
 }
 .dropdown ul {
-  border-radius: 15px;
+  border-radius: theme(borderRadius.default);
 }
 .dropdown {
   box-sizing: border-box;
@@ -91,8 +88,8 @@ font-weight: 500;
   display: flex;
   flex-flow: column wrap;
   background-color: white;
-  border-radius: 15px;
-  border: 1px solid grey;
+  border-radius: theme(borderRadius.default);
+  border: theme(borderWidth.1) solid grey;
   width: 280px;
 }
 
@@ -119,7 +116,7 @@ font-weight: 500;
   display: inline-flex;
   font-family: inherit;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: theme(fontWeight.fontHeavyWeight);
   justify-content: center;
   letter-spacing: 0.03em;
   line-height: 1;
@@ -132,10 +129,10 @@ font-weight: 500;
   color: #ffffff;
   margin-right: 0.5rem;
   box-shadow: #8f80ba 0px -1px 0px 0px inset;
-  height: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  color: white;
+  height: theme(spacing.32);
+  padding-left: theme(fontSize.fontSizeCopy);
+  padding-right: theme(fontSize.fontSizeCopy);
+  color: theme(colors.white);
 }
 .connectWalletButton:hover {
   opacity: 70%;

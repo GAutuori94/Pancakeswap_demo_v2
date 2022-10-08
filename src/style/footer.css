@@ -38,7 +38,7 @@ footer {
   overflow: visible;
   width: 100%;
   height: 100%;
-  background-color: #27262c;
+  background-color: theme(colors.darkBackgroundAlt);
   display: flex;
   flex-flow: column;
 }
@@ -46,8 +46,8 @@ footer .services {
 
   display: flex;
   justify-content: space-between;
-  margin: 1.563rem;
-  padding: 0rem;
+  margin: theme(borderRadius.card);
+  
 }
 
 
@@ -57,14 +57,14 @@ footer .services ul li {
 }
 footer .services ul li a {
   text-decoration: none;
-  color: #faf9fa;
+  color: theme(colors.white);
 }
 
 footer .services ul li a:hover {
   text-decoration: underline;
 }
 footer .partnerSvgIcons {
-  padding-left: 2.063rem;
+  padding-left: theme(spacing.32);
   display: flex;
   align-items: flex-start;
 }
@@ -74,35 +74,32 @@ footer .partnerSvgIcons div {
 footer .lasts {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding:theme(spacing.32);
   border-top: 0.063rem solid grey;
   margin-top: 1.25rem;
 }
 footer .lasts button {
   align-items: center;
-  border: 0rem;
-  border-radius: 1rem;
+  border: theme(borderWidth.0);
+  border-radius: theme(borderRadius.default);
   box-shadow: 0rem -0.063rem 0rem 0rem inset;
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
-  font-size: 1rem;
-  font-weight: 600;
+  font-weight: theme(fontWeight.fontHeavyWeight);
   justify-content: center;
-  letter-spacing: 0.03em;
-  line-height: 1;
   opacity: 1;
-  outline: 0rem;
+  outline:theme(borderWidth.0);
   transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
   height: 3rem;
   padding: 0px 1.5rem;
   background-color: #1fc7d4;
   margin-right: 0.5rem;
   box-shadow: #452a7a 0rem -0.063rem 0rem 0rem inset;
-  height: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  color: white;
+  height: theme(spacing.32);
+  padding-left: theme(borderRadius.default);
+  padding-right: theme(borderRadius.default);
+  color: theme(colors.white);
 }
 footer .lasts button:hover {
   opacity: 70%;
@@ -138,24 +135,23 @@ footer .lasts .modeSelector .languageSelector .net:hover {
 footer .lasts .modeSelector .languageSelector .net p {
   margin-left: 1.25rem;
   align-items: center;
-  color: #b8add2;
+  color: theme(colors.darkTextSubtle);
   padding: 0.313rem;
-  font-family: 'Kanit', 'sans';
 }
 footer .lasts .selectors .buttonContainer {
   display: flex;
   align-items: center;
 }
 footer .lasts .selectors .buttonContainer p {
-  color: #b8add2;
+  color: theme(colors.darkTextSubtle);
   font-family: inherit;
-  font-weight: 900;
+  font-weight: theme(fontWeight.fontHeavyWeight);
   margin: 0rem 1.25rem 0rem 0rem;
 }
 footer .lasts .selectors .buttonContainer .svg {
   margin-top: 0.5rem;
-  width: 1.875rem;
-  height: 1.875rem;
+  width: theme(spacing.32);
+  height:theme(spacing.32);
   background-image: url('../../src/assets/images/svg/utilities/logoPancake.svg');
   background-repeat: no-repeat;
   transition-property: transform;
@@ -167,155 +163,29 @@ footer .lasts .selectors .buttonContainer .svg:hover {
 }
 
 
-
-/*
-.dark {
-  color: white;
-  background: #444;
-}
-
-.ease {
-  transition: all 300ms ease;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 3.75rem;
-  height: 1.75rem;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #bdc2c4;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider:before {
-  background-image: url('../../src/assets/images/svg/icons/lightModeIcon.svg');
-  background-position: center;
-  position: absolute;
-  background-repeat: no-repeat;
-  content: '';
-  height: 1.5rem;
-  width: 1.5rem;
-  left: 0.175rem;
-  bottom: 0.219rem;
-  background-color: #ffffff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-
-  width: 100%;
-  background-image: url('../../src/assets/images/svg/icons/lightModeIconSlided.svg');
-  background-repeat: no-repeat;
-  background-position-x: 0.33rem;
-  background-position-y: 0.33rem;
-  background-color: #666171;
-}
-
-input:not(:checked) + .slider {
-  background-image: url('../../src/assets/images/svg/icons/nightModeIcon.svg');
-  background-repeat: no-repeat;
-  background-position-x: 2rem;
-  background-position-y: 0.35rem;
-  background-color: #bdc2c4;
-}
-
-input:checked + .slider:before {
-
-  background-color: black;
-  background-image: url('../../src/assets/images/svg/icons/nightModeIconSlided.svg');
-  background-position: center;
-  -webkit-transform: translateX(1.625rem);
-  -ms-transform: translateX(1.625rem);
-  transform: translateX(1.625rem);
-  margin: auto;
-  margin-right: 0.125rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-}
-
-input:focus:checked + .slider:before {
-  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-}
-
-input:hover:checked + .slider:before {
-  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-}
-
-input:hover:not(:checked) + .slider:before {
-  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-}
-
-input:focus:not(:checked) + .slider:before {
-  box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-}
-
-
-Rounded sliders
-.slider.round {
-  border-radius: 1.875rem;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-@import url('../styles/output.css');
-.toggleDarkBtn {
-  position: relative;
-  display: inline-block;
-  width: 3.438rem;
-  height: 1.938rem;
-}
-.toggleDarkBtn input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-*/
-
 footer .services .helpContainer ul:nth-child(1) li a, footer .services .developerContainer ul:nth-child(1) li a, footer .services .servicesContainer ul:nth-child(1) li a {
-  color: #7a6eaa;
-  font-weight: 600;
+  color:theme(colors.lightTextSubtle);
+  font-weight: theme(fontWeight.fontHeavyWeight);
   cursor: text;
   text-decoration: none;
       
 }
 
 footer .services .developerContainer ul:nth-child(1) li a{
-  color: #7a6eaa;
-  font-weight: 600;
+  color: theme(colors.lightTextSubtle);
+  font-weight: theme(fontWeight.fontHeavyWeight);
   cursor: text;
   text-decoration: none;
 }
 
 footer .services .helpContainer ul:nth-child(1) li a{
-  color: #7a6eaa;
-  font-weight: 600;
+  color: theme(colors.lightTextSubtle);
+  font-weight: theme(fontWeight.fontHeavyWeight);
   cursor: text;
   text-decoration: none;
 }
 footer .services .servicesContainer ul:nth-child(2) li a{
-  color: gold;
+  color:theme(colors.gold);
 
 }
 
@@ -325,7 +195,7 @@ footer .services .servicesContainer ul:nth-child(2) li a{
   @layer components {
   .toggleDarkBtn {
     width: 56px;
-    height: 32px;
+    height: theme(spacing.32);
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -334,7 +204,7 @@ footer .services .servicesContainer ul:nth-child(2) li a{
 
   .sliderDarkMode {
     position: absolute;
-    height: 32px;
+    height: theme(spacing.32);
     width: 56px;
     background-color: theme(colors.darkTextDisabled);
     align-items: center;
@@ -349,7 +219,7 @@ footer .services .servicesContainer ul:nth-child(2) li a{
   }
 
   .sliderDarkMode:before {
-    border-radius: 50%;
+    border-radius: theme(borderRadius.circle);
   }
 
   .sliderDarkMode::before {

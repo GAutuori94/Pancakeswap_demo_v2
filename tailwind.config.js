@@ -80,7 +80,7 @@ module.exports = {
       /*----------------fonts--------------------------- */
 
       fontFamily: {
-        "sans": ["Kanit"],
+        sans: ["Kanit"],
       },
 
       fontSize: {

@@ -10,6 +10,12 @@ module.exports = {
         30: "30%",
         32: "32px",
       },
+      screens: {
+        sm: "370px",
+        md: "576px",
+        lg: "852px",
+        xl: "968px",
+      },
       colors: {
         /*-------baseColors-----------*/
         white: "white",

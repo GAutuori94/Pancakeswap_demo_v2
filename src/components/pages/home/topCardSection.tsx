@@ -30,7 +30,7 @@ export default function TopCardSection(): JSX.Element {
             <h2 className="font-fontHeavyWeight text-[2.5rem] leading-[1.1] mb-8">
               Trusted with billions.
             </h2>
-            <p className="font-normal text-lightTextSubtle dark:text-darkTextSubtle">
+            <p className="font-fontLightWeight text-lightTextSubtle dark:text-darkTextSubtle">
               PancakeSwap has the most users of any decentralized platform,
               ever.
             </p>

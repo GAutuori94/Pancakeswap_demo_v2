@@ -1,19 +1,40 @@
 import React from "react";
+import { PredictionIcon } from "./cardIcons";
 
 export function YellowCard() {
   return (
-    <div id="yellow-card">
-      <div id="yellow-card-outer">
-        <div id="yellow-card-inner">
-          <div id="yellow-card-body">
-            <div id="svg-container">
-              <img src="assets/images/svg/asset 49.svg" />
+    <div
+      id="yellow-card"
+      className="flex flex-1 max-w-[275px] mb-8 lg:max-w-full lg:mr-6 lg:mb-0"
+    >
+      <div
+        id="yellow-card-outer"
+        className="bg-[#ffb237] rounded-card text-lightText dark:text-darkText overflow-hidden relative pt-px pb-1 px-px h-fit lg:rotate-[-2.36deg]"
+      >
+        <div
+          id="yellow-card-inner"
+          className="w-full h-full overflow-initial yellowCardGradient rounded-card"
+        >
+          <div id="yellow-card-body" className="p-6">
+            <div
+              id="svg-container"
+              className="absolute top-6 right-6 lg:rotate-[-2.36deg]"
+            >
+              <PredictionIcon />
             </div>
-            <div id="card-text">
-              <p>Prediction</p>
-              <h2>$150 billion</h2>
-              <p>in BNB + CAKE won so far</p>
-              <p>Predict the price trend of BNB or CAKE to win</p>
+            <div id="card-text" className="mt-12 flex flex-col">
+              <p className="leading-normal font-fontHeavyWeight text-lightText ">
+                Prediction
+              </p>
+              <h2 className="my-2 leading-[1.1] font-fontHeavyWeight text-lightText xl:text-[2.5rem]">
+                $150 billion
+              </h2>
+              <p className="mb-6 leading-normal font-fontHeavyWeight text-lightText">
+                in BNB + CAKE won so far
+              </p>
+              <p className="mb-10 leading-normal font-fontLightWeight text-lightText">
+                Predict the price trend of BNB or CAKE to win
+              </p>
             </div>
             <div id="card-footer">
               <a>
@@ -32,7 +53,6 @@ export function YellowCard() {
                     color="invertedContrast"
                     width="20px"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="sc-6457768a-0 ftixwH"
                   >
                     <path d="M5 13H16.17L11.29 17.88C10.9 18.27 10.9 18.91 11.29 19.3C11.68 19.69 12.31 19.69 12.7 19.3L19.29 12.71C19.68 12.32 19.68 11.69 19.29 11.3L12.71 4.7C12.32 4.31 11.69 4.31 11.3 4.7C10.91 5.09 10.91 5.72 11.3 6.11L16.17 11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13Z"></path>
                   </svg>

@@ -27,14 +27,30 @@ export default function BottomCardSection() {
               className="flex flex-col items-center justify-center"
             >
               <div id="card-section-text">
-                <h2 className="text-[2.25rem] leading-[1.1] text-lightText dark:text-darkText mb-6 text-center">
-                  <span>Win</span> millions in prizes
+                <h2 className="text-[2.25rem] xl:text-[2.5rem] font-fontHeavyWeight leading-[1.1] text-lightText dark:text-darkText mb-6 text-center">
+                  <span className="text-lightSecondary dark:text-darkSecondary">
+                    Win
+                  </span>{" "}
+                  millions in prizes
                 </h2>
               </div>
-              <div id="card-section-copy1">Provably fair, on-chain games.</div>
-              <div id="card-section-copy2">Win big with PancakeSwap.</div>
+              <div
+                id="card-section-copy1"
+                className="text-lightTextSubtle dark:text-darkTextSubtle font-fontLightWeight leading-normal"
+              >
+                Provably fair, on-chain games.
+              </div>
+              <div
+                id="card-section-copy2"
+                className="text-lightTextSubtle dark:text-darkTextSubtle font-fontLightWeight leading-normal mb-10"
+              >
+                Win big with PancakeSwap.
+              </div>
 
-              <div id="bottom-cards-container">
+              <div
+                id="bottom-cards-container"
+                className="flex flex-col lg:flex-row max-w-[600px] my-0 mx-auto"
+              >
                 <YellowCard />
                 <PurpleCard />
               </div>

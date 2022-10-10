@@ -14,14 +14,14 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <ThemeProvider>
-      <SymbolsContextProvider>
-        <TickerContextProvider>
-        <KlineContextProvider>
-        <Router />
-        </KlineContextProvider>
-        </TickerContextProvider>
-      </SymbolsContextProvider>
+      <ThemeProvider>
+        <SymbolsContextProvider>
+          <TickerContextProvider>
+            <KlineContextProvider>
+              <Router />
+            </KlineContextProvider>
+          </TickerContextProvider>
+        </SymbolsContextProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

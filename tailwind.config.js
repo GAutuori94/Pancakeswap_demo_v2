@@ -11,6 +11,12 @@ module.exports = {
         32: "32px",
         56: "56px"
       },
+      screens: {
+        sm: "370px",
+        md: "576px",
+        lg: "852px",
+        xl: "968px",
+      },
       colors: {
         /*-------baseColors-----------*/
         white: "white",

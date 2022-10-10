@@ -14,15 +14,15 @@ function BannerHeroLeft() {
       <div className="banner_hero__perpetual_container ">
         <div className="left__perpetual_container p-5">
           <h2 className=" text-xl text-gold">Perpetual Futures</h2>
-          <h2 className="text-xl text-white drop-shadow-lg font-bold colors-gold">
+          <h2 className="text-[40px] text-white drop-shadow-lg font-bold colors-gold">
             UP TO 100X LEVERAGE
           </h2>
           <FullButton />
         </div>
 
-        <div className="banner_right">
+        <span className="banner_right">
           <img className="w-80 mb-2" src={bannerPerpetual} />
-        </div>
+        </span>
       </div>
     </>
   );
@@ -33,18 +33,18 @@ function BannerHeroRight() {
     <>
       <div className="banner_hero__lottery_container">
         <div className="left__lottery_container p-5">
-          <h1 className="text-xl font-bold text-gold">time</h1>
-          <h2 className="text-md text-white drop-shadow-lg font-bold">
+          <h2 className="text-[20px] text-white drop-shadow-lg font-bold p-5">
             Win $110.720 in Lottery
           </h2>
-          <img className="absolute" src={board} alt="board" />
+          <div className="">
+            <h1 className="absolute text-xl font-bold top-16 text-gold">
+              time
+            </h1>
+            <img className="" src={board} alt="board" />
+          </div>
           <FullButton />
         </div>
-        <div>
-          <span className="banner_right">
-            <img className="mb-6" src={bannerLottery} />
-          </span>
-        </div>
+        <img className="w-full absolute" src={bannerLottery} />
       </div>
     </>
   );
@@ -54,14 +54,14 @@ export function BannerHero() {
   const [isShown, setIsShown] = useState(false);
   const handleIsShown = () => setIsShown(false);
 
-  useEffect(() => {
-    const bannerInterval = setInterval(() => {
-      handleIsShown();
-    }, 6000);
-    return () => {
-      clearInterval(bannerInterval);
-    };
-  }, [isShown]);
+  // useEffect(() => {
+  //   const bannerInterval = setInterval(() => {
+  //     handleIsShown();
+  //   }, 6000);
+  //   return () => {
+  //     clearInterval(bannerInterval);
+  //   };
+  // }, [isShown]);
 
   return (
     <>

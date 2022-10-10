@@ -21,21 +21,14 @@
 .left__perpetual_container {
   position: relative;
   top: 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  gap: 1.2em;
 }
 
 .left__lottery_container {
-  position: relative;
   top: 35px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.2em;
-  width: 45%;
+  width: 25%;
 }
 
 .banner_right {

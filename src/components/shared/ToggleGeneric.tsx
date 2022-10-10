@@ -6,13 +6,13 @@ export function ToggleGeneric() {
 
   return (
     <>
-      <label className="toggle">
+      <label className="toggle_sub_graph">
         <input
           type="checkbox"
-          className="input"
+          className="input_sub_graph"
         
         />
-        <span className="slider"></span>
+        <span className="slider_sub_graph"></span>
       </label>
     </>
   );

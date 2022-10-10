@@ -290,7 +290,7 @@ footer .services .servicesContainer ul:nth-child(2) li a{
   .input_darkMode {
     cursor: pointer;
   }
-  .toggle {
+  .toggle_sub_graph {
     width: 56px;
     height: theme(spacing.32);
     display: flex;
@@ -299,7 +299,7 @@ footer .services .servicesContainer ul:nth-child(2) li a{
     justify-content: center;
   }
 
-  .slider {
+  .slider_sub_graph {
     position: absolute;
     height: theme(spacing.32);
     width: 56px;
@@ -311,15 +311,15 @@ footer .services .servicesContainer ul:nth-child(2) li a{
   }
 
   /* Rounded sliders */
-  .slider {
+  .slider_sub_graph {
     border-radius: 1.875rem;
   }
 
-  .slider:before {
+  .slider_sub_graph:before {
     border-radius: theme(borderRadius.circle);
   }
 
-  .slider::before {
+  .slider_sub_graph::before {
     
     background-position: center;
     position: absolute;
@@ -334,26 +334,26 @@ footer .services .servicesContainer ul:nth-child(2) li a{
     transition: 0.4s; */
   }
 
-  .input:checked + .slider {
+  .input_sub_graph:checked + .slider_sub_graph {
     background-repeat: no-repeat;
     background-position-x: 0.33rem;
     background-position-y: 0.33rem;
     background-color: theme(colors.primary);
   }
 
-  .input:not(:checked) {
+  .input_sub_graph:not(:checked) {
    
     /* background-color: theme(colors.darkBackgroundAlt); */
   }
 
-  .input:not(:checked) + .slider {
+  .input_sub_graph:not(:checked) + .slider_sub_graph {
    
     background-repeat: no-repeat;
     background-position-x: 2rem;
     background-position-y: 0.35rem;
   }
 
-  .input:checked + .slider:before {
+  .input_sub_graph:checked + .slider_sub_graph:before {
 
     background-position: center;
     -webkit-transform: translateX(1.625rem);
@@ -367,23 +367,23 @@ footer .services .servicesContainer ul:nth-child(2) li a{
     justify-items: center;
   }
 
-  .input:focus:checked + .slider:before {
+  .input_sub_graph:focus:checked + .slider_sub_graph:before {
     box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
   }
 
-  .input:hover:checked + .slider:before {
+  .input_sub_graph:hover:checked + .slider_sub_graph:before {
     box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
   }
 
-  .input:hover:not(:checked) + .slider:before {
+  .input_sub_graph:hover:not(:checked) + .slider_sub_graph:before {
     box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
   }
 
-  .input:focus:not(:checked) + .slider:before {
+  .input_sub_graph:focus:not(:checked) + .slider_sub_graph:before {
     box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
   }
 
-  .input {
+  .input_sub_graph {
     cursor: pointer;
   }
 }

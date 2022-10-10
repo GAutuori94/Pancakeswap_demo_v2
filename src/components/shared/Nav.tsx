@@ -1,19 +1,19 @@
-import React from "react";
-import "../../style/Nav.css";
-import { Link } from "react-router-dom";
-import { intervals } from "./constants";
-import logoPancake from "../../assets/images/svg/utilities/logoPancake.svg";
-import logoNET from "../../assets/images/svg/utilities/logoNET.svg";
-import ingranaggio from "../../assets/images/svg/utilities/ingranaggio.svg";
-import { useState, useEffect } from "react";
-import { useLazyFetch } from "../hooks/useLazyFetch";
-import { linkWin, linkEarn, linksInfo, linksNFT, linkTrade } from "./menuItems";
+import React from 'react';
+import '../../style/Nav.css';
+import { Link } from 'react-router-dom';
+import { intervals } from './constants';
+import logoPancake from '../../assets/images/svg/utilities/logoPancake.svg';
+import logoNET from '../../assets/images/svg/utilities/logoNET.svg';
+import ingranaggio from '../../assets/images/svg/utilities/ingranaggio.svg';
+import { useState, useEffect } from 'react';
+import { useLazyFetch } from '../hooks/useLazyFetch';
+import { linkWin, linkEarn, linksInfo, linksNFT, linkTrade } from './menuItems';
 import {
   ParsedBinanceKline,
   BinanceKline,
-} from "../pages/trade/ChartLayoutComponent";
-import { PancakeWrittenIcon } from "./navIcons";
-import SettingsModal from "./settingsModal";
+} from '../pages/trade/ChartLayoutComponent';
+import { PancakeWrittenIcon } from './navIcons';
+import SettingsModal from './settingsModal';
 
 type Link = {
   label: string;
@@ -22,11 +22,11 @@ type Link = {
 
 const Nav: React.FC = () => {
   const { data, trigger: fetchNewData } =
-    useLazyFetch<BinanceKline[]>("/api/v3/klines?");
-  const [selectedSymbol, setSelectedSymbol] = useState<string>("CAKEUSDT");
+    useLazyFetch<BinanceKline[]>('/api/v3/klines?');
+  const [selectedSymbol, setSelectedSymbol] = useState<string>('CAKEUSDT');
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
   const [selectedInterval, setSelectedInterval] = useState<string>(
-    intervals[intervals.length - 1]
+    intervals[intervals.length - 1],
   );
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
@@ -56,6 +56,16 @@ const Nav: React.FC = () => {
     fetchNewData({}, reqParams);
   }, [selectedInterval]);
 
+  const [priceValue, setPriceValue] = useState<number | undefined>();
+
+  useEffect(() => {
+    setPriceValue(() => {
+      const lastElement = parsedData?.pop();
+      return lastElement?.close;
+    });
+  }, [parsedData]);
+
+
   const [hoverTrade, setHoverTrade] = useState<boolean>(false);
   const [hoverEarn, setHoverEarn] = useState<boolean>(false);
   const [hoverWin, setHoverWin] = useState<boolean>(false);
@@ -78,28 +88,24 @@ const Nav: React.FC = () => {
     setHoverInfo(boolValue);
   };
 
-  const priceValue = () => {
-    const lastElement = parsedData.pop();
-    return lastElement?.close;
-  };
   return (
-    <nav className="navbar dark:bg-darkBackgroundAlt dark:border-darkCardBorder">
-      <SettingsModal
-        isDialogOpen={isDialogOpen}
-        closeModal={() => setIsDialogOpen(false)}
-      />
-      <div className="logo-container">
+    <nav className='navbar dark:bg-darkBackgroundAlt dark:border-darkCardBorder'>
+    <SettingsModal
+            isDialogOpen={isDialogOpen}
+            closeModal={() => setIsDialogOpen(false)}
+          />
+      <div className='logo-container'>
         <PancakeWrittenIcon />
         <div
-          className="links-container"
+          className='links-container'
           onMouseEnter={() => handleDropdownHoverTrade(true)}
           onMouseLeave={() => handleDropdownHoverTrade(false)}
         >
           {linkTrade.map((link: Link, i) => {
             return (
-              <ul key={i} className="links">
-                <div className="nav-li">
-                  <li className="nav-li">
+              <ul key={i} className='links'>
+                <div className='nav-li'>
+                  <li className='nav-li'>
                     <a href={link.href}>
                       {link.label}
                       {hoverTrade && (
@@ -151,15 +157,15 @@ const Nav: React.FC = () => {
           })}
         </div>
         <div
-          className="links-container"
+          className='links-container'
           onMouseEnter={() => handleDropdownHoverWin(true)}
           onMouseLeave={() => handleDropdownHoverWin(false)}
         >
           {linkWin.map((link: Link, i) => {
             return (
-              <ul key={i} className="links">
-                <div className="nav-li">
-                  <li className="nav-li">
+              <ul key={i} className='links'>
+                <div className='nav-li'>
+                  <li className='nav-li'>
                     <a href={link.href}>
                       {link.label}
                       {hoverWin && (
@@ -191,7 +197,7 @@ const Nav: React.FC = () => {
           })}
         </div>
         <div
-          className="links-container"
+          className='links-container'
           onMouseEnter={() => handleDropdownHoverEarn(true)}
           onMouseLeave={() => handleDropdownHoverEarn(false)}
         >
@@ -199,10 +205,10 @@ const Nav: React.FC = () => {
             return (
               <ul
                 key={i}
-                className="links py-0.5 text-left rounded-lg m-0 border-none"
+                className='links py-0.5 text-left rounded-lg m-0 border-none'
               >
-                <div className="nav-li">
-                  <li className="nav-li ">
+                <div className='nav-li'>
+                  <li className='nav-li '>
                     <a href={link.href}>
                       {link.label}
                       {hoverEarn && (
@@ -239,15 +245,15 @@ const Nav: React.FC = () => {
           })}
         </div>
         <div
-          className="links-container"
+          className='links-container'
           onMouseEnter={() => handleDropdownHoverNFT(true)}
           onMouseLeave={() => handleDropdownHoverNFT(false)}
         >
           {linksNFT.map((link: Link, i) => {
             return (
-              <ul key={i} className="links">
-                <div className="nav-li">
-                  <li className="nav-li">
+              <ul key={i} className='links'>
+                <div className='nav-li'>
+                  <li className='nav-li'>
                     <a href={link.href}>
                       {link.label}
                       {hoverNFT && (
@@ -295,15 +301,15 @@ const Nav: React.FC = () => {
           })}
         </div>
         <div
-          className="links-container"
+          className='links-container'
           onMouseEnter={() => handleDropdownHoverInfo(true)}
           onMouseLeave={() => handleDropdownHoverInfo(false)}
         >
           {linksInfo.map((link: Link, i) => {
             return (
-              <ul key={i} className="links">
-                <div className="nav-li">
-                  <li className="nav-li">
+              <ul key={i} className='links'>
+                <div className='nav-li'>
+                  <li className='nav-li'>
                     <a href={link.href}>
                       {link.label}
                       {hoverInfo && (
@@ -351,16 +357,17 @@ const Nav: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="interactionsContainer">
-        <img className="growing" src={logoPancake} alt="logo Pancake" />
-        <p className="priceValueContainer">{`$${priceValue()}`}</p>
-        <button className="transparent">
-          <img className="tra" src={logoNET} alt="logo net" />
+      <div className='interactionsContainer'>
+        <img className='growing' src={logoPancake} alt='logo Pancake' />
+        <p className='priceValueContainer'>{`$${priceValue}`}</p>
+        <button className='transparent'>
+          <img className='tra' src={logoNET} alt='logo net' />
         </button>
         <button onClick={() => setIsDialogOpen(true)}>
-          <img className="tra" src={ingranaggio} alt="logo" />
+          <img className='tra' src={ingranaggio} alt='logo' />
+         
         </button>
-        <button className="connectWalletButton">Connect Wallet</button>
+        <button className='connectWalletButton'>Connect Wallet</button>
       </div>
     </nav>
   );

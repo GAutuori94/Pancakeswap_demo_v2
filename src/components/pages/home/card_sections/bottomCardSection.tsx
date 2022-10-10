@@ -6,7 +6,7 @@ export default function BottomCardSection() {
     <section id="bottom_card_section">
       <div
         id="bottom-cards-section-background"
-        className="flex flex-col items-center relative z-10 py-12"
+        className="flex flex-col items-center relative z-10 py-12 lightGradientBottomCardSection dark:darkGradientBottomCardSection"
       >
         <div
           id="section-inner-box"
@@ -20,7 +20,7 @@ export default function BottomCardSection() {
           {/* !SECTION */}
           <div
             id="panel-element"
-            className="bg-lightBackgroundAlt2 dark:bg-darkBackgroundAlt2 p-4 border-1 border-lightCardBorder backdrop-blur-md rounded-[4rem] lg:p-10"
+            className="bg-lightBackgroundAlt2 dark:bg-darkBackgroundAlt2 p-4 border-1 border-lightCardBorder dark:border-darkCardBorder backdrop-blur-md rounded-[4rem] lg:p-10"
           >
             <div
               id="card-section-container"

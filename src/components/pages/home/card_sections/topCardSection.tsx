@@ -13,21 +13,24 @@ import {
 
 export default function TopCardSection(): JSX.Element {
   return (
-    <section id="top-card-section">
+    <section
+      id="top-cards-section"
+      className="lightGradientTopCardSection dark:darkGradientTopCardSection py-12 flex flex-col items-center z-10 relative"
+    >
       <div
-        id="top-cards-background"
-        className="bg-gradient-to-b from-[#fff] to-[#d7caec] py-12 flex flex-col items-center z-10 relative"
+        id="top-cards-responsive-box"
+        className="w-full min-h-[auto] p-4 max-w-[1200px] sm:px-6 md:py-8 xl:py-12"
       >
         <div
           id="top-cards-container"
-          className="w-full px-6 py-12 flex flex-col justify-center items-center"
+          className="flex flex-col justify-center items-center"
         >
           <PurpleBunnyIcon />
           <div id="card-section-text" className="text-center">
-            <h2 className="font-fontHeavyWeight text-[2.5rem] leading-[1.1]">
+            <h2 className="font-fontHeavyWeight text-[2.5rem] leading-[1.1] text-lightText dark:text-darkText">
               Used by millions.
             </h2>
-            <h2 className="font-fontHeavyWeight text-[2.5rem] leading-[1.1] mb-8">
+            <h2 className="font-fontHeavyWeight text-[2.5rem] leading-[1.1] mb-8 text-lightText dark:text-darkText">
               Trusted with billions.
             </h2>
             <p className="font-fontLightWeight text-lightTextSubtle dark:text-darkTextSubtle">
@@ -42,10 +45,10 @@ export default function TopCardSection(): JSX.Element {
               Will you join them?
             </p>
           </div>
-          <div id="top-cards-container" className="flex flex-row">
+          <div id="top-cards-container" className="flex flex-col lg:flex-row">
             <TopCard
               color="secondary"
-              blackText="1.9 million"
+              normalText="1.9 million"
               coloredText="users"
               subtleText="in the last 30 days"
             >
@@ -53,7 +56,7 @@ export default function TopCardSection(): JSX.Element {
             </TopCard>
             <TopCard
               color="primary"
-              blackText="23 million"
+              normalText="23 million"
               coloredText="trades"
               subtleText="made in the last 30 days"
             >
@@ -61,7 +64,7 @@ export default function TopCardSection(): JSX.Element {
             </TopCard>
             <TopCard
               color="failure"
-              blackText="$4 billion"
+              normalText="$4 billion"
               coloredText="staked"
               subtleText="Total Value Locked"
             >

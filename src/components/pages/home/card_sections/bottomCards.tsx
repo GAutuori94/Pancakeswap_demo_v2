@@ -27,7 +27,7 @@ export function YellowCard() {
               <p className="leading-normal font-fontHeavyWeight text-lightText ">
                 Prediction
               </p>
-              <h2 className="my-2 leading-[1.1] font-fontHeavyWeight text-lightText xl:text-[2.5rem]">
+              <h2 className="my-2 leading-[1.1] font-fontHeavyWeight text-lightText text-[2rem] xl:text-[2.5rem]">
                 $150 billion
               </h2>
               <p className="mb-6 leading-normal font-fontHeavyWeight text-lightText">

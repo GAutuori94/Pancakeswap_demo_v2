@@ -3,9 +3,285 @@
 @layer base {
   @font-face {
     font-family: "Kanit";
-    src: local('Kanit') url("../assets/font/Kanit-Regular.ttf") format("ttf");
+    src: local("Kanit") url("../assets/font/Kanit-Regular.ttf") format("ttf");
   }
 }
 
 @tailwind components;
 @tailwind utilities;
+
+/* button custom class without color  */
+
+@layer components {
+  .btn-main {
+    @apply rounded-lg hover:opacity-60 text-white font-bold py-2 px-4;
+  }
+  .btn-transparent {
+    @apply rounded-lg font-bold hover:underline decoration-2 py-1 px-4;
+  }
+}
+
+@layer utilities {
+  /*----------------------lightGradients----------------------------*/
+
+  .lightGradientBubblegum {
+    background-image: linear-gradient(180deg, #a7e8f1 0%, #94e1f2 100%);
+  }
+
+  .lightGradientInverseBubblegum {
+    background-image: linear-gradient(139.73deg, #f3efff 0%, #e5fdff 100%);
+  }
+
+  .lightGradientCardHeader {
+    background-image: linear-gradient(111.68deg, #f2ecf2 0%, #e8f2f6 100%);
+  }
+
+  .lightGradientBlue {
+    background-image: linear-gradient(180deg, #a7e8f1 0%, #94e1f2 100%);
+  }
+
+  .lightGradientViolet {
+    background-image: linear-gradient(180deg, #e2c9fb 0%, #cdb8fa 100%);
+  }
+
+  .lightGradientVioletAlt {
+    background-image: linear-gradient(180deg, #cbd7ef 0%, #9a9fd0 100%);
+  }
+
+  .lightGradientGold {
+    background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
+  }
+
+  /*----------------------darkGradients----------------------------*/
+
+  .darkGradientBubblegum {
+    background-image: linear-gradient(139.73deg, #313d5c 0%, #3d2a54 100%);
+  }
+
+  .darkGradientInverseBubblegum {
+    background-image: linear-gradient(139.73deg, #3d2a54 0%, #313d5c 100%);
+  }
+
+  .darkGradientCardHeader {
+    background-image: linear-gradient(166.77deg, #3b4155 0%, #3a3045 100%);
+  }
+
+  .darkGradientBlue {
+    background-image: linear-gradient(180deg, #00707f 0%, #19778c 100%);
+  }
+
+  .darkGradientViolet {
+    background-image: linear-gradient(180deg, #6c4999 0%, #6d4db2 100%);
+  }
+
+  .darkGradientVioletAlt {
+    background-image: linear-gradient(180deg, #434575 0%, #66578d 100%);
+  }
+
+  .darkGradientGold {
+    background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
+  }
+
+  /*----------------------animationDelay----------------------------*/
+
+  .animation-delay-33 {
+    animation-delay: 0.33s;
+  }
+  .animation-delay-66 {
+    animation-delay: 0.66s;
+  }
+  .animation-delay-100 {
+    animation-delay: 1s;
+  }
+}
+
+@layer components {
+  /*----------------------Primary full button--------------------------------------------------------------------------------------*/
+  .full-primary-button {
+    background-color: theme(colors.primary);
+    box-shadow: theme(boxShadow.button);
+    opacity: 1;
+    height: 48px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Kanit;
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border: 0px;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .full-primary-button:hover {
+    opacity: 75%;
+  }
+
+  /*----------------------Primary void button--------------------------------------------------------------------------------------*/
+  .void-primary-button {
+    background-color: none;
+    box-shadow: none;
+    opacity: 1;
+    height: 48px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: theme(colors.primary);
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border: 0px;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .void-primary-button:hover {
+    text-decoration: underline;
+  }
+
+  /*----------------------Primary border button--------------------------------------------------------------------------------------*/
+  .border-primary-button {
+    box-shadow: none;
+    border-style: solid;
+    border-color: theme(colors.primary);
+    border-width: theme(borderWidth.2);
+    opacity: 1;
+    height: 48px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: theme(colors.primary);
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .border-primary-button:hover {
+    opacity: 75%;
+  }
+
+  /*----------------------Interval toggle button--------------------------------------------------------------------------------------*/
+  .btn_interval__container {
+    height: theme(spacing.32);
+    padding: 0px 16px;
+    border-radius: theme(borderRadius.default);
+    /* background-color: theme(colors.primary); */
+    font-size: theme(fontSize.fontSizeButton);
+    color: theme(colors.primary);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    cursor: pointer;
+  }
+
+  .btn_interval__container:focus {
+    background-color: theme(colors.primary);
+    color: #ffff;
+    outline: none;
+  }
+
+  /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
+  .toggleDarkBtn {
+    width: 56px;
+    height: 32px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sliderDarkMode {
+    position: absolute;
+    height: 32px;
+    width: 56px;
+    background-color: theme(colors.darkTextDisabled);
+    align-items: center;
+    border-radius: theme(borderRadius.card);
+    /* box-shadow: theme(boxShadow.button); */
+    transition: left 200ms ease-in 0s;
+  }
+
+  /* Rounded sliders */
+  .sliderDarkMode {
+    border-radius: 1.875rem;
+  }
+
+  .sliderDarkMode:before {
+    border-radius: 50%;
+  }
+
+  .sliderDarkMode::before {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIconSlided.svg");
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 0.175rem;
+    bottom: 0.219rem;
+    background-color: theme(colors.darkBackgroundAlt);
+    /* -webkit-transition: 0.4s;
+    transition: 0.4s; */
+  }
+
+  .input_darkMode:checked + .sliderDarkMode {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 0.33rem;
+    background-position-y: 0.33rem;
+    background-color: theme(colors.darkTextDisabled);
+  }
+
+  .input_darkMode:not(:checked) {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    /* background-color: theme(colors.darkBackgroundAlt); */
+  }
+
+  .input_darkMode:not(:checked) + .sliderDarkMode {
+    background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 2rem;
+    background-position-y: 0.35rem;
+  }
+
+  .input_darkMode:checked + .sliderDarkMode:before {
+    background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
+    background-position: center;
+    -webkit-transform: translateX(1.625rem);
+    -ms-transform: translateX(1.625rem);
+    transform: translateX(1.625rem);
+    margin: auto;
+    margin-right: 0.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .input_darkMode:focus:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:not(:checked) + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:focus:not(:checked) + .sliderDarkMod:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode {
+    cursor: pointer;
+  }
+}

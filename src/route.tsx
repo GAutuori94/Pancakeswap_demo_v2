@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { Home } from './components/pages/home';
-import Nav from './components/shared/Nav';
 
 export default function Router () {
     return (

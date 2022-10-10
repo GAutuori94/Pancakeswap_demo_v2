@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../style/Nav.css';
 import { Link } from 'react-router-dom';
-import * as data from './links.json';
+import * as data from '../shared/links.json';
 import pancakeWritten from '../../assets/images/svg/utilities/pancakeWritten.svg';
 import logoPancake from '../../assets/images/svg/utilities/logoPancake.svg';
 import logoNET from '../../assets/images/svg/utilities/logoNET.svg';
@@ -20,11 +20,11 @@ const Nav: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleDropdownHover = () => {
-    
+
     setOpen(true);
   };
   const handleDropdownNotHover = () => {
-    
+
     setOpen(false);
   };
   return ( <body>
@@ -39,15 +39,15 @@ const Nav: React.FC = () => {
                   <li onMouseEnter={() => handleDropdownHover()}
                       onMouseLeave={() => handleDropdownNotHover()} className='nav-li'>
                     <Link
-                    
+
                       key={link.href}
                       to={link.href}
                     >
                       {link.label}
                     </Link>
-                
+
                   </li>
-                 
+
                 </div>
               </ul>
             );
@@ -71,8 +71,8 @@ const Nav: React.FC = () => {
                       <li>Item 3</li>
                       <li>Item 4</li>
                     </ul>
-                    )}   
-   </body>   
+                    )}
+   </body>
   );
 };
 export default Nav;

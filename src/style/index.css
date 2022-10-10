@@ -338,4 +338,10 @@ input[type="number"] {
   .input_darkMode {
     cursor: pointer;
   }
+
+  /* SPECIAL BUTTONS */
+
+  #card-footer > .full-primary-button {
+    width: 100%;
+  }
 }

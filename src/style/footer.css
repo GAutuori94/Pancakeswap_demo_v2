@@ -290,4 +290,100 @@ footer .services .servicesContainer ul:nth-child(2) li a{
   .input_darkMode {
     cursor: pointer;
   }
+  .toggle {
+    width: 56px;
+    height: theme(spacing.32);
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider {
+    position: absolute;
+    height: theme(spacing.32);
+    width: 56px;
+    background-color: theme(colors.lightTertiary); 
+    align-items: center;
+    border-radius: theme(borderRadius.card);
+    /* box-shadow: theme(boxShadow.button); */
+    transition: left 200ms ease-in 0s;
+  }
+
+  /* Rounded sliders */
+  .slider {
+    border-radius: 1.875rem;
+  }
+
+  .slider:before {
+    border-radius: theme(borderRadius.circle);
+  }
+
+  .slider::before {
+    
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 0.175rem;
+    bottom: 0.219rem;
+    background-color: theme(colors.white);
+    /* -webkit-transition: 0.4s;
+    transition: 0.4s; */
+  }
+
+  .input:checked + .slider {
+    background-repeat: no-repeat;
+    background-position-x: 0.33rem;
+    background-position-y: 0.33rem;
+    background-color: theme(colors.primary);
+  }
+
+  .input:not(:checked) {
+   
+    /* background-color: theme(colors.darkBackgroundAlt); */
+  }
+
+  .input:not(:checked) + .slider {
+   
+    background-repeat: no-repeat;
+    background-position-x: 2rem;
+    background-position-y: 0.35rem;
+  }
+
+  .input:checked + .slider:before {
+
+    background-position: center;
+    -webkit-transform: translateX(1.625rem);
+    -ms-transform: translateX(1.625rem);
+    transform: translateX(1.625rem);
+    margin: auto;
+    margin-right: 0.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .input:focus:checked + .slider:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input:hover:checked + .slider:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input:hover:not(:checked) + .slider:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input:focus:not(:checked) + .slider:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input {
+    cursor: pointer;
+  }
 }

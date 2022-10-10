@@ -165,17 +165,12 @@ const Nav: React.FC = () => {
                           {linkWin.map((item) => {
                             return item.sub?.map((item, index) => (
                               <ul
-                                className={`${item.href}-ul  bg-white  dark:bg-darkBackgroundAlt dark:border-darkCardBorder
-                              py-0.5
-                              text-left
-                              rounded-lg
-                              m-0
-                              border-none`}
+                                className={`${item.href}-ul bg-white dark:bg-darkBackgroundAlt dark:border-darkCardBorder py-0.5 text-left rounded-lg m-0 border-none`}
                                 key={index}
                               >
                                 <li
                                   key={index}
-                                  className={`${item.href}-li dropdown-item  dark:bg-darkBackgroundAlt dark:border-darkCardBorder dark:hover:bg-darkTertiary text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent hover:bg-gray-100`}
+                                  className={`${item.href}-li dropdown-item dark:bg-darkBackgroundAlt dark:border-darkCardBorder dark:hover:bg-darkTertiary text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent hover:bg-gray-100`}
                                 >
                                   {item.label}
                                 </li>
@@ -200,12 +195,7 @@ const Nav: React.FC = () => {
             return (
               <ul
                 key={i}
-                className="links
-              py-0.5
-              text-left
-              rounded-lg
-              m-0
-              border-none"
+                className="links py-0.5 text-left rounded-lg m-0 border-none"
               >
                 <div className="nav-li">
                   <li className="nav-li ">
@@ -228,18 +218,7 @@ const Nav: React.FC = () => {
                               >
                                 <li
                                   key={index}
-                                  className={`${item.href}-li dropdown-item  dark:bg-darkBackgroundAlt dark:border-darkCardBorder
-                                  dark:hover:bg-darkTertiary
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-
-              hover:bg-gray-100`}
+                                  className={`${item.href}-li dropdown-item  dark:bg-darkBackgroundAlt dark:border-darkCardBorder dark:hover:bg-darkTertiary text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent hover:bg-gray-100`}
                                 >
                                   {item.label}
                                 </li>
@@ -370,7 +349,7 @@ const Nav: React.FC = () => {
       </div>
       <div className="interactionsContainer">
         <img className="growing" src={logoPancake} alt="logo Pancake" />
-        <p className="priceValueContainer">{`$${priceValue()}`}</p>
+        <p className="priceValueContainer">{`$${priceValue}`}</p>
         <button className="transparent">
           <img className="tra" src={logoNET} alt="logo net" />
         </button>
@@ -381,7 +360,6 @@ const Nav: React.FC = () => {
             closeModal={() => setIsDialogOpen(false)}
           />
         </button>
-
         <button className="connectWalletButton">Connect Wallet</button>
       </div>
     </nav>

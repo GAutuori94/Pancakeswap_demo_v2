@@ -1,0 +1,71 @@
+.banner_hero__main_container {
+  width: 56%;
+  margin: auto auto;
+  border-radius: 32px;
+  height: 192px;
+  background: -webkit-linear-gradient(top, #7645d9 0%, #452a7a 100%);
+  border-radius: 32px;
+  margin-top: 35px;
+}
+
+.banner_hero__lottery_container {
+  display: flex;
+}
+
+.banner_hero__perpetual_container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.left__perpetual_container {
+  position: relative;
+  top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 1.2em;
+}
+
+.left__lottery_container {
+  position: relative;
+  top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.2em;
+  width: 45%;
+}
+
+.banner_right {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  max-width: 100%;
+}
+
+.banner_right img {
+  display: block;
+  max-width: 100%;
+  opacity: 1;
+  height: 100%;
+  border: 0px;
+  padding: 0px;
+}
+
+.banner_hero__inner_container {
+  inset: -34px 0;
+  position: relative;
+}
+
+.banner_hero__wrapper {
+}

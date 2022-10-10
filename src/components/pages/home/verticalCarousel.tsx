@@ -23,7 +23,6 @@ export function VerticalCarousel() {
     return () => {clearInterval(gridInterval)};
   }, [showGrid]);
 
-  
   return (
 <div>
     <div className="vertical_carousel w-50 ml-10">
@@ -35,7 +34,6 @@ export function VerticalCarousel() {
           </h2>
           <button onClick={handleShowGrid}>
             <svg
-
               viewBox="0 0 24 25"
               height="24px"
               width="24px"

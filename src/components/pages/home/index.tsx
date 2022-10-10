@@ -1,1 +1,3 @@
-export {}
+export function Home () {
+    return
+}

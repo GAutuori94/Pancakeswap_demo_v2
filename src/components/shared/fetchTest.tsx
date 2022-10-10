@@ -14,7 +14,7 @@ export default function SymbolsRender() {
 
 
     return (
-        <div className="symbols_container">
+        <div className="">
             {(dataFetchedLoading) && <h1>Loading ...</h1>}
             {(dataFetchedError) && <h1>Errore nel fetch ...</h1>}
             {dataFetched.symbols?.map((item) => <SymbolsItem item={item}/>)}
@@ -28,7 +28,7 @@ export function SymbolsItem ({item}: {item: ExchangeInfoSymbol}) {
 
     return (
         <>
-            <div>
+            <div className="" >
                 <h1>{item.symbol}</h1>
                 <h1>{item.baseAsset}</h1>
                 <h1>{item.quoteAsset}</h1>

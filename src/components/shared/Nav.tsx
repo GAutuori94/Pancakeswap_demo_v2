@@ -349,7 +349,7 @@ const Nav: React.FC = () => {
       </div>
       <div className="interactionsContainer">
         <img className="growing" src={logoPancake} alt="logo Pancake" />
-        <p className="priceValueContainer">{`$${priceValue}`}</p>
+        <p className="priceValueContainer">{`$${priceValue()}`}</p>
         <button className="transparent">
           <img className="tra" src={logoNET} alt="logo net" />
         </button>

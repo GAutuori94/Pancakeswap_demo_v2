@@ -84,6 +84,10 @@ const Nav: React.FC = () => {
   };
   return (
     <nav className="navbar dark:bg-darkBackgroundAlt dark:border-darkCardBorder">
+      <SettingsModal
+        isDialogOpen={isDialogOpen}
+        closeModal={() => setIsDialogOpen(false)}
+      />
       <div className="logo-container">
         <PancakeWrittenIcon />
         <div
@@ -355,10 +359,6 @@ const Nav: React.FC = () => {
         </button>
         <button onClick={() => setIsDialogOpen(true)}>
           <img className="tra" src={ingranaggio} alt="logo" />
-          <SettingsModal
-            isDialogOpen={isDialogOpen}
-            closeModal={() => setIsDialogOpen(false)}
-          />
         </button>
         <button className="connectWalletButton">Connect Wallet</button>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useCustomNav } from "../hooks/useButtonNavigation";
 
 
-export function FullButton({value}: {value: string}): JSX.Element {
+export function FullButton({value, children}: {value: string, children: JSX.Element}): JSX.Element {
 
     const navigator = useCustomNav()
 
@@ -17,7 +17,7 @@ export function FullButton({value}: {value: string}): JSX.Element {
   );
 }
 
-export function VoidButton() {
+export function VoidButton({value}: {value: string}) {
 
     const navigator = useCustomNav()
 
@@ -28,7 +28,7 @@ export function VoidButton() {
   return <button className="void-primary-button" onClick={() => handleNav("/insertNavigationUrlHer")}>Learn</button>;
 }
 
-export function OnlyBorderButton() {
+export function OnlyBorderButton({value, children}: {value: string, children: JSX.Element}) {
 
     const navigator = useCustomNav()
 

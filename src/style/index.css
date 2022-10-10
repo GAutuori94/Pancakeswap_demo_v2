@@ -53,6 +53,14 @@ input[type="number"] {
     background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
   }
 
+  .lightGradientTopCardSection {
+    background: linear-gradient(180deg, #fff 22%, #d7caec 100%);
+  }
+
+  .lightGradientBottomCardSection {
+    background-image: linear-gradient(180deg, #6fb6f1 0%, #eaf2f6 100%);
+  }
+
   /*----------------------darkGradients----------------------------*/
 
   .darkGradientBubblegum {
@@ -83,6 +91,14 @@ input[type="number"] {
     background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
   }
 
+  .darkGradientTopCardSection {
+    background: linear-gradient(180deg, #09070c 22%, #201335 100%);
+  }
+
+  .darkGradientBottomCardSection {
+    background: linear-gradient(180deg, #09070c 22%, #201335 100%);
+  }
+
   /* SPECIAL GRADIENTS */
 
   .yellowCardGradient {
@@ -91,6 +107,23 @@ input[type="number"] {
       rgb(255, 205, 81) 51.17%,
       rgb(255, 231, 106) 100%
     );
+  }
+
+  .purpleCardGradient {
+    background-image: linear-gradient(
+      rgb(118, 69, 217) 0%,
+      rgb(81, 33, 177) 100%
+    );
+  }
+
+  .purpleCardTextFill {
+    background: -webkit-linear-gradient(
+      top,
+      rgb(255, 216, 0),
+      rgb(235, 140, 0)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 

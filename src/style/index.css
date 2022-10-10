@@ -83,21 +83,35 @@ input[type="number"] {
     background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
   }
 
-  /*----------------------animationDelay----------------------------*/
+  /* SPECIAL GRADIENTS */
 
-  .animation-delay-33 {
-    animation-delay: 0.33s;
+  .yellowCardGradient {
+    background-image: linear-gradient(
+      rgb(255, 178, 55) 0%,
+      rgb(255, 205, 81) 51.17%,
+      rgb(255, 231, 106) 100%
+    );
   }
-  .animation-delay-66 {
-    animation-delay: 0.66s;
-  }
-  .animation-delay-100 {
-    animation-delay: 1s;
-  }
+}
 
-  /* OVERFLOW: HIDDEN */
+/*----------------------animationDelay----------------------------*/
 
-  .overflow-inherit {
-    overflow: inherit;
-  }
+.animation-delay-33 {
+  animation-delay: 0.33s;
+}
+.animation-delay-66 {
+  animation-delay: 0.66s;
+}
+.animation-delay-100 {
+  animation-delay: 1s;
+}
+
+/* OVERFLOW RULES */
+
+.overflow-inherit {
+  overflow: inherit;
+}
+
+.overflow-initial {
+  overflow: initial;
 }

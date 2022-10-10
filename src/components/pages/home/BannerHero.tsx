@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FullButton } from "../../shared/buttons";
+
 import "../../../style/index.css";
 import "../../../style/bannerHero.css";
+
 import bannerLottery from "../../../assets/images/png/lotteryBanner.png";
 import bannerPerpetual from "../../../assets/images/png/perpetualBanner.png";
 import board from "../../../assets/images/png/bannerBord.png";
@@ -49,25 +51,35 @@ function BannerHeroRight() {
 }
 
 export function BannerHero() {
-  const [isShown, setIsShown] = useState("rightBanner");
+  const [isShown, setIsShown] = useState(false);
+  const handleIsShown = () => setIsShown(false);
+
+  useEffect(() => {
+    const bannerInterval = setInterval(() => {
+      handleIsShown();
+    }, 6000);
+    return () => {
+      clearInterval(bannerInterval);
+    };
+  }, [isShown]);
+
   return (
     <>
       <div className="banner_hero__main_container">
         <div className="banner_hero__wrapper">
           <div className="banner_hero__inner_container">
-            {isShown === "leftBanner" && <BannerHeroLeft />}
-            {isShown === "rightBanner" && <BannerHeroRight />}
-
+            {isShown == false && <BannerHeroLeft />}
+            {isShown == true && <BannerHeroRight />}
             <div className="flex flex-row justify-center h-100">
               <input
                 type="button"
-                onClick={() => setIsShown("rightBanner")}
+                onClick={() => setIsShown(true)}
                 className="bg-white cursor-pointer rounded-l-lg w-10 h-2"
               />
 
               <input
                 type="button"
-                onClick={() => setIsShown("leftBanner")}
+                onClick={() => setIsShown(false)}
                 className="bg-white cursor-pointer rounded-r-lg w-10 h-2"
               />
             </div>

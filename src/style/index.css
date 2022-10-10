@@ -3,7 +3,7 @@
 @layer base {
   @font-face {
     font-family: "Kanit";
-    src: url("../assets/font/Kanit-Regular.ttf");
+    src: local("Kanit") url("../assets/font/Kanit-Regular.ttf") format("ttf");
   }
 }
 
@@ -502,107 +502,6 @@ input[type="number"] {
 
   }
 
-
-    /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
-
-    @layer components {
-    .toggleDarkBtn {
-      width: 56px;
-      height: theme(spacing.32);
-      display: flex;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .sliderDarkMode {
-      position: absolute;
-      height: theme(spacing.32);
-      width: 56px;
-      background-color: theme(colors.darkTextDisabled);
-      align-items: center;
-      border-radius: theme(borderRadius.card);
-      /* box-shadow: theme(boxShadow.button); */
-      transition: left 200ms ease-in 0s;
-    }
-
-    /* Rounded sliders */
-    .sliderDarkMode {
-      border-radius: 1.875rem;
-    }
-
-    .sliderDarkMode:before {
-      border-radius: theme(borderRadius.circle);
-    }
-
-    .sliderDarkMode::before {
-      background-image: url("../../src/assets/images/svg/icons/lightModeIconSlided.svg");
-      background-position: center;
-      position: absolute;
-      background-repeat: no-repeat;
-      content: "";
-      height: 1.5rem;
-      width: 1.5rem;
-      left: 0.175rem;
-      bottom: 0.219rem;
-      background-color: theme(colors.darkBackgroundAlt);
-      /* -webkit-transition: 0.4s;
-      transition: 0.4s; */
-    }
-
-    .input_darkMode:checked + .sliderDarkMode {
-      background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
-      background-repeat: no-repeat;
-      background-position-x: 0.33rem;
-      background-position-y: 0.33rem;
-      background-color: theme(colors.darkTextDisabled);
-    }
-
-    .input_darkMode:not(:checked) {
-      background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
-      /* background-color: theme(colors.darkBackgroundAlt); */
-    }
-
-    .input_darkMode:not(:checked) + .sliderDarkMode {
-      background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
-      background-repeat: no-repeat;
-      background-position-x: 2rem;
-      background-position-y: 0.35rem;
-    }
-
-    .input_darkMode:checked + .sliderDarkMode:before {
-      background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
-      background-position: center;
-      -webkit-transform: translateX(1.625rem);
-      -ms-transform: translateX(1.625rem);
-      transform: translateX(1.625rem);
-      margin: auto;
-      margin-right: 0.125rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-items: center;
-    }
-
-    .input_darkMode:focus:checked + .sliderDarkMode:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
-
-    .input_darkMode:hover:checked + .sliderDarkMode:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
-
-    .input_darkMode:hover:not(:checked) + .sliderDarkMode:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
-
-    .input_darkMode:focus:not(:checked) + .sliderDarkMod:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
-
-    .input_darkMode {
-      cursor: pointer;
-    }
     .toggle_sub_graph {
       width: 56px;
       height: theme(spacing.32);
@@ -699,5 +598,110 @@ input[type="number"] {
     .input_sub_graph {
       cursor: pointer;
     }
+=======
+
+  .btn_interval__container:focus {
+    background-color: theme(colors.primary);
+    color: #ffff;
+    outline: none;
+  }
+
+  /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
+  .toggleDarkBtn {
+    width: 56px;
+    height: 32px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sliderDarkMode {
+    position: absolute;
+    height: 32px;
+    width: 56px;
+    background-color: theme(colors.darkTextDisabled);
+    align-items: center;
+    border-radius: theme(borderRadius.card);
+    /* box-shadow: theme(boxShadow.button); */
+    transition: left 200ms ease-in 0s;
+  }
+
+  /* Rounded sliders */
+  .sliderDarkMode {
+    border-radius: 1.875rem;
+  }
+
+  .sliderDarkMode:before {
+    border-radius: 50%;
+  }
+
+  .sliderDarkMode::before {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIconSlided.svg");
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 0.175rem;
+    bottom: 0.219rem;
+    background-color: theme(colors.darkBackgroundAlt);
+    /* -webkit-transition: 0.4s;
+    transition: 0.4s; */
+  }
+
+  .input_darkMode:checked + .sliderDarkMode {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 0.33rem;
+    background-position-y: 0.33rem;
+    background-color: theme(colors.darkTextDisabled);
+  }
+
+  .input_darkMode:not(:checked) {
+    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    /* background-color: theme(colors.darkBackgroundAlt); */
+  }
+
+  .input_darkMode:not(:checked) + .sliderDarkMode {
+    background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+    background-repeat: no-repeat;
+    background-position-x: 2rem;
+    background-position-y: 0.35rem;
+  }
+
+  .input_darkMode:checked + .sliderDarkMode:before {
+    background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
+    background-position: center;
+    -webkit-transform: translateX(1.625rem);
+    -ms-transform: translateX(1.625rem);
+    transform: translateX(1.625rem);
+    margin: auto;
+    margin-right: 0.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .input_darkMode:focus:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:checked + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:hover:not(:checked) + .sliderDarkMode:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode:focus:not(:checked) + .sliderDarkMod:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
+
+  .input_darkMode {
+    cursor: pointer;
   }
 }

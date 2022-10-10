@@ -24,6 +24,5 @@ root.render(
       </SymbolsContextProvider>
       </ThemeProvider>
     </BrowserRouter>
-
   </React.StrictMode>,
 );

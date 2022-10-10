@@ -1,45 +1,68 @@
 import React from "react";
 import { useCustomNav } from "../hooks/useButtonNavigation";
 
+export function FullButton({
+  value,
+  children,
+}: {
+  value: string;
+  children?: JSX.Element;
+}): JSX.Element {
+  const navigator = useCustomNav();
 
-export function FullButton() {
-
-    const navigator = useCustomNav()
-
-    function handleNav(url: string) {
-        navigator.goTo(url)
-    }
+  function handleNav(url: string) {
+    navigator.goTo(url);
+  }
 
   return (
-    <button className="full-primary-button" onClick={() => handleNav("/insertNavigationUrlHer")}>
-      Trade now
+    <button
+      className="full-primary-button"
+      onClick={() => handleNav("/insertNavigationUrlHer")}
+    >
+      {value}
+      {children}
     </button>
   );
 }
 
-export function VoidButton() {
+export function VoidButton({ value }: { value: string }) {
+  const navigator = useCustomNav();
 
-    const navigator = useCustomNav()
+  function handleNav(url: string) {
+    navigator.goTo(url);
+  }
 
-    function handleNav(url: string) {
-        navigator.goTo(url)
-    }
-
-  return <button className="void-primary-button" onClick={() => handleNav("/insertNavigationUrlHer")}>Learn</button>;
+  return (
+    <button
+      className="void-primary-button"
+      onClick={() => handleNav("/insertNavigationUrlHer")}
+    >
+      Learn
+    </button>
+  );
 }
 
-export function OnlyBorderButton() {
+export function OnlyBorderButton({
+  value,
+  children,
+}: {
+  value: string;
+  children?: JSX.Element;
+}) {
+  const navigator = useCustomNav();
 
-    const navigator = useCustomNav()
-
-    function handleNav(url: string) {
-        navigator.goTo(url)
-    }
+  function handleNav(url: string) {
+    navigator.goTo(url);
+  }
 
   return (
     <div>
-      <button className="border-primary-button flex align-center" onClick={() => handleNav("/insertNavigationUrlHer")}>
-        Start earning
+      <button
+        className="border-primary-button flex align-center"
+        onClick={() => handleNav("/insertNavigationUrlHer")}
+      >
+        {value}
+        {children}
         <svg
           viewBox="0 0 24 24"
           color="invertedContrast"

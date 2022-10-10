@@ -17,7 +17,7 @@ function BannerHeroLeft() {
           <h2 className="text-[40px] text-white drop-shadow-lg font-bold colors-gold">
             UP TO 100X LEVERAGE
           </h2>
-          <FullButton />
+          <FullButton value="Trade now"/>
         </div>
 
         <span className="banner_right">

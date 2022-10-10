@@ -9,6 +9,7 @@ module.exports = {
         144: "36rem",
         30: "30%",
         32: "32px",
+        56: "56px"
       },
       screens: {
         sm: "370px",

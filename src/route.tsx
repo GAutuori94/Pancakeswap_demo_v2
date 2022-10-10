@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home } from './components/pages/home';
 
-export default function Router () {
-    return (
+export default function Router() {
+  return (
     <Routes>
         <Route path='/' element={<Home />} />
         {/* <Route path='home' element={<Home />} /> */}
@@ -27,5 +27,5 @@ export default function Router () {
             <Route path='/activity' element={<Activity />} />
         </Route> */}
     </Routes>
-    )
+  );
 }

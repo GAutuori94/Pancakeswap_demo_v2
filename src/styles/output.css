@@ -1,5 +1,19 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: kanit;
+}
 
 nav {
+  position: relative;
   background-color: white;
   border-bottom: 1px solid grey;
   width: 100vw;
@@ -8,9 +22,19 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 3rem;
-  overflow: hidden;
-  padding: 0px;
 }
+
+.nav-li {
+  width: 1.5rem;
+  height: 1.2rem;
+}
+
+.priceValueContainer{
+  align-self: center;
+  color: #7a6eaa;
+  font-weight: 500;
+}
+
 .logo-container {
   margin: 10px;
   cursor: pointer;
@@ -24,15 +48,22 @@ nav {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-
+  height: 48px;
 }
+
+.links-container a {
+  margin-left: 15px;
+}
+
 .links-container > .links {
   list-style-type: none;
+  margin: 30px;
 }
 
 .logoPriceContainer {
   display: flex;
 }
+
 .logoPriceContainer img {
   display: block;
 }
@@ -40,20 +71,54 @@ nav {
 .nav-li a {
   text-decoration: none;
   color: #7a6eea;
-  font-weight: 500;
+}
+
+.eye:hover {
+  transition-delay: 1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.dropdownContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column wrap;
+}
+
+.dropdown ul li {
+  color: #7a6eea;
+  font-weight: 400;
+  font-size: medium;
+  border-radius: 10px;
+}
+
+.dropdown ul {
+  border-radius: 15px;
+}
+
+.dropdown {
+  box-sizing: border-box;
+  margin-top: 9px;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid grey;
+  width: 280px;
 }
 
 .interactionsContainer {
-  width: 20%;
-
+  width: 25%;
   display: flex;
   flex-flow: row;
   justify-content: space-around;
 }
+
 .transparent {
   background-color: transparent;
   border: 0px solid transparent;
 }
+
 .transparent > img {
   display: block;
 }
@@ -74,7 +139,6 @@ nav {
   opacity: 1;
   outline: 0px;
   transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-  height: 3rem;
   padding: 0px remConverter(24px);
   background-color: #1fc7d4;
   color: #ffffff;
@@ -85,6 +149,7 @@ nav {
   padding-right: 1rem;
   color: white;
 }
+
 .connectWalletButton:hover {
   opacity: 70%;
   transition: 0.5s;
@@ -92,12 +157,15 @@ nav {
 
 .interactionsContainer > .tra:hover,
 button :hover {
-  filter: opacity(0.5);
+  -webkit-filter: opacity(0.5);
+          filter: opacity(0.5);
   transition: 0.5s;
   cursor: pointer;
 }
+
 .interactionsContainer > .growing:hover {
   transition: 0.5s;
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   cursor: pointer;
 }

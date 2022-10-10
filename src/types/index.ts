@@ -3,7 +3,11 @@ export interface ExchangeModel {
 }
 
 
-
+export type Link = {
+    label: string;
+    href: string;
+  };
+  
 export interface ExchangeInfoSymbol {
     symbol: string,
     status: string,

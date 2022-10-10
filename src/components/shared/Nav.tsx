@@ -1,6 +1,6 @@
 import React from "react";
 import "../../style/Nav.css";
-import { Link } from "react-router-dom";
+import { Link } from "../../types/index";
 import { intervals } from "./constants";
 import logoPancake from "../../assets/images/svg/utilities/logoPancake.svg";
 import logoNET from "../../assets/images/svg/utilities/logoNET.svg";
@@ -15,10 +15,6 @@ import {
 import { PancakeWrittenIcon } from "./navIcons";
 import SettingsModal from "./settingsModal";
 
-type Link = {
-  label: string;
-  href: string;
-};
 
 const Nav: React.FC = () => {
   const { data, trigger: fetchNewData } =

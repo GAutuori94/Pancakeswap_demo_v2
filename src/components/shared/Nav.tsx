@@ -92,6 +92,7 @@ const Nav: React.FC = () => {
         isDialogOpen={isDialogOpen}
         closeModal={() => setIsDialogOpen(false)}
       />
+      <div className="container_links hidden md:flex justify-start">
       <div className="logo-container">
         <PancakeWrittenIcon />
       </div>
@@ -355,7 +356,7 @@ const Nav: React.FC = () => {
             );
           })}
         </div>
-
+        </div>
 
       <div className="interactionsContainer">
         <img className="growing" src={logoPancake} alt="logo Pancake" />

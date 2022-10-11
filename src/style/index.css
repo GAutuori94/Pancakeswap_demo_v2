@@ -421,6 +421,7 @@ input[type="number"] {
     list-style-type: none;
     margin: 0.1875rem;
   }
+
   footer .services ul li a {
     text-decoration: none;
     color: theme(colors.white);
@@ -434,9 +435,11 @@ input[type="number"] {
     display: flex;
     align-items: flex-start;
   }
+
   footer .partnerSvgIcons div {
     width: 2.5rem;
   }
+
   footer .lasts {
     display: flex;
     justify-content: space-between;
@@ -444,6 +447,7 @@ input[type="number"] {
     border-top: 0.063rem solid grey;
     margin-top: 1.25rem;
   }
+
   footer .lasts button {
     align-items: center;
     border: theme(borderWidth.0);
@@ -508,12 +512,14 @@ input[type="number"] {
     display: flex;
     align-items: center;
   }
+  
   footer .lasts .selectors .buttonContainer p {
     color: theme(colors.darkTextSubtle);
     font-family: inherit;
     font-weight: theme(fontWeight.fontHeavyWeight);
     margin: 0rem 1.25rem 0rem 0rem;
   }
+
   footer .lasts .selectors .buttonContainer .svg {
     margin-top: 0.5rem;
     width: theme(spacing.32);
@@ -524,6 +530,7 @@ input[type="number"] {
     transition-duration: 0.5s;
     cursor: pointer;
   }
+
   footer .lasts .selectors .buttonContainer .svg:hover {
     transform: scale(1.2);
   }
@@ -651,7 +658,6 @@ input[type="number"] {
     .input_sub_graph {
       cursor: pointer;
     }
-=======
 
   .btn_interval__container:focus {
     background-color: theme(colors.primary);
@@ -764,4 +770,5 @@ input[type="number"] {
     width: 100%;
     @apply dark:text-darkInvertedContrast
   }
+
 }

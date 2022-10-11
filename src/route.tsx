@@ -1,15 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ChartLayoutComponent from "./components/pages/trade/ChartLayoutComponent";
+import { Home } from "./components/pages/home";
+import { Trade } from "./components/pages/trade";
 
 export default function Router() {
   return (
     <Routes>
-      <Route path="/trade" element={<ChartLayoutComponent />} />
-      {/* <Route path='trade' element={<Trade />}>
-        <Route path='fetched-data' element={<ResponseRender />} />
-        <Route path='fetched-kline' element={<KlineRender />} />
-        <Route path='fetched-ticker' element={<TickerRender />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/trade' element={<Trade />} />
+        {/* <Route path='home' element={<Home />} /> */}
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

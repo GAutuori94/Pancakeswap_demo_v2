@@ -4,7 +4,7 @@ import { ParsedBinanceKline } from "../../types/klineModelTypes";
 import { useKline } from "../context/klineContext";
 
 
-export function ResponseRender(){
+export function KlineResponseRender(){
     return <KlineRender />
 }
 

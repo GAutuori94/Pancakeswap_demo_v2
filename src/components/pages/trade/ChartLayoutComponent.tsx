@@ -7,7 +7,7 @@ import { usePercDiff } from "../../hooks/usePercDiff";
 import ChartSideCard from "./chart_side_card/ChartSideCard";
 import { useMarketChange } from "../../hooks/useMarketChange";
 
-type BinanceKline = [
+export type BinanceKline = [
   number,
   string,
   string,
@@ -134,7 +134,7 @@ export default function ChartLayoutComponent(): JSX.Element {
   ];
 
   return (
-    <div className="h-[100vh] w-full flex flex-row justify-center relative">
+    <div className="h-[100vh] w-full flex flex-row justify-center relative mt-[50px] lightGradientInverseBubblegum">
       <div className="w-1/2 h-3/4">
         <div className="flex justify-between items-center w-full  ">
           <div className="flex flex-col justify-start">

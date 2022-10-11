@@ -30,7 +30,7 @@ export function KlineContextProvider({
     loading: dataFetchedLoading,
     error: dataFetchedError,
     data: dataFetched,
-  } = useFetchApi<KlineResponseModel[]>("/api/v3/klines?symbol=BTCBUSD&interval=1h");
+  } = useFetchApi<KlineResponseModel[]>("/api/v3/klines?symbol=ETHBTC&interval=1d");
 
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
 

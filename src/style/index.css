@@ -756,3 +756,48 @@ button :hover {
   }
 
 }
+
+
+  /*----------------------------------------vertical carousel home------------------------------------------------------------------*/
+
+@layer components {
+  .column__gridView{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .data__column__gridView{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid theme(colors.lightInputSecondary);
+    transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
+    padding-left: 16px;
+
+  }
+
+  .market__data__column{
+    font-size: theme(fontSize.fontSizeGeneral);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: theme(colors.lightSecondary)
+  }
+
+  .percent__data__column{
+    font-size: theme(fontSize.fontSizeCopy);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    line-height: 1.1
+  }
+
+  .percent__data__column span{
+    color: theme(colors.lightText)
+  }
+
+  .apy__data__column{
+    font-size: theme(fontSize.fontSizeCopy);
+    color: theme(colors.lightTextSubtle)
+  }
+}

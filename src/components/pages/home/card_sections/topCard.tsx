@@ -2,7 +2,7 @@ import React from "react";
 
 interface TopCardProps {
   children: JSX.Element;
-  color?: string;
+  accentColor?: string;
   normalText: string;
   coloredText: string;
   subtleText: string;
@@ -10,6 +10,7 @@ interface TopCardProps {
 
 export default function TopCard({
   children,
+  accentColor,
   normalText,
   coloredText,
   subtleText,
@@ -35,7 +36,7 @@ export default function TopCard({
               {normalText}
             </h2>
             <h2
-              id="colored-text"
+              id={`accentColor-${accentColor}`}
               className="text-[32px] lg:text-[40px] mb-6 font-fontHeavyWeight leading-[1.1]"
             >
               {coloredText}

@@ -7,10 +7,6 @@ import {
   TradesIcon,
   StackedIcon,
 } from "./cardIcons";
-
-/* TODO: there needs to be a way to style these cards conditionally,
-  either with props or with custom styling rules */
-
 export default function TopCardSection(): JSX.Element {
   return (
     <section
@@ -47,7 +43,7 @@ export default function TopCardSection(): JSX.Element {
           </div>
           <div id="top-cards-container" className="flex flex-col lg:flex-row">
             <TopCard
-              color="secondary"
+              accentColor="secondary"
               normalText="1.9 million"
               coloredText="users"
               subtleText="in the last 30 days"
@@ -55,7 +51,7 @@ export default function TopCardSection(): JSX.Element {
               <UsersIcon />
             </TopCard>
             <TopCard
-              color="primary"
+              accentColor="primary"
               normalText="23 million"
               coloredText="trades"
               subtleText="made in the last 30 days"
@@ -63,7 +59,7 @@ export default function TopCardSection(): JSX.Element {
               <TradesIcon />
             </TopCard>
             <TopCard
-              color="failure"
+              accentColor="failure"
               normalText="$4 billion"
               coloredText="staked"
               subtleText="Total Value Locked"

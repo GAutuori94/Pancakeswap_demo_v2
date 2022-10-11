@@ -35,14 +35,26 @@ export type ParsedBinanceKline = {
 export default function ChartLayoutComponent(): JSX.Element {
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
   const [chartData, setChartData] = useState<PriceChartProps>([]);
-  const { selectedMarket, setSelectedMarket } = useMarketChange("BTCBUSD");
+  const {
+    selectedMarket,
+    selectedBaseAsset,
+    setSelectedBaseAsset,
+    selectedQuoteAsset,
+    setSelectedQuoteAsset,
+  } = useMarketChange("");
   const [selectedInterval, setSelectedInterval] = useState<string>(
     intervals[intervals.length - 1]
   );
 
-  function changeMarket(market: string): void {
-    setSelectedMarket(market);
-  }
+  const handleBaseAssetChange = (baseAsset: string) => {
+    setSelectedBaseAsset(baseAsset);
+  };
+
+  const handleQuoteAssetChange = (quoteAsset: string) => {
+    setSelectedQuoteAsset(quoteAsset);
+  };
+
+  console.log("selectedMarket", selectedMarket);
 
   const focusRef = useRef<HTMLInputElement | null>(null);
 
@@ -176,7 +188,12 @@ export default function ChartLayoutComponent(): JSX.Element {
         </div>
         <AreaChart lines={lines} data={chartData} />
       </div>
-      <ChartSideCard changeMarket={changeMarket} />
+      <ChartSideCard
+        inputBaseAsset={selectedBaseAsset}
+        inputQuoteAsset={selectedQuoteAsset}
+        baseAssetChange={handleBaseAssetChange}
+        quoteAssetChange={handleQuoteAssetChange}
+      />
     </div>
   );
 }

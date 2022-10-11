@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NoGraphIcon } from "./SideCardIcons";
 import { useSymbols } from "../../../context/symbolsContext";
 import { useMarketChange } from "../../../hooks/useMarketChange";
 
 interface ChartSideCardProps {
-  changeMarket: (market: string) => void;
+  inputBaseAsset: string;
+  inputQuoteAsset: string;
+  baseAssetChange: (baseAsset: string) => void;
+  quoteAssetChange: (quoteAsset: string) => void;
 }
 
 export default function ChartSideCard({
-  changeMarket,
+  ...props
 }: ChartSideCardProps): JSX.Element {
-  const { selectedMarket, setSelectedMarket } = useMarketChange("");
+  const { selectedBaseAsset, selectedQuoteAsset } = useMarketChange("");
   const { dataFetched } = useSymbols();
 
   const filteredList = (assetType: string) => {
@@ -89,21 +92,22 @@ export default function ChartSideCard({
                     <div className="flex items-center justify-between">
                       <div className="flex">
                         <select
+                          value={props.inputBaseAsset}
                           title="base-asset-selector"
                           className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
+                          onChange={(e) =>
+                            props.baseAssetChange(e.target.value)
+                          }
                         >
                           {baseAssetList}
                         </select>
-                        <button
-                          className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
-                          value="ETHBTC"
-                          onClick={(e) => changeMarket(e.currentTarget.value)}
-                        >
-                          ETHBTC
-                        </button>
                         <select
+                          value={props.inputQuoteAsset}
                           title="quote-asset-selector"
                           className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
+                          onChange={(e) =>
+                            props.quoteAssetChange(e.target.value)
+                          }
                         >
                           {quoteAssetList}
                         </select>

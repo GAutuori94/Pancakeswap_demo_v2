@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -8,6 +9,13 @@ module.exports = {
         144: "36rem",
         30: "30%",
         32: "32px",
+        56: "56px"
+      },
+      screens: {
+        sm: "370px",
+        md: "576px",
+        lg: "852px",
+        xl: "968px",
       },
       colors: {
         /*-------baseColors-----------*/
@@ -79,7 +87,7 @@ module.exports = {
       /*----------------fonts--------------------------- */
 
       fontFamily: {
-        "sans": ["Kanit"],
+        sans: ["Kanit"],
       },
 
       fontSize: {
@@ -160,3 +168,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+

@@ -1,8 +1,8 @@
 import React from "react";
 
-import earnGraph1 from "../../../assets/images/png/earnGraph1.png";
-import earnGraph2 from "../../../assets/images/png/earnGraph2.png";
-import earnGraph3 from "../../../assets/images/png/earnGraph3.png";
+import earnGraph1 from "../../../assets/images/png/graphEarn1.png";
+import earnGraph2 from "../../../assets/images/png/graphEarn2.png";
+import earnGraph3 from "../../../assets/images/png/graphEarn3.png";
 
 export default function ImageComponent() {
   return (

@@ -23,3 +23,4 @@ export interface ExchangeInfoSymbol {
     filters: [],
     permissions: string[]
 }
+

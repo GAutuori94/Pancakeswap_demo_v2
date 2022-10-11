@@ -7,7 +7,7 @@
   }
 }
 
-@tailwind components;
+
 @tailwind utilities;
 
 @layer utilities {
@@ -41,6 +41,14 @@
     background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
   }
 
+  .lightGradientTopCardSection {
+    background: linear-gradient(180deg, #fff 22%, #d7caec 100%);
+  }
+
+  .lightGradientBottomCardSection {
+    background-image: linear-gradient(180deg, #6fb6f1 0%, #eaf2f6 100%);
+  }
+
   /*----------------------darkGradients----------------------------*/
 
   .darkGradientBubblegum {
@@ -71,8 +79,43 @@
     background-image: linear-gradient(180deg, #ffd800 0%, #fdab32 100%);
   }
 
-  /*----------------------animationDelay----------------------------*/
+  .darkGradientTopCardSection {
+    background: linear-gradient(180deg, #09070c 22%, #201335 100%);
+  }
 
+  .darkGradientBottomCardSection {
+    background: linear-gradient(180deg, #0b4576 0%, #091115 100%);
+  }
+
+  /* SPECIAL GRADIENTS */
+
+  .yellowCardGradient {
+    background-image: linear-gradient(
+      rgb(255, 178, 55) 0%,
+      rgb(255, 205, 81) 51.17%,
+      rgb(255, 231, 106) 100%
+    );
+  }
+
+  .purpleCardGradient {
+    background-image: linear-gradient(
+      rgb(118, 69, 217) 0%,
+      rgb(81, 33, 177) 100%
+    );
+  }
+
+  .purpleCardTextFill {
+    background: -webkit-linear-gradient(
+      top,
+      rgb(255, 216, 0),
+      rgb(235, 140, 0)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /*----------------------animationDelay----------------------------*/
   .animation-delay-33 {
     animation-delay: 0.33s;
   }
@@ -82,9 +125,177 @@
   .animation-delay-100 {
     animation-delay: 1s;
   }
+
+  /* OVERFLOW RULES */
+
+  .overflow-inherit {
+    overflow: inherit;
+  }
+
+  .overflow-initial {
+    overflow: initial;
+  }
 }
 
+
+@tailwind components;
+
 @layer components {
+
+  /* button custom class without color  */
+  .btn-main {
+    @apply rounded-lg hover:opacity-60 text-white font-bold py-2 px-4;
+  }
+  .btn-transparent {
+    @apply rounded-lg font-bold hover:underline decoration-2 py-1 px-4;
+  }
+
+  /*-------------------------Nav style--------------------------------------------------------------------------------------*/
+  nav {
+  position: relative;
+  background-color: white;
+  border-bottom: theme(borderWidth.1) solid grey;
+  width: 100%;
+  font-weight: theme(fontWeight.fontLightWeight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+.nav-li {
+  width: 1.5rem;
+  height: 1.2rem;
+}
+.priceValueContainer{
+align-self: center;
+color: theme(colors.lightTextSubtle);
+font-weight: 500;
+}
+
+.logo-container {
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+}
+.links-container a {
+  margin-left: 15px;
+}
+.links-container > .links {
+  list-style-type: none;
+  margin: 30px;
+}
+
+.logoPriceContainer {
+  display: flex;
+}
+.logoPriceContainer img {
+  display: block;
+}
+
+.nav-li a {
+  text-decoration: none;
+  color: theme(colors.lightTextSubtle);
+}
+
+.eye:hover {
+  transition-delay: 1s;
+  transform: translate(-50%, -50%);
+}
+.dropdownContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column wrap;
+}
+.dropdown ul li {
+  color: theme(colors.lightTextSubtle);
+  font-weight: theme(fontWeight.fontLightWeight);
+  font-size: medium;
+  border-radius: 10px;
+}
+.dropdown ul {
+  border-radius: theme(borderRadius.default);
+}
+.dropdown {
+  box-sizing: border-box;
+  margin-top: 9px;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  border-radius: theme(borderRadius.default);
+  border: theme(borderWidth.1) solid grey;
+  width: 280px;
+}
+
+.interactionsContainer {
+  width: 25%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.transparent {
+  background-color: transparent;
+  border: 0px solid transparent;
+}
+.transparent > img {
+  display: block;
+}
+
+.connectWalletButton {
+  align-items: center;
+  border: 0px;
+  border-radius: 1rem;
+  box-shadow: 0px -1px 0px 0px inset;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: theme(fontWeight.fontHeavyWeight);
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  height: 3rem;
+  padding: 0px remConverter(24px);
+  background-color: #1fc7d4;
+  color: #ffffff;
+  margin-right: 0.5rem;
+  box-shadow: #8f80ba 0px -1px 0px 0px inset;
+  height: theme(spacing.32);
+  padding-left: theme(fontSize.fontSizeCopy);
+  padding-right: theme(fontSize.fontSizeCopy);
+  color: theme(colors.white);
+}
+.connectWalletButton:hover {
+  opacity: 70%;
+  transition: 0.5s;
+}
+
+.interactionsContainer > .tra:hover,
+button :hover {
+  filter: opacity(0.5);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.interactionsContainer > .growing:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+
   /*----------------------Primary full button--------------------------------------------------------------------------------------*/
   .full-primary-button {
     background-color: theme(colors.primary);
@@ -174,6 +385,269 @@
     color: #ffff;
     outline: none;
   }
+
+  /*----------------------------------Footer style----------------------------------------------------------------------*/
+
+  footer {
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    background-color: theme(colors.darkBackgroundAlt);
+    display: flex;
+    flex-flow: column;
+  }
+
+  footer .services {
+
+    display: flex;
+    justify-content: space-between;
+    margin: theme(borderRadius.card);
+
+  }
+
+
+  footer .services ul li {
+    list-style-type: none;
+    margin: 0.1875rem;
+  }
+
+  footer .services ul li a {
+    text-decoration: none;
+    color: theme(colors.white);
+  }
+
+  footer .services ul li a:hover {
+    text-decoration: underline;
+  }
+  footer .partnerSvgIcons {
+    padding-left: theme(spacing.32);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  footer .partnerSvgIcons div {
+    width: 2.5rem;
+  }
+
+  footer .lasts {
+    display: flex;
+    justify-content: space-between;
+    padding:theme(spacing.32);
+    border-top: 0.063rem solid grey;
+    margin-top: 1.25rem;
+  }
+
+  footer .lasts button {
+    align-items: center;
+    border: theme(borderWidth.0);
+    border-radius: theme(borderRadius.default);
+    box-shadow: 0rem -0.063rem 0rem 0rem inset;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    justify-content: center;
+    opacity: 1;
+    outline:theme(borderWidth.0);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 3rem;
+    padding: 0px 1.5rem;
+    background-color: #1fc7d4;
+    margin-right: 0.5rem;
+    box-shadow: #452a7a 0rem -0.063rem 0rem 0rem inset;
+    height: theme(spacing.32);
+    padding-left: theme(borderRadius.default);
+    padding-right: theme(borderRadius.default);
+    color: theme(colors.white);
+  }
+  footer .lasts button:hover {
+    opacity: 70%;
+  }
+  footer .lasts .modeSelector {
+    display: flex;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .lasts .modeSelector div {
+    padding: 0.313rem;
+  }
+  footer .lasts .modeSelector .languageSelector {
+    display: flex;
+    align-items: center;
+  }
+  footer .lasts .modeSelector .languageSelector .net {
+    background-image: url('../../src/assets/images/svg/utilities/logoNETsecondarycolor.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.313rem;
+  }
+  footer .lasts .modeSelector .languageSelector .net:hover {
+    opacity: 70%;
+    cursor: pointer;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+  footer .lasts .modeSelector .languageSelector .net p {
+    margin-left: 1.25rem;
+    align-items: center;
+    color: theme(colors.darkTextSubtle);
+    padding: 0.313rem;
+  }
+  footer .lasts .selectors .buttonContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  footer .lasts .selectors .buttonContainer p {
+    color: theme(colors.darkTextSubtle);
+    font-family: inherit;
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    margin: 0rem 1.25rem 0rem 0rem;
+  }
+
+  footer .lasts .selectors .buttonContainer .svg {
+    margin-top: 0.5rem;
+    width: theme(spacing.32);
+    height:theme(spacing.32);
+    background-image: url('../../src/assets/images/svg/utilities/logoPancake.svg');
+    background-repeat: no-repeat;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+
+  footer .lasts .selectors .buttonContainer .svg:hover {
+    transform: scale(1.2);
+  }
+
+
+  footer .services .helpContainer ul:nth-child(1) li a, footer .services .developerContainer ul:nth-child(1) li a, footer .services .servicesContainer ul:nth-child(1) li a {
+    color:theme(colors.lightTextSubtle);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    cursor: text;
+    text-decoration: none;
+
+  }
+
+  footer .services .developerContainer ul:nth-child(1) li a{
+    color: theme(colors.lightTextSubtle);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    cursor: text;
+    text-decoration: none;
+  }
+
+  footer .services .helpContainer ul:nth-child(1) li a{
+    color: theme(colors.lightTextSubtle);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    cursor: text;
+    text-decoration: none;
+  }
+  footer .services .servicesContainer ul:nth-child(2) li a{
+    color:theme(colors.gold);
+
+  }
+
+    .toggle_sub_graph {
+      width: 56px;
+      height: theme(spacing.32);
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider_sub_graph {
+      position: absolute;
+      height: theme(spacing.32);
+      width: 56px;
+      background-color: theme(colors.lightTertiary);
+      align-items: center;
+      border-radius: theme(borderRadius.card);
+      /* box-shadow: theme(boxShadow.button); */
+      transition: left 200ms ease-in 0s;
+    }
+
+    /* Rounded sliders */
+    .slider_sub_graph {
+      border-radius: 1.875rem;
+    }
+
+    .slider_sub_graph:before {
+      border-radius: theme(borderRadius.circle);
+    }
+
+    .slider_sub_graph::before {
+
+      background-position: center;
+      position: absolute;
+      background-repeat: no-repeat;
+      content: "";
+      height: 1.5rem;
+      width: 1.5rem;
+      left: 0.175rem;
+      bottom: 0.219rem;
+      background-color: theme(colors.white);
+      /* -webkit-transition: 0.4s;
+      transition: 0.4s; */
+    }
+
+    .input_sub_graph:checked + .slider_sub_graph {
+      background-repeat: no-repeat;
+      background-position-x: 0.33rem;
+      background-position-y: 0.33rem;
+      background-color: theme(colors.primary);
+    }
+
+    .input_sub_graph:not(:checked) {
+
+      background-color: theme(colors.darkBackgroundAlt);
+    }
+
+    .input_sub_graph:not(:checked) + .slider_sub_graph {
+
+      background-repeat: no-repeat;
+      background-position-x: 2rem;
+      background-position-y: 0.35rem;
+    }
+
+    .input_sub_graph:checked + .slider_sub_graph:before {
+
+      background-position: center;
+      -webkit-transform: translateX(1.625rem);
+      -ms-transform: translateX(1.625rem);
+      transform: translateX(1.625rem);
+      margin: auto;
+      margin-right: 0.125rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .input_sub_graph:focus:checked + .slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .input_sub_graph:hover:checked + .slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .input_sub_graph:hover:not(:checked) + .slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .input_sub_graph:focus:not(:checked) + .slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .input_sub_graph {
+      cursor: pointer;
+    }
+
 
   /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
   .toggleDarkBtn {
@@ -273,4 +747,12 @@
   .input_darkMode {
     cursor: pointer;
   }
+
+  /* SPECIAL BUTTONS */
+
+  #card-footer > .full-primary-button {
+    width: 100%;
+    @apply dark:text-darkInvertedContrast
+  }
+
 }

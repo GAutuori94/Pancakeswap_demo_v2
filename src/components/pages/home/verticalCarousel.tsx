@@ -25,7 +25,7 @@ export function VerticalCarousel() {
 
   return (
 <div>
-    <div className="vertical_carousel w-50 ml-10">
+    <div className="vertical_carousel w-full mt-[100px]">
       <div className="carousel_container__vertical_carousel mt-[24px]">
         <div className="top__carousel_container__vertical_carousel mb-[24px] flex items-center">
           <h2 className="text-lightText text-fontSizeParagraph leading-lineHeightPar font-fontSizeParagraph font-fontHeavyWeight flex gap-0.5">

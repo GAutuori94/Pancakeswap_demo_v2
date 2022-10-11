@@ -152,162 +152,148 @@ input[type="number"] {
 
 @layer components {
   nav {
-    position: relative;
-    background-color: white;
-    border-bottom: 1px solid grey;
-    width: 100vw;
-    font-weight: 400;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 3rem;
-  }
+  position: relative;
+  background-color: white;
+  border-bottom: theme(borderWidth.1) solid grey;
+  width: 100%;
+  font-weight: theme(fontWeight.fontLightWeight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+.nav-li {
+  width: 1.5rem;
+  height: 1.2rem;
+}
+.priceValueContainer{
+align-self: center;
+color: theme(colors.lightTextSubtle);
+font-weight: 500;
+}
 
-  .nav-li {
-    width: 1.5rem;
-    height: 1.2rem;
-  }
+.logo-container {
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .priceValueContainer{
-    align-self: center;
-    color: #7a6eaa;
-    font-weight: 500;
-  }
+.links-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+}
+.links-container a {
+  margin-left: 15px;
+}
+.links-container > .links {
+  list-style-type: none;
+  margin: 30px;
+}
 
-  .logo-container {
-    margin: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.logoPriceContainer {
+  display: flex;
+}
+.logoPriceContainer img {
+  display: block;
+}
 
-  .links-container {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 48px;
-  }
+.nav-li a {
+  text-decoration: none;
+  color: theme(colors.lightTextSubtle);
+}
 
-  .links-container a {
-    margin-left: 15px;
-  }
+.eye:hover {
+  transition-delay: 1s;
+  transform: translate(-50%, -50%);
+}
+.dropdownContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column wrap;
+}
+.dropdown ul li {
+  color: theme(colors.lightTextSubtle);
+  font-weight: theme(fontWeight.fontLightWeight);
+  font-size: medium;
+  border-radius: 10px;
+}
+.dropdown ul {
+  border-radius: theme(borderRadius.default);
+}
+.dropdown {
+  box-sizing: border-box;
+  margin-top: 9px;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  border-radius: theme(borderRadius.default);
+  border: theme(borderWidth.1) solid grey;
+  width: 280px;
+}
 
-  .links-container > .links {
-    list-style-type: none;
-    margin: 30px;
-  }
+.interactionsContainer {
+  width: 25%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.transparent {
+  background-color: transparent;
+  border: 0px solid transparent;
+}
+.transparent > img {
+  display: block;
+}
 
-  .logoPriceContainer {
-    display: flex;
-  }
+.connectWalletButton {
+  align-items: center;
+  border: 0px;
+  border-radius: 1rem;
+  box-shadow: 0px -1px 0px 0px inset;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: theme(fontWeight.fontHeavyWeight);
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  height: 3rem;
+  padding: 0px remConverter(24px);
+  background-color: #1fc7d4;
+  color: #ffffff;
+  margin-right: 0.5rem;
+  box-shadow: #8f80ba 0px -1px 0px 0px inset;
+  height: theme(spacing.32);
+  padding-left: theme(fontSize.fontSizeCopy);
+  padding-right: theme(fontSize.fontSizeCopy);
+  color: theme(colors.white);
+}
+.connectWalletButton:hover {
+  opacity: 70%;
+  transition: 0.5s;
+}
 
-  .logoPriceContainer img {
-    display: block;
-  }
+.interactionsContainer > .tra:hover,
+button :hover {
+  filter: opacity(0.5);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.interactionsContainer > .growing:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
+  cursor: pointer;
+}
 
-  .nav-li a {
-    text-decoration: none;
-    color: #7a6eea;
-  }
-
-  .eye:hover {
-    transition-delay: 1s;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-  }
-
-  .dropdownContainer {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: column wrap;
-  }
-
-  .dropdown ul li {
-    color: #7a6eea;
-    font-weight: 400;
-    font-size: medium;
-    border-radius: 10px;
-  }
-
-  .dropdown ul {
-    border-radius: 15px;
-  }
-
-  .dropdown {
-    box-sizing: border-box;
-    margin-top: 9px;
-    display: flex;
-    flex-flow: column wrap;
-    background-color: white;
-    border-radius: 15px;
-    border: 1px solid grey;
-    width: 280px;
-  }
-
-  .interactionsContainer {
-    width: 25%;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-  }
-
-  .transparent {
-    background-color: transparent;
-    border: 0px solid transparent;
-  }
-
-  .transparent > img {
-    display: block;
-  }
-
-  .connectWalletButton {
-    align-items: center;
-    border: 0px;
-    border-radius: 1rem;
-    box-shadow: 0px -1px 0px 0px inset;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    opacity: 1;
-    outline: 0px;
-    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-    padding: 0px remConverter(24px);
-    background-color: #1fc7d4;
-    color: #ffffff;
-    margin-right: 0.5rem;
-    box-shadow: #8f80ba 0px -1px 0px 0px inset;
-    height: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    color: white;
-  }
-
-  .connectWalletButton:hover {
-    opacity: 70%;
-    transition: 0.5s;
-  }
-
-  .interactionsContainer > .tra:hover,
-  button :hover {
-    -webkit-filter: opacity(0.5);
-            filter: opacity(0.5);
-    transition: 0.5s;
-    cursor: pointer;
-  }
-
-  .interactionsContainer > .growing:hover {
-    transition: 0.5s;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-    cursor: pointer;
-  }
 
 
   /*----------------------Primary full button--------------------------------------------------------------------------------------*/
@@ -421,6 +407,7 @@ input[type="number"] {
     list-style-type: none;
     margin: 0.1875rem;
   }
+
   footer .services ul li a {
     text-decoration: none;
     color: theme(colors.white);
@@ -434,9 +421,11 @@ input[type="number"] {
     display: flex;
     align-items: flex-start;
   }
+
   footer .partnerSvgIcons div {
     width: 2.5rem;
   }
+
   footer .lasts {
     display: flex;
     justify-content: space-between;
@@ -444,6 +433,7 @@ input[type="number"] {
     border-top: 0.063rem solid grey;
     margin-top: 1.25rem;
   }
+
   footer .lasts button {
     align-items: center;
     border: theme(borderWidth.0);
@@ -508,12 +498,14 @@ input[type="number"] {
     display: flex;
     align-items: center;
   }
+
   footer .lasts .selectors .buttonContainer p {
     color: theme(colors.darkTextSubtle);
     font-family: inherit;
     font-weight: theme(fontWeight.fontHeavyWeight);
     margin: 0rem 1.25rem 0rem 0rem;
   }
+
   footer .lasts .selectors .buttonContainer .svg {
     margin-top: 0.5rem;
     width: theme(spacing.32);
@@ -524,6 +516,7 @@ input[type="number"] {
     transition-duration: 0.5s;
     cursor: pointer;
   }
+
   footer .lasts .selectors .buttonContainer .svg:hover {
     transform: scale(1.2);
   }
@@ -651,7 +644,6 @@ input[type="number"] {
     .input_sub_graph {
       cursor: pointer;
     }
-=======
 
   .btn_interval__container:focus {
     background-color: theme(colors.primary);
@@ -764,4 +756,5 @@ input[type="number"] {
     width: 100%;
     @apply dark:text-darkInvertedContrast
   }
+
 }

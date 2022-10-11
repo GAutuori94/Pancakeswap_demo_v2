@@ -1,5 +1,4 @@
 import React from "react";
-import "../../style/Nav.css";
 import { Link } from "react-router-dom";
 import { intervals } from "./constants";
 import logoPancake from "../../assets/images/svg/utilities/logoPancake.svg";
@@ -88,15 +87,15 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <nav className="navbar dark:bg-darkBackgroundAlt dark:border-darkCardBorder">
+    <nav className="navbar dark:bg-darkBackgroundAlt dark:border-darkCardBorder z-20">
       <SettingsModal
         isDialogOpen={isDialogOpen}
         closeModal={() => setIsDialogOpen(false)}
       />
+      <div className="container_links hidden md:flex justify-start">
       <div className="logo-container">
         <PancakeWrittenIcon />
       </div>
-      <div className="hidden md:flex">
         <div
           className="links-container"
           onMouseEnter={() => handleDropdownHoverTrade(true)}
@@ -140,7 +139,7 @@ const Nav: React.FC = () => {
                                     whitespace-nowrap
                                     bg-transparent
 
-                                    hover:bg-gray-100`}
+                                    hover:bg-gray-100 `}
                                 >
                                   {item.label}
                                 </li>
@@ -357,7 +356,7 @@ const Nav: React.FC = () => {
             );
           })}
         </div>
-      </div>
+        </div>
 
       <div className="interactionsContainer">
         <img className="growing" src={logoPancake} alt="logo Pancake" />

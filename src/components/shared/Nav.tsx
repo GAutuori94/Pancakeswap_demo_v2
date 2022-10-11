@@ -88,7 +88,7 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <nav className="navbar border-b-darkText dark:bg-darkBackgroundAlt dark:border-darkCardBorder z-20">
+    <nav className="navbar border-b-darkText bg-lightBackground dark:bg-darkBackgroundAlt dark:border-darkCardBorder z-20">
       <SettingsModal
         isDialogOpen={isDialogOpen}
         closeModal={() => setIsDialogOpen(false)}

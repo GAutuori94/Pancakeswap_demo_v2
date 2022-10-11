@@ -6,7 +6,7 @@ import { CakeGrid } from './CakeGrid';
 
 export default function CtaCake() {
   return (
-    <section className='lightGradientCardHeader dark:bg-darkBackground w-full flex justify-center '>
+    <section className='bg-lightBackground dark:bg-darkBackground w-full flex justify-center '>
 
       <div className='container_cake_fullcontent ml-[250px] w-[70%] h-[700px] flex flex-col justify-center '>
         <div className='container_cake_text_image'>

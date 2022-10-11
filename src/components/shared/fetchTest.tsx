@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { ExchangeInfoSymbol } from "../../types";
+import { ExchangeInfoSymbol } from "../../types/exchangeModelTypes";
 import { useSymbols } from "../context/symbolsContext";
 
 

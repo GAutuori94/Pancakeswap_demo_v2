@@ -12,9 +12,9 @@ export default function Router() {
   return (
     <Routes>
       <Route path="fetched-data" element={<ResponseRender />} />
-      <Route path="/button1" element={<FullButton />} />
+      {/* <Route path="/button1" element={<FullButton />} />
       <Route path="/button2" element={<VoidButton />} />
-      <Route path="/button3" element={<OnlyBorderButton />} />
+      <Route path="/button3" element={<OnlyBorderButton />} /> */}
       <Route
         path="/togglebuttongraph"
         element={<GraphIntervalsToggleButton />}

@@ -8,7 +8,7 @@ export default function CtaCake() {
   return (
     <section className='lightGradientCardHeader dark:darkGradientCardHeader w-full flex justify-center '>
 
-      <div className='container_cake_fullcontent w-[70%] h-[700px] flex flex-col justify-center '>
+      <div className='container_cake_fullcontent ml-[250px] w-[70%] h-[700px] flex flex-col justify-center '>
         <div className='container_cake_text_image'>
           <div className=' flex items-center '>
 

@@ -1,10 +1,18 @@
-import React from "react";
-import CtaTrade from "./ctaTrade";
+import React from 'react'
+import Footer from '../../shared/Footer'
+import Nav from '../../shared/Nav'
+import BottomCardSection from './card_sections/bottomCardSection'
+import TopCardSection from './card_sections/topCardSection'
+import CtaTrade from './ctaTrade'
 
-export default function Home() {
-  return (
-    <>
-      <CtaTrade />
-    </>
-  );
+export function Home () {
+    return (
+        <>
+        <Nav />
+        <TopCardSection />
+        <CtaTrade />
+        <BottomCardSection />
+        <Footer />
+        </>
+    )
 }

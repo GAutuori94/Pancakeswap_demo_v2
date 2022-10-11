@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home } from './components/pages/home';
+import  CtaCake  from './components/pages/home/CtaCake';
 
 export default function Router() {
   return (
     <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<CtaCake />} />
         {/* <Route path='home' element={<Home />} /> */}
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />

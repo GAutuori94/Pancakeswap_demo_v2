@@ -234,6 +234,7 @@ font-weight: 500;
   border-radius: theme(borderRadius.default);
   border: theme(borderWidth.1) solid grey;
   width: 280px;
+  border: 1px solid theme(colors.darkText)
 }
 
 .interactionsContainer {
@@ -317,6 +318,29 @@ button :hover {
   }
 
   .full-primary-button:hover {
+    opacity: 75%;
+  }
+    /*----------------------Full-slim-primary-button--------------------------------------------------------------------------------------*/
+    .full-slim-primary-button {
+    background-color: theme(colors.primary);
+    box-shadow: theme(boxShadow.button);
+    opacity: 1;
+    height: 32px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Kanit;
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border: 0px;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .full-slim-primary-button:hover {
     opacity: 75%;
   }
 

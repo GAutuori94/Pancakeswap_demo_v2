@@ -1,20 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ChartLayoutComponent from "./components/pages/trade/ChartLayoutComponent";
-import { ResponseRender } from "./components/shared/fetchTest";
+import { Home } from './components/pages/home';
 
 export default function Router() {
   return (
     <Routes>
-      <Route path="fetched-data" element={<ResponseRender />} />
-      <Route path="trade" element={<ChartLayoutComponent />} />
-      {/* <Route path='trade' element={<Trade />}>
-      
-        <Route path='fetched-data' element={<ResponseRender />} />
-        <Route path='/button1' element={<FullButton />} />
-        <Route path='/button2' element={<VoidButton />} />
-        <Route path='/button3' element={<OnlyBorderButton />} />
-        <Route path='/togglebuttongraph' element={<GraphIntervalsToggleButton />} />
+        <Route path='/' element={<Home />} />
+        {/* <Route path='home' element={<Home />} /> */}
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />

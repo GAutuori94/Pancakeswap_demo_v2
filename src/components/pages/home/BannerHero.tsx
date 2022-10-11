@@ -13,7 +13,7 @@ function BannerHeroLeft() {
     <>
       <div className="banner_hero__perpetual_container ">
         <div className="left_banner_inner_container">
-          <div className="left__perpetual_container p-5">
+          <div className="left__perpetual_container">
             <h2 className=" text-xl text-gold">Perpetual Futures</h2>
             <h2 className="text-[40px] text-white drop-shadow-lg font-bold colors-gold">
               UP TO 100X LEVERAGE
@@ -21,9 +21,9 @@ function BannerHeroLeft() {
             <FullButton value="Trade now" />
           </div>
 
-          <span className="left__img_container">
-            <img className="perpetual w-96" src={bannerPerpetual} />
-          </span>
+          <div className="left__img_container">
+            <img className="perpetual" src={bannerPerpetual} />
+          </div>
         </div>
       </div>
     </>
@@ -35,21 +35,23 @@ function BannerHeroRight() {
     <>
       <div className="banner_hero__lottery_container">
         <div className="right_banner_inner_container">
-          <div className="left__lottery_container ">
-            <h2 className="text-[20px] text-white drop-shadow-lg font-bold p-5">
+          <div className="left__lottery_container">
+            <h2 className="text-[20px] text-white drop-shadow-xl font-bold mx-8 my-2">
               Win $110.720 in Lottery
             </h2>
             <div className="countdown_container">
-              <h1 className="absolute text-[25px] font-bold left-24 text-gold">
-                {Math.random()}
+              <h1 className="absolute text-[25px] font-bold text-gold">
+                02d 15m 30s
               </h1>
-              <img className="" src={board} alt="board" />
+              <img src={board} alt="board" />
             </div>
-            <FullButton value="Play now" />
+            <div className="flex flex-col mx-8">
+              <FullButton value="Play now" />
+            </div>
           </div>
-          <span className="right__img_container">
-            <img className="lottery w-100" src={bannerLottery} />
-          </span>
+          <div className="right__img_container">
+            <img className="lottery" src={bannerLottery} />
+          </div>
         </div>
       </div>
     </>
@@ -60,21 +62,21 @@ export function BannerHero() {
   const [isShown, setIsShown] = useState(false);
   const handleIsShown = () => setIsShown(false);
 
-  // useEffect(() => {
-  //   const bannerInterval = setInterval(() => {
-  //     handleIsShown();
-  //   }, 6000);
-  //   return () => {
-  //     clearInterval(bannerInterval);
-  //   };
-  // }, [isShown]);
+  useEffect(() => {
+    const bannerInterval = setInterval(() => {
+      handleIsShown();
+    }, 6000);
+    return () => {
+      clearInterval(bannerInterval);
+    };
+  }, [isShown]);
 
   return (
     <>
       <div className="banner_hero__main_container">
         {isShown == false && <BannerHeroLeft />}
         {isShown == true && <BannerHeroRight />}
-        <div className="swiper__container flex flex-row justify-center">
+        <div className="swiper__container">
           <input
             type="button"
             onClick={() => setIsShown(true)}

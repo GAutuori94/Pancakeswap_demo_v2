@@ -7,7 +7,6 @@
   }
 }
 
-
 @tailwind utilities;
 
 @layer utilities {
@@ -137,11 +136,9 @@
   }
 }
 
-
 @tailwind components;
 
 @layer components {
-
   /* button custom class without color  */
   .btn-main {
     @apply rounded-lg hover:opacity-60 text-white font-bold py-2 px-4;
@@ -152,150 +149,146 @@
 
   /*-------------------------Nav style--------------------------------------------------------------------------------------*/
   nav {
-  position: relative;
-  background-color: white;
-  border-bottom: theme(borderWidth.1) solid grey;
-  width: 100%;
-  font-weight: theme(fontWeight.fontLightWeight);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 3rem;
-}
-.nav-li {
-  width: 1.5rem;
-  height: 1.2rem;
-}
-.priceValueContainer{
-align-self: center;
-color: theme(colors.lightTextSubtle);
-font-weight: 500;
-}
+    position: relative;
+    background-color: white;
+    border-bottom: theme(borderWidth.1) solid grey;
+    width: 100%;
+    font-weight: theme(fontWeight.fontLightWeight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+  }
+  .nav-li {
+    width: 1.5rem;
+    height: 1.2rem;
+  }
+  .priceValueContainer {
+    align-self: center;
+    color: theme(colors.lightTextSubtle);
+    font-weight: 500;
+  }
 
-.logo-container {
-  margin: 10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .logo-container {
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.links-container {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 48px;
-}
-.links-container a {
-  margin-left: 15px;
-}
-.links-container > .links {
-  list-style-type: none;
-  margin: 30px;
-}
+  .links-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+  }
+  .links-container a {
+    margin-left: 15px;
+  }
+  .links-container > .links {
+    list-style-type: none;
+    margin: 30px;
+  }
 
-.logoPriceContainer {
-  display: flex;
-}
-.logoPriceContainer img {
-  display: block;
-}
+  .logoPriceContainer {
+    display: flex;
+  }
+  .logoPriceContainer img {
+    display: block;
+  }
 
-.nav-li a {
-  text-decoration: none;
-  color: theme(colors.lightTextSubtle);
-}
+  .nav-li a {
+    text-decoration: none;
+    color: theme(colors.lightTextSubtle);
+  }
 
-.eye:hover {
-  transition-delay: 1s;
-  transform: translate(-50%, -50%);
-}
-.dropdownContainer {
-  display: flex;
-  align-items: flex-start;
-  flex-flow: column wrap;
-}
-.dropdown ul li {
-  color: theme(colors.lightTextSubtle);
-  font-weight: theme(fontWeight.fontLightWeight);
-  font-size: medium;
-  border-radius: 10px;
-}
-.dropdown ul {
-  border-radius: theme(borderRadius.default);
-}
-.dropdown {
-  box-sizing: border-box;
-  margin-top: 9px;
-  display: flex;
-  flex-flow: column wrap;
-  background-color: white;
-  border-radius: theme(borderRadius.default);
-  border: theme(borderWidth.1) solid grey;
-  width: 280px;
-  border: 1px solid theme(colors.darkText)
-}
+  .eye:hover {
+    transition-delay: 1s;
+    transform: translate(-50%, -50%);
+  }
+  .dropdownContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column wrap;
+  }
+  .dropdown ul li {
+    color: theme(colors.lightTextSubtle);
+    font-weight: theme(fontWeight.fontLightWeight);
+    font-size: medium;
+    border-radius: 10px;
+  }
+  .dropdown ul {
+    border-radius: theme(borderRadius.default);
+  }
+  .dropdown {
+    box-sizing: border-box;
+    margin-top: 9px;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: white;
+    border-radius: theme(borderRadius.default);
+    border: theme(borderWidth.1) solid grey;
+    width: 280px;
+    border: 1px solid theme(colors.darkText);
+  }
 
-.interactionsContainer {
-  width: 25%;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-}
-.transparent {
-  background-color: transparent;
-  border: 0px solid transparent;
-}
-.transparent > img {
-  display: block;
-}
+  .interactionsContainer {
+    display: flex;
+    flex-flow: row;
+  }
+  .transparent {
+    background-color: transparent;
+    border: 0px solid transparent;
+  }
+  .transparent > img {
+    display: block;
+  }
 
-.connectWalletButton {
-  align-items: center;
-  border: 0px;
-  border-radius: 1rem;
-  box-shadow: 0px -1px 0px 0px inset;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: theme(fontWeight.fontHeavyWeight);
-  justify-content: center;
-  letter-spacing: 0.03em;
-  line-height: 1;
-  opacity: 1;
-  outline: 0px;
-  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-  height: 3rem;
-  padding: 0px remConverter(24px);
-  background-color: #1fc7d4;
-  color: #ffffff;
-  margin-right: 0.5rem;
-  box-shadow: #8f80ba 0px -1px 0px 0px inset;
-  height: theme(spacing.32);
-  padding-left: theme(fontSize.fontSizeCopy);
-  padding-right: theme(fontSize.fontSizeCopy);
-  color: theme(colors.white);
-}
-.connectWalletButton:hover {
-  opacity: 70%;
-  transition: 0.5s;
-}
+  .connectWalletButton {
+    align-items: center;
+    border: 0px;
+    border-radius: 1rem;
+    box-shadow: 0px -1px 0px 0px inset;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: 0px;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 3rem;
+    padding: 0px remConverter(24px);
+    background-color: #1fc7d4;
+    color: #ffffff;
+    margin-right: 0.5rem;
+    box-shadow: #8f80ba 0px -1px 0px 0px inset;
+    height: theme(spacing.32);
+    padding-left: theme(fontSize.fontSizeCopy);
+    padding-right: theme(fontSize.fontSizeCopy);
+    color: theme(colors.white);
+  }
+  .connectWalletButton:hover {
+    opacity: 70%;
+    transition: 0.5s;
+  }
 
-.interactionsContainer > .tra:hover,
-button :hover {
-  filter: opacity(0.5);
-  transition: 0.5s;
-  cursor: pointer;
-}
-.interactionsContainer > .growing:hover {
-  transition: 0.5s;
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
-
+  .interactionsContainer > .tra:hover,
+  button :hover {
+    filter: opacity(0.5);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .interactionsContainer > .growing:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 
   /*----------------------Primary full button--------------------------------------------------------------------------------------*/
   .full-primary-button {
@@ -320,8 +313,8 @@ button :hover {
   .full-primary-button:hover {
     opacity: 75%;
   }
-    /*----------------------Full-slim-primary-button--------------------------------------------------------------------------------------*/
-    .full-slim-primary-button {
+  /*----------------------Full-slim-primary-button--------------------------------------------------------------------------------------*/
+  .full-slim-primary-button {
     background-color: theme(colors.primary);
     box-shadow: theme(boxShadow.button);
     opacity: 1;
@@ -422,13 +415,10 @@ button :hover {
   }
 
   footer .services {
-
     display: flex;
     justify-content: space-between;
     margin: theme(borderRadius.card);
-
   }
-
 
   footer .services ul li {
     list-style-type: none;
@@ -456,7 +446,7 @@ button :hover {
   footer .lasts {
     display: flex;
     justify-content: space-between;
-    padding:theme(spacing.32);
+    padding: theme(spacing.32);
     border-top: 0.063rem solid grey;
     margin-top: 1.25rem;
   }
@@ -472,7 +462,7 @@ button :hover {
     font-weight: theme(fontWeight.fontHeavyWeight);
     justify-content: center;
     opacity: 1;
-    outline:theme(borderWidth.0);
+    outline: theme(borderWidth.0);
     transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
     height: 3rem;
     padding: 0px 1.5rem;
@@ -502,7 +492,7 @@ button :hover {
     align-items: center;
   }
   footer .lasts .modeSelector .languageSelector .net {
-    background-image: url('../../src/assets/images/svg/utilities/logoNETsecondarycolor.svg');
+    background-image: url("../../src/assets/images/svg/utilities/logoNETsecondarycolor.svg");
     background-repeat: no-repeat;
     background-position: left;
     display: flex;
@@ -536,8 +526,8 @@ button :hover {
   footer .lasts .selectors .buttonContainer .svg {
     margin-top: 0.5rem;
     width: theme(spacing.32);
-    height:theme(spacing.32);
-    background-image: url('../../src/assets/images/svg/utilities/logoPancake.svg');
+    height: theme(spacing.32);
+    background-image: url("../../src/assets/images/svg/utilities/logoPancake.svg");
     background-repeat: no-repeat;
     transition-property: transform;
     transition-duration: 0.5s;
@@ -548,130 +538,124 @@ button :hover {
     transform: scale(1.2);
   }
 
-
-  footer .services .helpContainer ul:nth-child(1) li a, footer .services .developerContainer ul:nth-child(1) li a, footer .services .servicesContainer ul:nth-child(1) li a {
-    color:theme(colors.lightTextSubtle);
-    font-weight: theme(fontWeight.fontHeavyWeight);
-    cursor: text;
-    text-decoration: none;
-
-  }
-
-  footer .services .developerContainer ul:nth-child(1) li a{
+  footer .services .helpContainer ul:nth-child(1) li a,
+  footer .services .developerContainer ul:nth-child(1) li a,
+  footer .services .servicesContainer ul:nth-child(1) li a {
     color: theme(colors.lightTextSubtle);
     font-weight: theme(fontWeight.fontHeavyWeight);
     cursor: text;
     text-decoration: none;
   }
 
-  footer .services .helpContainer ul:nth-child(1) li a{
+  footer .services .developerContainer ul:nth-child(1) li a {
     color: theme(colors.lightTextSubtle);
     font-weight: theme(fontWeight.fontHeavyWeight);
     cursor: text;
     text-decoration: none;
   }
-  footer .services .servicesContainer ul:nth-child(2) li a{
-    color:theme(colors.gold);
 
+  footer .services .helpContainer ul:nth-child(1) li a {
+    color: theme(colors.lightTextSubtle);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    cursor: text;
+    text-decoration: none;
+  }
+  footer .services .servicesContainer ul:nth-child(2) li a {
+    color: theme(colors.gold);
   }
 
-    .toggle_sub_graph {
-      width: 56px;
-      height: theme(spacing.32);
-      display: flex;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-    }
+  .toggle_sub_graph {
+    width: 56px;
+    height: theme(spacing.32);
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .slider_sub_graph {
-      position: absolute;
-      height: theme(spacing.32);
-      width: 56px;
-      background-color: theme(colors.lightTertiary);
-      align-items: center;
-      border-radius: theme(borderRadius.card);
-      /* box-shadow: theme(boxShadow.button); */
-      transition: left 200ms ease-in 0s;
-    }
+  .slider_sub_graph {
+    position: absolute;
+    height: theme(spacing.32);
+    width: 56px;
+    background-color: theme(colors.lightTertiary);
+    align-items: center;
+    border-radius: theme(borderRadius.card);
+    /* box-shadow: theme(boxShadow.button); */
+    transition: left 200ms ease-in 0s;
+  }
 
-    /* Rounded sliders */
-    .slider_sub_graph {
-      border-radius: 1.875rem;
-    }
+  /* Rounded sliders */
+  .slider_sub_graph {
+    border-radius: 1.875rem;
+  }
 
-    .slider_sub_graph:before {
-      border-radius: theme(borderRadius.circle);
-    }
+  .slider_sub_graph:before {
+    border-radius: theme(borderRadius.circle);
+  }
 
-    .slider_sub_graph::before {
-
-      background-position: center;
-      position: absolute;
-      background-repeat: no-repeat;
-      content: "";
-      height: 1.5rem;
-      width: 1.5rem;
-      left: 0.175rem;
-      bottom: 0.219rem;
-      background-color: theme(colors.white);
-      /* -webkit-transition: 0.4s;
+  .slider_sub_graph::before {
+    background-position: center;
+    position: absolute;
+    background-repeat: no-repeat;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 0.175rem;
+    bottom: 0.219rem;
+    background-color: theme(colors.white);
+    /* -webkit-transition: 0.4s;
       transition: 0.4s; */
-    }
+  }
 
-    .input_sub_graph:checked + .slider_sub_graph {
-      background-repeat: no-repeat;
-      background-position-x: 0.33rem;
-      background-position-y: 0.33rem;
-      background-color: theme(colors.primary);
-    }
+  .input_sub_graph:checked + .slider_sub_graph {
+    background-repeat: no-repeat;
+    background-position-x: 0.33rem;
+    background-position-y: 0.33rem;
+    background-color: theme(colors.primary);
+  }
 
-    .input_sub_graph:not(:checked) {
+  .input_sub_graph:not(:checked) {
+    background-color: theme(colors.darkBackgroundAlt);
+  }
 
-      background-color: theme(colors.darkBackgroundAlt);
-    }
+  .input_sub_graph:not(:checked) + .slider_sub_graph {
+    background-repeat: no-repeat;
+    background-position-x: 2rem;
+    background-position-y: 0.35rem;
+  }
 
-    .input_sub_graph:not(:checked) + .slider_sub_graph {
+  .input_sub_graph:checked + .slider_sub_graph:before {
+    background-position: center;
+    -webkit-transform: translateX(1.625rem);
+    -ms-transform: translateX(1.625rem);
+    transform: translateX(1.625rem);
+    margin: auto;
+    margin-right: 0.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
 
-      background-repeat: no-repeat;
-      background-position-x: 2rem;
-      background-position-y: 0.35rem;
-    }
+  .input_sub_graph:focus:checked + .slider_sub_graph:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
 
-    .input_sub_graph:checked + .slider_sub_graph:before {
+  .input_sub_graph:hover:checked + .slider_sub_graph:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
 
-      background-position: center;
-      -webkit-transform: translateX(1.625rem);
-      -ms-transform: translateX(1.625rem);
-      transform: translateX(1.625rem);
-      margin: auto;
-      margin-right: 0.125rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-items: center;
-    }
+  .input_sub_graph:hover:not(:checked) + .slider_sub_graph:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
 
-    .input_sub_graph:focus:checked + .slider_sub_graph:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
+  .input_sub_graph:focus:not(:checked) + .slider_sub_graph:before {
+    box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+  }
 
-    .input_sub_graph:hover:checked + .slider_sub_graph:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
-
-    .input_sub_graph:hover:not(:checked) + .slider_sub_graph:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
-
-    .input_sub_graph:focus:not(:checked) + .slider_sub_graph:before {
-      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
-    }
-
-    .input_sub_graph {
-      cursor: pointer;
-    }
-
+  .input_sub_graph {
+    cursor: pointer;
+  }
 
   /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
   .toggleDarkBtn {
@@ -776,62 +760,58 @@ button :hover {
 
   #card-footer > .full-primary-button {
     width: 100%;
-    @apply dark:text-darkInvertedContrast
+    @apply dark:text-darkInvertedContrast;
   }
-
 }
 
-
-  /*----------------------------------------vertical carousel home------------------------------------------------------------------*/
+/*----------------------------------------vertical carousel home------------------------------------------------------------------*/
 
 @layer components {
-  .column__gridView{
+  .column__gridView {
     position: relative;
     display: flex;
     justify-content: flex-start;
     width: 100%;
   }
 
-  .data__column__gridView{
+  .data__column__gridView {
     position: absolute;
     display: flex;
     flex-direction: column;
     border-left: 1px solid theme(colors.lightInputSecondary);
     transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
     padding-left: 16px;
-
   }
 
-  .market__data__column{
+  .market__data__column {
     font-size: theme(fontSize.fontSizeGeneral);
     font-weight: theme(fontWeight.fontHeavyWeight);
     margin-bottom: 8px;
     line-height: 1.5;
-    color: theme(colors.lightSecondary)
+    color: theme(colors.lightSecondary);
   }
 
-  .percent__data__column{
+  .percent__data__column {
     font-size: theme(fontSize.fontSizeCopy);
     font-weight: theme(fontWeight.fontHeavyWeight);
-    line-height: 1.1
+    line-height: 1.1;
   }
 
-  .percent__data__column span{
-    color: theme(colors.lightText)
+  .percent__data__column span {
+    color: theme(colors.lightText);
   }
 
-  .apy__data__column{
+  .apy__data__column {
     font-size: theme(fontSize.fontSizeCopy);
-    color: theme(colors.lightTextSubtle)
+    color: theme(colors.lightTextSubtle);
   }
 }
 .cake_grid_element {
   height: 65px;
- border-left: 0.5px solid theme(colors.darkTextSubtle);
- padding-left: 10px
+  border-left: 0.5px solid theme(colors.darkTextSubtle);
+  padding-left: 10px;
 }
 
 .cake_grid_element_content {
-  font-weight:bold;
-
+  font-weight: bold;
 }

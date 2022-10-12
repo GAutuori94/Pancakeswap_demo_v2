@@ -1,14 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-/*Reset*/
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap');
-
 @tailwind base;
 
 @layer base {
@@ -47,7 +36,7 @@ footer .services {
   display: flex;
   justify-content: space-between;
   margin: theme(borderRadius.card);
-  
+
 }
 
 
@@ -168,7 +157,7 @@ footer .services .helpContainer ul:nth-child(1) li a, footer .services .develope
   font-weight: theme(fontWeight.fontHeavyWeight);
   cursor: text;
   text-decoration: none;
-      
+
 }
 
 footer .services .developerContainer ul:nth-child(1) li a{
@@ -303,7 +292,7 @@ footer .services .servicesContainer ul:nth-child(2) li a{
     position: absolute;
     height: theme(spacing.32);
     width: 56px;
-    background-color: theme(colors.lightTertiary); 
+    background-color: theme(colors.lightTertiary);
     align-items: center;
     border-radius: theme(borderRadius.card);
     /* box-shadow: theme(boxShadow.button); */
@@ -320,7 +309,7 @@ footer .services .servicesContainer ul:nth-child(2) li a{
   }
 
   .slider_sub_graph::before {
-    
+
     background-position: center;
     position: absolute;
     background-repeat: no-repeat;
@@ -342,12 +331,12 @@ footer .services .servicesContainer ul:nth-child(2) li a{
   }
 
   .input_sub_graph:not(:checked) {
-   
+
     /* background-color: theme(colors.darkBackgroundAlt); */
   }
 
   .input_sub_graph:not(:checked) + .slider_sub_graph {
-   
+
     background-repeat: no-repeat;
     background-position-x: 2rem;
     background-position-y: 0.35rem;

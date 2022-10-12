@@ -7,20 +7,8 @@
   }
 }
 
-@tailwind components;
+
 @tailwind utilities;
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 @layer utilities {
   /*----------------------lightGradients----------------------------*/
@@ -122,35 +110,47 @@ input[type="number"] {
       rgb(255, 216, 0),
       rgb(235, 140, 0)
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  /*----------------------animationDelay----------------------------*/
+  .animation-delay-33 {
+    animation-delay: 0.33s;
+  }
+  .animation-delay-66 {
+    animation-delay: 0.66s;
+  }
+  .animation-delay-100 {
+    animation-delay: 1s;
+  }
+
+  /* OVERFLOW RULES */
+
+  .overflow-inherit {
+    overflow: inherit;
+  }
+
+  .overflow-initial {
+    overflow: initial;
+  }
 }
 
-/*----------------------animationDelay----------------------------*/
 
-.animation-delay-33 {
-  animation-delay: 0.33s;
-}
-.animation-delay-66 {
-  animation-delay: 0.66s;
-}
-.animation-delay-100 {
-  animation-delay: 1s;
-}
-
-/* OVERFLOW RULES */
-
-.overflow-inherit {
-  overflow: inherit;
-}
-
-.overflow-initial {
-  overflow: initial;
-}
-
+@tailwind components;
 
 @layer components {
+
+  /* button custom class without color  */
+  .btn-main {
+    @apply rounded-lg hover:opacity-60 text-white font-bold py-2 px-4;
+  }
+  .btn-transparent {
+    @apply rounded-lg font-bold hover:underline decoration-2 py-1 px-4;
+  }
+
+  /*-------------------------Nav style--------------------------------------------------------------------------------------*/
   nav {
   position: relative;
   background-color: white;
@@ -234,6 +234,7 @@ font-weight: 500;
   border-radius: theme(borderRadius.default);
   border: theme(borderWidth.1) solid grey;
   width: 280px;
+  border: 1px solid theme(colors.darkText)
 }
 
 .interactionsContainer {
@@ -319,6 +320,29 @@ button :hover {
   .full-primary-button:hover {
     opacity: 75%;
   }
+    /*----------------------Full-slim-primary-button--------------------------------------------------------------------------------------*/
+    .full-slim-primary-button {
+    background-color: theme(colors.primary);
+    box-shadow: theme(boxShadow.button);
+    opacity: 1;
+    height: 32px;
+    padding: 0px 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Kanit;
+    font-size: theme(fontSize.fontSizeButton);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    letter-spacing: 0.03em;
+    border: 0px;
+    border-radius: theme(borderRadius.default);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  }
+
+  .full-slim-primary-button:hover {
+    opacity: 75%;
+  }
 
   /*----------------------Primary void button--------------------------------------------------------------------------------------*/
   .void-primary-button {
@@ -386,6 +410,8 @@ button :hover {
     outline: none;
   }
 
+  /*----------------------------------Footer style----------------------------------------------------------------------*/
+
   footer {
     overflow: visible;
     width: 100%;
@@ -394,6 +420,7 @@ button :hover {
     display: flex;
     flex-flow: column;
   }
+
   footer .services {
 
     display: flex;
@@ -601,7 +628,7 @@ button :hover {
 
     .input_sub_graph:not(:checked) {
 
-      /* background-color: theme(colors.darkBackgroundAlt); */
+      background-color: theme(colors.darkBackgroundAlt);
     }
 
     .input_sub_graph:not(:checked) + .slider_sub_graph {
@@ -645,11 +672,6 @@ button :hover {
       cursor: pointer;
     }
 
-  .btn_interval__container:focus {
-    background-color: theme(colors.primary);
-    color: #ffff;
-    outline: none;
-  }
 
   /*----------------------Dark mode toggle button--------------------------------------------------------------------------------------*/
   .toggleDarkBtn {
@@ -756,5 +778,60 @@ button :hover {
     width: 100%;
     @apply dark:text-darkInvertedContrast
   }
+
+}
+
+
+  /*----------------------------------------vertical carousel home------------------------------------------------------------------*/
+
+@layer components {
+  .column__gridView{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .data__column__gridView{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid theme(colors.lightInputSecondary);
+    transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
+    padding-left: 16px;
+
+  }
+
+  .market__data__column{
+    font-size: theme(fontSize.fontSizeGeneral);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: theme(colors.lightSecondary)
+  }
+
+  .percent__data__column{
+    font-size: theme(fontSize.fontSizeCopy);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    line-height: 1.1
+  }
+
+  .percent__data__column span{
+    color: theme(colors.lightText)
+  }
+
+  .apy__data__column{
+    font-size: theme(fontSize.fontSizeCopy);
+    color: theme(colors.lightTextSubtle)
+  }
+}
+.cake_grid_element {
+  height: 65px;
+ border-left: 0.5px solid theme(colors.darkTextSubtle);
+ padding-left: 10px
+}
+
+.cake_grid_element_content {
+  font-weight:bold;
 
 }

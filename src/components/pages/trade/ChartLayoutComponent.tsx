@@ -4,6 +4,8 @@ import dayjs from "dayjs";
 import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
+import ChartSideCard from "./chart_side_card/ChartSideCard";
+import { useMarketChange } from "../../hooks/useMarketChange";
 
 export type BinanceKline = [
   number,
@@ -30,12 +32,30 @@ export type ParsedBinanceKline = {
   closeTime: number;
 };
 
-export default function ChartLayoutComponent() {
+export default function ChartLayoutComponent(): JSX.Element {
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
   const [chartData, setChartData] = useState<PriceChartProps>([]);
+  const {
+    selectedMarket,
+    selectedBaseAsset,
+    setSelectedBaseAsset,
+    selectedQuoteAsset,
+    setSelectedQuoteAsset,
+  } = useMarketChange("");
   const [selectedInterval, setSelectedInterval] = useState<string>(
     intervals[intervals.length - 1]
   );
+
+  const handleBaseAssetChange = (baseAsset: string) => {
+    setSelectedBaseAsset(baseAsset);
+  };
+
+  const handleQuoteAssetChange = (quoteAsset: string) => {
+    setSelectedQuoteAsset(quoteAsset);
+  };
+
+  console.log("selectedMarket", selectedMarket);
+
   const focusRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
@@ -44,11 +64,9 @@ export default function ChartLayoutComponent() {
     }
   }, []);
 
-  const [selectedSymbol, setSelectedSymbol] = useState<string>("BTCBUSD");
-
   const { data, trigger: fetchNewData } =
     useLazyFetch<BinanceKline[]>("/api/v3/klines?");
-  console.log("data before useEffect: ", data);
+  /* console.log("data before useEffect: ", data); */
   useEffect(() => {
     if (data) {
       const parsedData: ParsedBinanceKline[] = data.map((item) => {
@@ -65,16 +83,16 @@ export default function ChartLayoutComponent() {
       setParsedData(parsedData);
     }
   }, [data]);
-  console.log("parsedData after 1st useEffect: ", parsedData);
+  /* console.log("parsedData after 1st useEffect: ", parsedData); */
 
   useEffect(() => {
     const reqParams = new URLSearchParams({
-      symbol: selectedSymbol,
+      symbol: selectedMarket,
       interval: selectedInterval,
     });
 
     fetchNewData({}, reqParams);
-  }, [selectedInterval]);
+  }, [selectedMarket, selectedInterval]);
 
   useEffect(() => {
     setChartData(
@@ -86,7 +104,7 @@ export default function ChartLayoutComponent() {
     );
   }, [parsedData]);
 
-  console.log("parsedData: ", parsedData);
+  /* console.log("parsedData: ", parsedData); */
 
   const { percDiff: percDifference } = usePercDiff(parsedData);
 
@@ -116,8 +134,8 @@ export default function ChartLayoutComponent() {
   ];
 
   return (
-    <div className="h-[100vh] w-[auto]">
-      <div className="w-[47%] h-[60%]">
+    <div className="h-[100vh] w-full flex flex-row justify-center relative mt-[50px] lightGradientInverseBubblegum">
+      <div className="w-1/2 h-3/4">
         <div className="flex justify-between items-center w-full  ">
           <div className="flex flex-col justify-start">
             <div className="flex gap-2 items-center">
@@ -125,7 +143,7 @@ export default function ChartLayoutComponent() {
                 {bigCloseNumber()}
               </h1>
               <h3 className="text-lg font-semibold  text-lightTextSubtle ml-2.5 ">
-                {selectedSymbol}{" "}
+                {selectedMarket}{" "}
               </h3>
               {parsedData.length > 2 && percentualDiffNumber()}
             </div>
@@ -170,6 +188,12 @@ export default function ChartLayoutComponent() {
         </div>
         <AreaChart lines={lines} data={chartData} />
       </div>
+      <ChartSideCard
+        inputBaseAsset={selectedBaseAsset}
+        inputQuoteAsset={selectedQuoteAsset}
+        baseAssetChange={handleBaseAssetChange}
+        quoteAssetChange={handleQuoteAssetChange}
+      />
     </div>
   );
 }

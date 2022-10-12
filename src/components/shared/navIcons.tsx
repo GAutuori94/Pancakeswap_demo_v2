@@ -2,6 +2,7 @@ import React from "react";
 
 export function PancakeWrittenIcon() {
   return (
+    
     <svg
       viewBox="0 0 1281 200"
       width="160px"

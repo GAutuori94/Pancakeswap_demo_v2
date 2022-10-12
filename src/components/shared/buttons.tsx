@@ -25,6 +25,30 @@ export function FullButton({
   );
 }
 
+export function FullSlimButton({
+  value,
+  children,
+}: {
+  value?: string;
+  children?: JSX.Element;
+}): JSX.Element {
+  const navigator = useCustomNav();
+
+  function handleNav(url: string) {
+    navigator.goTo(url);
+  }
+
+  return (
+    <button
+      className="full-slim-primary-button"
+      onClick={() => handleNav("/insertNavigationUrlHer")}
+    >
+      {value}
+      {children}
+    </button>
+  );
+}
+
 export function VoidButton({ value }: { value?: string }) {
   const navigator = useCustomNav();
 

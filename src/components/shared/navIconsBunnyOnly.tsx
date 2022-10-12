@@ -2,12 +2,13 @@ import React from 'react';
 
 export function PancakeBunny() {
   return (
+    
     <svg
-      viewBox='0 0 96 96'
-      width='32px'
+      viewBox='10 10 70 70'
+      width='32px'  
       color='text'
       xmlns='http://www.w3.org/2000/svg'
-      className='sc-eaf7e66-0 klAPmK xl:hidden ms:flex md:flex'
+      className='sc-eaf7e66-0 klAPmK xl:hidden sm:flex md:flex '
     >
     
       <path

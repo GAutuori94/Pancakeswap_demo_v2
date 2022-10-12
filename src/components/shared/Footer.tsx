@@ -66,13 +66,13 @@ const Footer: React.FC = () => {
   };
   return (
     <footer>
-      <div className='services'>
+      <div className='services sm:flex-col-reverse lg:flex  gap-5  '>
         <div className='servicesContainer'>
           {services.map((link: Link, index) => {
             return (
               <ul key={index}>
                 <li className='footer-li'>
-                  <a href={link.href}> {link.label} </a>
+                  <a href={link.href}> {link.label}</a>
                 </li>
               </ul>
             );

@@ -14,6 +14,7 @@ import {
 import { PancakeWrittenIcon } from "./navIcons";
 import SettingsModal from "./settingsModal";
 import { FullSlimButton } from "./buttons";
+import { PancakeBunny } from "./navIconsBunnyOnly";
 
 type Link = {
   label: string;
@@ -93,14 +94,15 @@ const Nav: React.FC = () => {
         isDialogOpen={isDialogOpen}
         closeModal={() => setIsDialogOpen(false)}
       />
-      <div className="container_links hidden md:flex justify-start">
+      <div className="container_links hidden md:flex xl:flex "> 
       <div className="logo-container">
         <Link to={"/"}>
           <PancakeWrittenIcon />
+          <PancakeBunny />
         </Link>
       </div>
         <div
-          className="links-container "
+          className="links-container md:flex-start xl:flex  "
           onMouseEnter={() => handleDropdownHoverTrade(true)}
           onMouseLeave={() => handleDropdownHoverTrade(false)}
         >
@@ -361,7 +363,7 @@ const Nav: React.FC = () => {
         </div>
         </div>
 
-      <div className="interactionsContainer">
+      <div className="interactionsContainer flex-wrap gap-3 sm:justify-start md:justify-start ">
         <img className="growing" src={logoPancake} alt="logo Pancake" />
         <p className="priceValueContainer dark:text-darkTextSubtle">{`$${priceValue}`}</p>
         <button className="transparent">

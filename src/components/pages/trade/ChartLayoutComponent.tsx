@@ -121,7 +121,7 @@ export default function ChartLayoutComponent(
   ];
 
   return (
-    <div className="h-[70%] overflow-unset flex flex-col pt-9 w-full rounded-[2rem] border-none md:pt-2 md:bg-[#ffffff80] md:dark:bg-[#27262c80] md:border-lightCardBorder md:dark:bg-darkCardBorder md:rounded-2xl md:w-50 md:h-[516px]">
+    <div className="h-[70%] overflow-unset flex flex-col pt-9 w-full rounded-[2rem] border-none md:bg-[#ffffff80] md:dark:bg-[#27262c80] md:border-lightCardBorder md:dark:bg-darkCardBorder md:rounded-2xl md:w-50 md:h-[516px] w-full p-6">
       <div className="flex justify-between items-center w-full  ">
         <div className="flex flex-col justify-start">
           <div className="flex gap-2 items-center">

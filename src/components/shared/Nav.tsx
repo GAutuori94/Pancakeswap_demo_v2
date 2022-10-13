@@ -10,7 +10,7 @@ import { linkWin, linkEarn, linksInfo, linksNFT, linkTrade } from "./menuItems";
 import {
   ParsedBinanceKline,
   BinanceKline,
-} from "../pages/trade/chartLayoutComponent";
+} from "../pages/trade/ChartLayoutComponent";
 import { PancakeWrittenIcon } from "./navIcons";
 import SettingsModal from "./settingsModal";
 import { FullSlimButton } from "./buttons";

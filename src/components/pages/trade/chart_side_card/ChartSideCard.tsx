@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { NoGraphIcon, SettingsIcon } from "./sideCardIcons";
-import { CurrencySelectElements } from "./currencySelect";
+import { NoGraphIcon, SettingsIcon } from "./SideCardIcons";
+import { CurrencySelectElements } from "./CurrencySelect";
 import { useMarketChange } from "../../../hooks/useMarketChange";
-import ChartLayoutComponent from "../chartLayoutComponent";
+import ChartLayoutComponent from "../ChartLayoutComponent";
+import { useFetchApi } from "../../../hooks/useFetch";
 
 export default function ChartSideCard(): JSX.Element {
   const {
@@ -11,6 +12,20 @@ export default function ChartSideCard(): JSX.Element {
     selectedQuoteAsset,
     setSelectedQuoteAsset,
   } = useMarketChange("BTC", "BUSD");
+  const [randomValue, setRandomValue] = useState(Math.random());
+
+  const selectedMarket = selectedBaseAsset + selectedQuoteAsset;
+
+  interface CurrentAveragePriceResponse {
+    mins: number;
+    price: string;
+  }
+
+  useEffect;
+
+  const { data: currentAvgPrice } = useFetchApi<CurrentAveragePriceResponse>(
+    `https://api.binance.com/api/v3/avgPrice?symbol=${selectedMarket}`
+  );
 
   function handleBaseAssetChange(baseAsset: string) {
     setSelectedBaseAsset(baseAsset);
@@ -20,7 +35,9 @@ export default function ChartSideCard(): JSX.Element {
     setSelectedQuoteAsset(quoteAsset);
   }
 
-  const selectedMarket = selectedBaseAsset + selectedQuoteAsset;
+  useEffect(() => {
+    setRandomValue(() => Math.random());
+  }, [selectedMarket]);
 
   return (
     <>
@@ -68,6 +85,8 @@ export default function ChartSideCard(): JSX.Element {
                   inputQuoteAsset={selectedQuoteAsset}
                   baseAssetChange={handleBaseAssetChange}
                   quoteAssetChange={handleQuoteAssetChange}
+                  priceValue={currentAvgPrice?.price}
+                  randomValue={randomValue}
                 />
               </div>
             </div>

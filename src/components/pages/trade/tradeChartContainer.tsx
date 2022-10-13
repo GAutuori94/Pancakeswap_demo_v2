@@ -1,5 +1,5 @@
 import React from "react";
-import ChartSideCard from "./chart_side_card/chartSideCard";
+import ChartSideCard from "./chart_side_card/ChartSideCard";
 
 export default function TradeChartContainer() {
   return (

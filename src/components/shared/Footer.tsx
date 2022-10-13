@@ -15,7 +15,7 @@ import { intervals } from "./constants";
 import {
   ParsedBinanceKline,
   BinanceKline,
-} from "../pages/trade/chartLayoutComponent";
+} from "../pages/trade/ChartLayoutComponent";
 
 import { developer, help, services } from "./footerItems";
 import { Toggle } from "./Toggle";

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSymbols } from "../../../context/symbolsContext";
 
 interface CurrencySelectProps {
@@ -6,11 +6,25 @@ interface CurrencySelectProps {
   inputQuoteAsset: string;
   baseAssetChange: (baseAsset: string) => void;
   quoteAssetChange: (quoteAsset: string) => void;
+  priceValue?: string;
+  randomValue: number;
 }
 export function CurrencySelectElements({
   ...props
 }: CurrencySelectProps): JSX.Element {
   const { dataFetched } = useSymbols();
+  const [inputSwap, setInputSwap] = useState(Number);
+  const [outputSwap, setOutputSwap] = useState(Number);
+
+  function handleInputSwap(inputValue: number) {
+    setInputSwap(inputValue);
+
+    console.log(inputSwap);
+  }
+
+  useEffect(() => {
+    setOutputSwap(() => inputSwap * props.randomValue);
+  }, [inputSwap, props.randomValue]);
 
   const filteredList = (assetType: string) => {
     const completeAssetsList = dataFetched.symbols?.map((market) => {
@@ -69,6 +83,7 @@ export function CurrencySelectElements({
               <label className="rounded-default bg-lightInput dark:bg-darkInput">
                 <div className="flex flex-row flex-nowrap items-center text-lightText dark:text-darkText text-xs pt-3 px-4 pb-0">
                   <input
+                    onChange={(e) => handleInputSwap(Number(e.target.value))}
                     type={"text"}
                     pattern="^[0-9]*[.,]?[0-9]*$"
                     placeholder="0.0"
@@ -100,6 +115,7 @@ export function CurrencySelectElements({
               <label className="rounded-default bg-lightInput dark:bg-darkInput">
                 <div className="flex flex-row flex-nowrap items-center text-lightText dark:text-darkText text-xs pt-3 px-4 pb-0">
                   <input
+                    value={outputSwap}
                     type={"text"}
                     pattern="^[0-9]*[.,]?[0-9]*$"
                     placeholder="0.0"

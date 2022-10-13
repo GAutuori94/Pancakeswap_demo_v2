@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ParsedBinanceKline } from "../pages/trade/chartLayoutComponent";
+import { ParsedBinanceKline } from "../pages/trade/ChartLayoutComponent";
 
 export type percDiff = number;
 

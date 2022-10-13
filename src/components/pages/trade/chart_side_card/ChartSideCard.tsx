@@ -13,7 +13,6 @@ interface ChartSideCardProps {
 export default function ChartSideCard({
   ...props
 }: ChartSideCardProps): JSX.Element {
-  const { selectedBaseAsset, selectedQuoteAsset } = useMarketChange("");
   const { dataFetched } = useSymbols();
 
   const filteredList = (assetType: string) => {

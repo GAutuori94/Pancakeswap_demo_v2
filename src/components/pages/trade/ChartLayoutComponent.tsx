@@ -36,12 +36,11 @@ export default function ChartLayoutComponent(): JSX.Element {
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
   const [chartData, setChartData] = useState<PriceChartProps>([]);
   const {
-    selectedMarket,
     selectedBaseAsset,
     setSelectedBaseAsset,
     selectedQuoteAsset,
     setSelectedQuoteAsset,
-  } = useMarketChange("");
+  } = useMarketChange("BTC", "BUSD");
   const [selectedInterval, setSelectedInterval] = useState<string>(
     intervals[intervals.length - 1]
   );
@@ -53,6 +52,8 @@ export default function ChartLayoutComponent(): JSX.Element {
   const handleQuoteAssetChange = (quoteAsset: string) => {
     setSelectedQuoteAsset(quoteAsset);
   };
+
+  const selectedMarket = selectedBaseAsset + selectedQuoteAsset;
 
   console.log("selectedMarket", selectedMarket);
 

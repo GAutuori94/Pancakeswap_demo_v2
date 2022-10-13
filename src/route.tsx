@@ -1,17 +1,16 @@
-import React from 'react'
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { CryptosTable } from './components/pages/earn/cryptosTable';
-import { ResponseRender } from './components/shared/fetchTest';
-import KlineRender from './components/shared/klineFetchTest';
-import TickerRender from './components/shared/tickerFetchTest';
+import { Home } from "./components/pages/home";
+import Trade from "./components/pages/trade";
+import Earn from './components/pages/earn'
 
-export default function Router () {
-    return (
+export default function Router() {
+  return (
     <Routes>
-        <Route path='fetched-data' element={<ResponseRender />} />
-        <Route path='fetched-kline' element={<KlineRender />} />
-        <Route path='fetched-ticker' element={<TickerRender />} />
-        <Route path='table' element={<CryptosTable />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/trade' element={<Trade />} />
+        <Route path='/earn' element={<Earn />} />
+        {/* <Route path='home' element={<Home />} /> */}
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />
             <Route path='/limit' element={<Limit />} />
@@ -32,5 +31,5 @@ export default function Router () {
             <Route path='/activity' element={<Activity />} />
         </Route> */}
     </Routes>
-    )
+  );
 }

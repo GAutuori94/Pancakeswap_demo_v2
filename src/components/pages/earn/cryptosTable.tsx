@@ -18,16 +18,17 @@ export function CryptosTable() {
 
   return (
     <>
+    <div className="mt-[20px] ml-[100px] mb-[20px]">
     <TopBarTable />
     <div>
-    <div className="farms_table mt-[40px] w-[80%] p-[20px ] bg-lightBackgroundAlt rounded-default border-1 border-lightCardBorder box-border ">
+    <div className="farms_table mt-[40px] w-[60%] p-[20px ] bg-lightBackgroundAlt rounded-default border-1 border-lightCardBorder box-border ">
       <div className="farms_table_container relative ">
         <div className="farm_table_overflow overflow-visible scroll-mt-[64px] ">
             <table className="farms_table_element font-[14px] border-collapse rounded-[4px] w-100 border-spacing-0 ">
                 <tbody className="farms_table_body flex flex-col items-start gap-10 mt-[20px] ml-[20px] ">
                     {dataFetched.symbols?.slice(0, 40).map((item) => <tr className="farms_table_row flex flex-row justify-between items-end gap-[100px] " key={item.symbol}>
                       <td className="farms_table_column_first"> <IconsComponent item={item} /> </td>
-                        <td className="farms_table_column_second flex text-lightText font-fontHeavyWeight px-[10px] ">{item.baseAsset} - {item.quoteAsset}</td>
+                        <td className="farms_table_column_second flex text-lightText font-fontHeavyWeight px-[10px] ">{item.baseAsset}-{item.quoteAsset}</td>
                         <td className=" farms_table_column_third flex justify-start text-lightTextSubtle ml-[10px] ">{item.status}</td>
                         <td>
                         {parsedData.slice(0, 1).map((item) => < div className="farms_table_column_forth flex flex-col text-lightTextSubtle text-fontSizeGeneral" key={item.volume}>Volume <br/> <span className="text-lightText text-fontSizeCopy font-fontLightWeight"> {item.volume} </span></div>)}
@@ -43,6 +44,7 @@ export function CryptosTable() {
             </table>
         </div>
       </div>
+    </div>
     </div>
     </div>
     </>

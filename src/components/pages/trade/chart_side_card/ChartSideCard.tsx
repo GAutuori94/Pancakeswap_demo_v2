@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NoGraphIcon, SettingsIcon } from "./SideCardIcons";
-import { CurrencySelectElements } from "./CurrencySelect";
+import { CurrencySelectElements } from "./currencySelect";
 import { useMarketChange } from "../../../hooks/useMarketChange";
 import ChartLayoutComponent from "../ChartLayoutComponent";
 import { useFetchApi } from "../../../hooks/useFetch";

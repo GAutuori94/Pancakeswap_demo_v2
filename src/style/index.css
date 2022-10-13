@@ -134,6 +134,10 @@
   .overflow-initial {
     overflow: initial;
   }
+
+  .overflow-unset {
+    overflow: unset;
+  }
 }
 
 @tailwind components;

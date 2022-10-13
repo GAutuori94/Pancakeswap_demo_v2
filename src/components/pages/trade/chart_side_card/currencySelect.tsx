@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSymbols } from "../../../context/symbolsContext";
 
 interface CurrencySelectProps {
+  inputBaseAsset: string;
+  inputQuoteAsset: string;
   baseAssetChange: (baseAsset: string) => void;
   quoteAssetChange: (quoteAsset: string) => void;
 }
@@ -42,10 +44,11 @@ export function CurrencySelectElements({
         {quoteAsset}
       </option>
     ));
+
   return (
     <>
       <select
-        /* value={props.inputBaseAsset} */
+        value={props.inputBaseAsset}
         title="base-asset-selector"
         className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
         onChange={(e) => props.baseAssetChange(e.target.value)}
@@ -53,7 +56,7 @@ export function CurrencySelectElements({
         {baseAssetList}
       </select>
       <select
-        /* value={props.inputQuoteAsset} */
+        value={props.inputQuoteAsset}
         title="quote-asset-selector"
         className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
         onChange={(e) => props.quoteAssetChange(e.target.value)}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NoGraphIcon } from "./sideCardIcons";
+import { NoGraphIcon, SettingsIcon } from "./sideCardIcons";
 import { CurrencySelectElements } from "./currencySelect";
 import { useMarketChange } from "../../../hooks/useMarketChange";
 import ChartLayoutComponent from "../chartLayoutComponent";
@@ -37,18 +37,6 @@ export default function ChartSideCard(): JSX.Element {
                 className="w-full h-full overflow-inherit bg-lightBackgroundAlt dark:bg-darkBackgroundAlt rounded-card"
               >
                 <div
-                  id="card-tabs"
-                  className="w-full bg-lightInput dark:bg-darkInput border-0 rounded-2xl inline-flex"
-                >
-                  {/* TODO Tab animations are missing */}
-                  <button className="text-lightText dark:text-darkText bg-lightBackgroundAlt dark:bg-darkBackgroundAlt rounded-b-0 shadow-none grow shrink basis-auto relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-fontSizeButton font-semibold justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-12 px-6">
-                    Swap
-                  </button>
-                  <button className="text-lightTextSubtle dark:text-darkTextSubtle bg-lightInput dark:bg-darkInput ml-0.5 rounded-b-0 shadow-none grow shrink basis-auto relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-fontSizeButton font-semibold justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-12 px-6">
-                    StableSwap
-                  </button>
-                </div>
-                <div
                   id="card-header"
                   className="flex flex-col items-center p-6 w-full border-b border-lightCardBorder dark:border-darkCardBorder"
                 >
@@ -56,27 +44,31 @@ export default function ChartSideCard(): JSX.Element {
                     <button className="text-lightTextSubtle dark:text-darkTextSubtle w-8 relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent shadow-none">
                       <NoGraphIcon />
                     </button>
-                  </div>
-                </div>
-                <div
-                  id="card-body"
-                  className="flex flex-col relative justify-between p-4"
-                >
-                  <div className="grid auto-rows-auto gap-y-2">
-                    <div className="relative">
-                      <div className="flex items-center justify-between">
-                        <div className="flex">
-                          <CurrencySelectElements
-                            inputBaseAsset={selectedBaseAsset}
-                            inputQuoteAsset={selectedQuoteAsset}
-                            baseAssetChange={handleBaseAssetChange}
-                            quoteAssetChange={handleQuoteAssetChange}
-                          />
-                        </div>
+                    <div className="flex flex-col items-center w-full">
+                      <h2 className="text-lightText dark:text-darkText font-fontHeavyWeight leading-normal text-fontSizeParagraph">
+                        Swap
+                      </h2>
+                    </div>
+                    <div className="flex">
+                      <div className="flex">
+                        <button className="w-8 relative items-center border-0 rounded-default cursor-pointer inline-flex font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary dark:text-darkPrimaryDark shadow-none mr-0">
+                          <SettingsIcon />
+                        </button>
                       </div>
                     </div>
                   </div>
+                  <div className="flex items-center">
+                    <p className="border-0 p-0 m-0 leading-normal font-fontLightWeight text-lightTextSubtle dark:text-darkTextSubtle">
+                      Trade tokens in an instant
+                    </p>
+                  </div>
                 </div>
+                <CurrencySelectElements
+                  inputBaseAsset={selectedBaseAsset}
+                  inputQuoteAsset={selectedQuoteAsset}
+                  baseAssetChange={handleBaseAssetChange}
+                  quoteAssetChange={handleQuoteAssetChange}
+                />
               </div>
             </div>
           </div>

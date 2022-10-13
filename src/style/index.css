@@ -138,6 +138,12 @@
   .overflow-unset {
     overflow: unset;
   }
+
+  /* APPEARANCE RULES */
+
+  .appearance-textfield {
+    appearance: textfield;
+  }
 }
 
 @tailwind components;

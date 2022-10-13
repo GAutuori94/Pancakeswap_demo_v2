@@ -47,8 +47,7 @@ export function VerticalCarousel() {
         </div>
       </div>
 
-
-    <div className={showGrid === 1 ? "verticalCarousel_gridContainer h-[80px] relative" : "hidden"}>
+<div className="hidden md:block"> <div className={showGrid === 1 ? "verticalCarousel_gridContainer h-[80px] relative" : "hidden"}>
       <div className="gridView__bottom__carousel_container grid grid-cols-5 gap-x-[70px]">
           {dataFetched.symbols?.slice(0, 5).map((item) =>
           <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}> {item.symbol} </div>)}
@@ -68,7 +67,51 @@ export function VerticalCarousel() {
         </div>
       </div>
     </div>
-</div>
+    </div>
+<div className="flex md:hidden"><div className={showGrid === 1 ? "verticalCarousel_gridContainer h-[80px] relative" : "hidden"}>
+      <div className="gridView__bottom__carousel_container grid grid-cols-2 gap-x-[70px]">
+          {dataFetched.symbols?.slice(0, 1).map((item) =>
+          <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}> {item.symbol} </div>)}
+          {(tickerDataFetched.slice(0, 1).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice} </div>))}
+          
+          {dataFetched.symbols?.slice(2, 3).map((item) =>
+          <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}>   {item.symbol} </div>)}
+          {(tickerDataFetched.slice(3, 4).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice} </div>))}
+          
+          {dataFetched.symbols?.slice(4, 5).map((item) =>
+          <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}>   {item.symbol} </div>)}
+          {(tickerDataFetched.slice(5, 6).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice} </div>))}
+          
+        </div>
+      </div>
+
+    <div className={showGrid === 0? "verticalCarousel_gridContainer h-[80px] relative" : "hidden"}>
+      <div className="gridView__bottom__carousel_container grid grid-cols-2 gap-x-[70px]">
+          {dataFetched.symbols?.slice(6, 7).map((item) =>
+          <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}> {item.symbol} </div>)}
+          {tickerDataFetched.slice(6, 7).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice}</div>)}
+          
+          {dataFetched.symbols?.slice(7, 8).map((item) =>
+          <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}> {item.symbol} </div>)}
+          {tickerDataFetched.slice(7, 8).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice}</div>)}
+          
+          {dataFetched.symbols?.slice(9, 10).map((item) =>
+         <div className="text-lightSecondary dark:text-darkSecondary mb-[8px] pr-[16px] " key={item.symbol}> {item.symbol} </div>)}
+       
+          {tickerDataFetched.slice(9, 10).map((item) =>
+          <div className="text-lightText dark:text-darkText pr-[16px] font-fontHeavyWeight" key={item.symbol}> {item.askPrice}</div>)}
+           
+        </div>
+      </div>
+    </div></div>
+    
+   
+    
   );
 }
 

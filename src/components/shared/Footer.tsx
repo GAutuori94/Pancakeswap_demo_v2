@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
   };
   return (
     <footer>
-      <div className='services sm:flex-col-reverse lg:flex  gap-5  '>
+      <div className='services gap-5  '>
         <div className='servicesContainer'>
           {services.map((link: Link, index) => {
             return (

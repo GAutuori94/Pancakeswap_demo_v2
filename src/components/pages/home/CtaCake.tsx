@@ -6,10 +6,10 @@ import { CakeGrid } from './CakeGrid';
 
 export default function CtaCake() {
   return (
-    <section className='bg-lightBackground dark:bg-darkBackground w-full flex justify-center sm:flex-col md:flex-col-wrap'>
-
-      <div className='container_cake_fullcontent ml-[250px] w-[70%] h-[700px] flex flex-col justify-center '>
-        <div className='container_cake_text_image'>
+    <section className=' bg-lightBackground relative dark:bg-darkBackground w-full flex flex-col items-center  justify-center cakeSection sm:px-6 md: py-8 xl:py-24'>
+ 
+      <div className='container_cake_fullcontent w-[100%] sm:px-6 md:py-8 xl:py-24 flex flex-col justify-center '>
+        <div className='container_cake_text_image xl:ml-48  sm:px-6 md:py-8 xl:py-24  '>
           <div className=' flex items-center '>
 
             <div className='flex flex-col flex-1 self-center justify-center '>
@@ -33,7 +33,7 @@ export default function CtaCake() {
                 </div>
               </div>
             </div>
-            <div className='flex flex-row flex-1 items-center justify-b etween place-content-start relative py-10'>
+            <div className='flex flex-row flex-1 items-center justify-between place-content-start relative'>
               <ImageComponentCake />
             </div>
           </div>

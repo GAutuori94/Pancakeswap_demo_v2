@@ -2,8 +2,8 @@
 
 @layer base {
   @font-face {
-    font-family: "Kanit";
-    src: local("Kanit") url("../assets/font/Kanit-Regular.ttf") format("ttf");
+    font-family: 'Kanit';
+    src: local('Kanit') url('../assets/font/Kanit-Regular.ttf') format('ttf');
   }
 }
 
@@ -148,8 +148,15 @@
   }
 
   /*-------------------------Nav style--------------------------------------------------------------------------------------*/
+  .cakeSection {
+  display: flex;
+  height: auto; 
+  width: 100%; 
+  }
+
   nav {
-    position: relative;
+    position: fixed;
+    z-index: 20;
     background-color: white;
     border-bottom: theme(borderWidth.1) solid grey;
     width: 100%;
@@ -158,6 +165,12 @@
     justify-content: space-between;
     align-items: center;
     height: 3rem;
+  }
+  .navContainer {
+    height: 126px;
+    position: fixed;
+
+    z-index: 20;
   }
   .nav-li {
     width: 1.5rem;
@@ -492,7 +505,7 @@
     align-items: center;
   }
   footer .lasts .modeSelector .languageSelector .net {
-    background-image: url("../../src/assets/images/svg/utilities/logoNETsecondarycolor.svg");
+    background-image: url('../../src/assets/images/svg/utilities/logoNETsecondarycolor.svg');
     background-repeat: no-repeat;
     background-position: left;
     display: flex;
@@ -527,7 +540,7 @@
     margin-top: 0.5rem;
     width: theme(spacing.32);
     height: theme(spacing.32);
-    background-image: url("../../src/assets/images/svg/utilities/logoPancake.svg");
+    background-image: url('../../src/assets/images/svg/utilities/logoPancake.svg');
     background-repeat: no-repeat;
     transition-property: transform;
     transition-duration: 0.5s;
@@ -597,7 +610,7 @@
     background-position: center;
     position: absolute;
     background-repeat: no-repeat;
-    content: "";
+    content: '';
     height: 1.5rem;
     width: 1.5rem;
     left: 0.175rem;
@@ -688,11 +701,11 @@
   }
 
   .sliderDarkMode::before {
-    background-image: url("../../src/assets/images/svg/icons/lightModeIconSlided.svg");
+    background-image: url('../../src/assets/images/svg/icons/lightModeIconSlided.svg');
     background-position: center;
     position: absolute;
     background-repeat: no-repeat;
-    content: "";
+    content: '';
     height: 1.5rem;
     width: 1.5rem;
     left: 0.175rem;
@@ -703,7 +716,7 @@
   }
 
   .input_darkMode:checked + .sliderDarkMode {
-    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-image: url('../../src/assets/images/svg/icons/lightModeIcon.svg');
     background-repeat: no-repeat;
     background-position-x: 0.33rem;
     background-position-y: 0.33rem;
@@ -711,19 +724,19 @@
   }
 
   .input_darkMode:not(:checked) {
-    background-image: url("../../src/assets/images/svg/icons/lightModeIcon.svg");
+    background-image: url('../../src/assets/images/svg/icons/lightModeIcon.svg');
     /* background-color: theme(colors.darkBackgroundAlt); */
   }
 
   .input_darkMode:not(:checked) + .sliderDarkMode {
-    background-image: url("../../src/assets/images/svg/icons/nightModeIcon.svg");
+    background-image: url('../../src/assets/images/svg/icons/nightModeIcon.svg');
     background-repeat: no-repeat;
     background-position-x: 2rem;
     background-position-y: 0.35rem;
   }
 
   .input_darkMode:checked + .sliderDarkMode:before {
-    background-image: url("../../src/assets/images/svg/icons/nightModeIconSlided.svg");
+    background-image: url('../../src/assets/images/svg/icons/nightModeIconSlided.svg');
     background-position: center;
     -webkit-transform: translateX(1.625rem);
     -ms-transform: translateX(1.625rem);

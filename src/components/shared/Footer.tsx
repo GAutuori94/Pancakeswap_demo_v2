@@ -65,8 +65,8 @@ const Footer: React.FC = () => {
     return lastElement?.close;
   };
   return (
-    <footer>
-      <div className='services gap-5  '>
+    <footer className=''>
+      <div className='services gap-5  flex-col-reverse sm:flex-row md:flex-row xl:flex-row '>
         <div className='servicesContainer'>
           {services.map((link: Link, index) => {
             return (
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
       </div>
 
       {
-        <div className='partnerSvgIcons'>
+        <div className='partnerSvgIcons '>
           <div className='twitter'>
             <a href=''>
               <img src={twitter} alt='twitter icon' />
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
       }
 
       {
-        <div className='lasts'>
+        <div className='lasts flex-col-reverse sm:flex-row md:flex-row xl:flex-row '>
           <div className='modeSelector'>
             <Toggle />
             <div className='languageSelector'>

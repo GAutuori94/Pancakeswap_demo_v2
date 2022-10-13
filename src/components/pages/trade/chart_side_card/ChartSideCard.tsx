@@ -21,8 +21,6 @@ export default function ChartSideCard(): JSX.Element {
     price: string;
   }
 
-  useEffect;
-
   const { data: currentAvgPrice } = useFetchApi<CurrentAveragePriceResponse>(
     `https://api.binance.com/api/v3/avgPrice?symbol=${selectedMarket}`
   );

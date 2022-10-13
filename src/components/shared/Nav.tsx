@@ -94,9 +94,11 @@ const Nav: React.FC = () => {
         closeModal={() => setIsDialogOpen(false)}
       />
       <div className="container_links hidden md:flex justify-start">
-        <div className="logo-container">
+      <div className="logo-container">
+        <Link to={"/"}>
           <PancakeWrittenIcon />
-        </div>
+        </Link>
+      </div>
         <div
           className="links-container "
           onMouseEnter={() => handleDropdownHoverTrade(true)}

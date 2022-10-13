@@ -19,7 +19,7 @@ export default function CtaCake() {
                   world <br /> go round.
                 </h2>
                 <div>
-                  <p className=' text-lightTextSubtle mb-6 '>
+                  <p className=' text-darkTextSubtle mb-6 '>
                     CAKE token is at the heart of the PancakeSwap ecosystem.
                     <br />
                     Buy it, win it, farm it, spend it, stake it... heck, you can

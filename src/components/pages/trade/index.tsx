@@ -1,15 +1,14 @@
-import React from 'react'
-import Footer from '../../shared/Footer'
-import Nav from '../../shared/Nav'
-import ChartLayoutComponent from './ChartLayoutComponent'
+import React from "react";
+import Footer from "../../shared/Footer";
+import Nav from "../../shared/Nav";
+import TradeChartContainer from "./tradeChartContainer";
 
-
-export function Trade () {
-    return (
-        <>
-        <Nav />
-        <ChartLayoutComponent />
-        <Footer />
-        </>
-    )
+export default function Trade() {
+  return (
+    <>
+      <Nav />
+      <TradeChartContainer />
+      <Footer />
+    </>
+  );
 }

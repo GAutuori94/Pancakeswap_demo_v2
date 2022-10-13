@@ -1,13 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./components/pages/home";
-import { Trade } from "./components/pages/trade";
+import Trade from "./components/pages/trade";
+import Earn from './components/pages/earn'
 
 export default function Router() {
   return (
     <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/trade' element={<Trade />} />
+        <Route path='/earn' element={<Earn />} />
         {/* <Route path='home' element={<Home />} /> */}
         {/* <Route path='trade' element={<Trade />}>
             <Route path='/swap' element={<Swap />} />

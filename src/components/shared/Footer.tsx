@@ -1,24 +1,24 @@
-import React from 'react';
-import '../../style/footer.css';
-import twitter from '../../assets/images/svg/social/twitter.svg';
-import telegram from '../../assets/images/svg/social/telegram.svg';
-import reddit from '../../assets/images/svg/social/reddit.svg';
-import instagram from '../../assets/images/svg/social/instagram.svg';
-import github from '../../assets/images/svg/social/gitHub.svg';
-import discord from '../../assets/images/svg/social/discord.svg';
-import medium from '../../assets/images/svg/social/medium.svg';
-import pancakeWhiteWritten from '../../assets/images/svg/utilities/pancakeWritten.svg';
-import arrowright from '../../assets/images/svg/utilities/arrowright.svg';
-import { useState, useEffect } from 'react';
-import { useLazyFetch } from '../hooks/useLazyFetch';
-import { intervals } from './constants';
+import React from "react";
+import "../../style/footer.css";
+import twitter from "../../assets/images/svg/social/twitter.svg";
+import telegram from "../../assets/images/svg/social/telegram.svg";
+import reddit from "../../assets/images/svg/social/reddit.svg";
+import instagram from "../../assets/images/svg/social/instagram.svg";
+import github from "../../assets/images/svg/social/gitHub.svg";
+import discord from "../../assets/images/svg/social/discord.svg";
+import medium from "../../assets/images/svg/social/medium.svg";
+import pancakeWhiteWritten from "../../assets/images/svg/utilities/pancakeWritten.svg";
+import arrowright from "../../assets/images/svg/utilities/arrowright.svg";
+import { useState, useEffect } from "react";
+import { useLazyFetch } from "../hooks/useLazyFetch";
+import { intervals } from "./constants";
 import {
   ParsedBinanceKline,
   BinanceKline,
-} from '../pages/trade/ChartLayoutComponent';
+} from "../pages/trade/ChartLayoutComponent";
 
-import { developer, help, services } from './footerItems';
-import { Toggle } from './Toggle';
+import { developer, help, services } from "./footerItems";
+import { Toggle } from "./Toggle";
 // import help from './footerItems';
 // import developer from './footerItems';
 
@@ -29,10 +29,12 @@ type Link = {
 
 const Footer: React.FC = () => {
   const { data, trigger: fetchNewData } =
-  useLazyFetch<BinanceKline[]>('/api/v3/klines?');
-  const [selectedSymbol, setSelectedSymbol] = useState<string>('CAKEUSDT');
+    useLazyFetch<BinanceKline[]>("/api/v3/klines?");
+  const [selectedSymbol, setSelectedSymbol] = useState<string>("CAKEUSDT");
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
-  const [selectedInterval, setSelectedInterval] = useState<string>(intervals[intervals.length - 1]);
+  const [selectedInterval, setSelectedInterval] = useState<string>(
+    intervals[intervals.length - 1]
+  );
 
   useEffect(() => {
     if (data) {
@@ -78,7 +80,7 @@ const Footer: React.FC = () => {
             );
           })}
         </div>
-        <div className='developerContainer'>
+        <div className="developerContainer">
           {developer.map((link: Link, index) => {
             return (
               <ul key={index}>
@@ -89,10 +91,10 @@ const Footer: React.FC = () => {
             );
           })}
         </div>
-        <div className='helpContainer'>
+        <div className="helpContainer">
           {help.map((link: Link, index) => {
             return (
-              <ul key={index} className='developer'>
+              <ul key={index} className="developer">
                 <li>
                   <a href={link.href}> {link.label} </a>
                 </li>
@@ -105,7 +107,7 @@ const Footer: React.FC = () => {
           <ul>
             <li>
               <a>
-                <img src={pancakeWhiteWritten} alt='pancakelogo' />
+                <img src={pancakeWhiteWritten} alt="pancakelogo" />
               </a>
             </li>
           </ul>
@@ -119,34 +121,34 @@ const Footer: React.FC = () => {
               <img src={twitter} alt='twitter icon' />
             </a>
           </div>
-          <div className='telegram'>
-            <a href=''>
-              <img src={telegram} alt='' />
+          <div className="telegram">
+            <a href="">
+              <img src={telegram} alt="" />
             </a>
           </div>
-          <div className='reddit'>
-            <a href=''>
-              <img src={reddit} alt='' />
+          <div className="reddit">
+            <a href="">
+              <img src={reddit} alt="" />
             </a>
           </div>
-          <div className='instagram'>
-            <a href=''>
-              <img src={instagram} alt='' />
+          <div className="instagram">
+            <a href="">
+              <img src={instagram} alt="" />
             </a>
           </div>
-          <div className='github'>
-            <a href=''>
-              <img src={github} alt='' />
+          <div className="github">
+            <a href="">
+              <img src={github} alt="" />
             </a>
           </div>
-          <div className='discord'>
-            <a href=''>
-              <img src={discord} alt='' />
+          <div className="discord">
+            <a href="">
+              <img src={discord} alt="" />
             </a>
           </div>
-          <div className='medium'>
-            <a href=''>
-              <img src={medium} alt='' />
+          <div className="medium">
+            <a href="">
+              <img src={medium} alt="" />
             </a>
           </div>
         </div>
@@ -156,23 +158,23 @@ const Footer: React.FC = () => {
         <div className='lasts flex-col-reverse sm:flex-row md:flex-row xl:flex-row '>
           <div className='modeSelector'>
             <Toggle />
-            <div className='languageSelector'>
-              <div className='net'>
+            <div className="languageSelector">
+              <div className="net">
                 <p>EN</p>
               </div>
 
-              <div className='language'></div>
+              <div className="language"></div>
             </div>
           </div>
 
-          <div className='selectors'>
-            <div className='buttonContainer'>
-              <div className='svg'></div>
-              <p className='priceValue'>{`$${priceValue()}`}</p>
-              <div className='buyCake'>
+          <div className="selectors">
+            <div className="buttonContainer">
+              <div className="svg"></div>
+              <p className="priceValue">{`$${priceValue()}`}</p>
+              <div className="buyCake">
                 <button>
                   Buy CAKE
-                  <img src={arrowright} alt='arrow right' />
+                  <img src={arrowright} alt="arrow right" />
                 </button>
               </div>
             </div>

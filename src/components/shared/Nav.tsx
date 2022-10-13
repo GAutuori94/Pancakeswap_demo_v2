@@ -366,7 +366,7 @@ const Nav: React.FC = () => {
       </div>
 
       <div className='interactionsContainer  flex items-center h-full '>
-        <div className='flex justify-between'> 
+        <div className='flex justify-between'>
           {' '}
           <div className='flex '>
             <div className=''>

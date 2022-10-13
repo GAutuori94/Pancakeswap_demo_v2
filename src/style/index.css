@@ -134,6 +134,16 @@
   .overflow-initial {
     overflow: initial;
   }
+
+  .overflow-unset {
+    overflow: unset;
+  }
+
+  /* APPEARANCE RULES */
+
+  .appearance-textfield {
+    appearance: textfield;
+  }
 }
 
 @tailwind components;
@@ -150,8 +160,8 @@
   /*-------------------------Nav style--------------------------------------------------------------------------------------*/
   .cakeSection {
   display: flex;
-  height: auto; 
-  width: 100%; 
+  height: auto;
+  width: 100%;
   }
 
   nav {
@@ -505,7 +515,7 @@
     align-items: center;
   }
   footer .lasts .modeSelector .languageSelector .net {
-    background-image: url('../../src/assets/images/svg/utilities/logoNETsecondarycolor.svg');
+    background-image: url("../../src/assets/images/svg/utilities/logoNETsecondarycolor.svg");
     background-repeat: no-repeat;
     background-position: left;
     display: flex;
@@ -769,28 +779,144 @@
     cursor: pointer;
   }
 
+  /*--------------------------Toggle mini sub graph--------------------------------------------*/
+
+  .mini_toggle_sub_graph {
+      width: 56px;
+      height: theme(spacing.32);
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mini_slider_sub_graph {
+      position: absolute;
+      height: 20px;
+      width: 40px;
+      background-color: theme(colors.lightTertiary);
+      align-items: center;
+      border-radius: theme(borderRadius.card);
+      /* box-shadow: theme(boxShadow.button); */
+      transition: left 200ms ease-in 0s;
+    }
+
+    /* Rounded sliders */
+    .mini_slider_sub_graph {
+      border-radius: 1.875rem;
+    }
+
+    .mini_slider_sub_graph:before {
+      border-radius: theme(borderRadius.circle);
+    }
+
+    .mini_slider_sub_graph::before {
+
+      background-position: center;
+      position: absolute;
+      background-repeat: no-repeat;
+      content: "";
+      height: 15px;
+      width: 15px;
+      left: 0.175rem;
+      bottom: 0.219rem;
+      background-color: theme(colors.white);
+      /* -webkit-transition: 0.4s;
+      transition: 0.4s; */
+    }
+
+    .mini_input_sub_graph:checked + .mini_slider_sub_graph {
+      background-repeat: no-repeat;
+      background-position-x: 0.33rem;
+      background-position-y: 0.33rem;
+      background-color: theme(colors.primary);
+    }
+
+    .mini_input_sub_graph:not(:checked) {
+
+      background-color: theme(colors.darkBackgroundAlt);
+    }
+
+    .mini_input_sub_graph:not(:checked) + .mini_slider_sub_graph {
+
+      background-repeat: no-repeat;
+      background-position-x: 2rem;
+      background-position-y: 0.35rem;
+    }
+
+    .mini_input_sub_graph:checked + .mini_slider_sub_graph:before {
+
+      background-position: center;
+      -webkit-transform: translateX(1.625rem);
+      -ms-transform: translateX(1.625rem);
+      transform: translateX(1.625rem);
+      margin: auto;
+      margin-right: 0.125rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .mini_input_sub_graph:focus:checked + .mini_slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .mini_input_sub_graph:hover:checked + .mini_slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .mini_input_sub_graph:hover:not(:checked) + .mini_slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .mini_input_sub_graph:focus:not(:checked) + .mini_slider_sub_graph:before {
+      box-shadow: 0 0 0.125rem 0.25rem rgb(122, 110, 170);
+    }
+
+    .mini_input_sub_graph {
+      cursor: pointer;
+    }
+
+      /*----------------------Farms live toggle button--------------------------------------------------------------------------------------*/
+  .farms_live_btn_interval__container {
+    height: theme(spacing.32);
+    padding: 0px 16px;
+    border-radius: theme(borderRadius.default);
+    /* background-color: theme(colors.primary); */
+    font-size: theme(fontSize.fontSizeButton);
+    color: theme(colors.lightTextSubtle);
+    font-weight: theme(fontWeight.fontHeavyWeight);
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    cursor: pointer;
+  }
+
+  .farms_live_btn_interval__container:focus {
+    background-color: theme(colors.lightTextSubtle);
+    color: #ffff;
+    outline: none;
+  }
   /* SPECIAL BUTTONS */
 
   #card-footer > .full-primary-button {
     width: 100%;
     @apply dark:text-darkInvertedContrast;
   }
-}
 
-/*----------------------------------------vertical carousel home------------------------------------------------------------------*/
+  /*----------------------------------------vertical carousel home------------------------------------------------------------------*/
 
-@layer components {
-  .column__gridView {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-  }
+  @layer components {
+    .column__gridView {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+    }
 
-  .data__column__gridView {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+    .data__column__gridView {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
     border-left: 1px solid theme(colors.lightInputSecondary);
     transition: opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s;
     padding-left: 16px;
@@ -827,4 +953,6 @@
 
 .cake_grid_element_content {
   font-weight: bold;
+}
+
 }

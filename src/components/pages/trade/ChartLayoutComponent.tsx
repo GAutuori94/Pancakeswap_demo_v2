@@ -4,8 +4,6 @@ import dayjs from "dayjs";
 import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
-import ChartSideCard from "./chart_side_card/ChartSideCard";
-import { useMarketChange } from "../../hooks/useMarketChange";
 
 export type BinanceKline = [
   number,
@@ -32,29 +30,18 @@ export type ParsedBinanceKline = {
   closeTime: number;
 };
 
-export default function ChartLayoutComponent(): JSX.Element {
+interface ChartLayoutProps {
+  selectedMarket: string;
+}
+
+export default function ChartLayoutComponent(
+  props: ChartLayoutProps
+): JSX.Element {
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
   const [chartData, setChartData] = useState<PriceChartProps>([]);
-  const {
-    selectedMarket,
-    selectedBaseAsset,
-    setSelectedBaseAsset,
-    selectedQuoteAsset,
-    setSelectedQuoteAsset,
-  } = useMarketChange("");
   const [selectedInterval, setSelectedInterval] = useState<string>(
     intervals[intervals.length - 1]
   );
-
-  const handleBaseAssetChange = (baseAsset: string) => {
-    setSelectedBaseAsset(baseAsset);
-  };
-
-  const handleQuoteAssetChange = (quoteAsset: string) => {
-    setSelectedQuoteAsset(quoteAsset);
-  };
-
-  console.log("selectedMarket", selectedMarket);
 
   const focusRef = useRef<HTMLInputElement | null>(null);
 
@@ -87,12 +74,12 @@ export default function ChartLayoutComponent(): JSX.Element {
 
   useEffect(() => {
     const reqParams = new URLSearchParams({
-      symbol: selectedMarket,
+      symbol: props.selectedMarket,
       interval: selectedInterval,
     });
 
     fetchNewData({}, reqParams);
-  }, [selectedMarket, selectedInterval]);
+  }, [props.selectedMarket, selectedInterval]);
 
   useEffect(() => {
     setChartData(
@@ -134,66 +121,58 @@ export default function ChartLayoutComponent(): JSX.Element {
   ];
 
   return (
-    <div className="h-[100vh] w-full flex flex-row justify-center relative mt-[50px] lightGradientInverseBubblegum">
-      <div className="w-1/2 h-3/4">
-        <div className="flex justify-between items-center w-full  ">
-          <div className="flex flex-col justify-start">
-            <div className="flex gap-2 items-center">
-              <h1 className="text-3xl font-semibold text-lightText ml-2">
-                {bigCloseNumber()}
-              </h1>
-              <h3 className="text-lg font-semibold  text-lightTextSubtle ml-2.5 ">
-                {selectedMarket}{" "}
-              </h3>
-              {parsedData.length > 2 && percentualDiffNumber()}
+    <div className="h-[70%] overflow-unset flex flex-col pt-9 w-full rounded-[2rem] border-none md:bg-[#ffffff80] md:dark:bg-[#27262c80] md:border-lightCardBorder md:dark:bg-darkCardBorder md:rounded-2xl md:w-50 md:h-[516px] w-full p-6">
+      <div className="flex justify-between items-center w-full  ">
+        <div className="flex flex-col justify-start">
+          <div className="flex gap-2 items-center">
+            <h1 className="text-3xl font-semibold text-lightText ml-2">
+              {bigCloseNumber()}
+            </h1>
+            <h3 className="text-lg font-semibold  text-lightTextSubtle ml-2.5 ">
+              {props.selectedMarket}{" "}
+            </h3>
+            {parsedData.length > 2 && percentualDiffNumber()}
+          </div>
+          {parsedData.length > 2 && (
+            <div className="text-xs text-lg text-lightSecondary ml-2.5">
+              {" "}
+              {dayjs(parsedData[parsedData.length - 1].closeTime).format(
+                "DD, MMM, YYYY"
+              )}{" "}
+              {dayjs(parsedData[parsedData.length - 1].closeTime).format(
+                "HH:MM A"
+              )}{" "}
             </div>
-            {parsedData.length > 2 && (
-              <div className="text-xs text-lg text-lightSecondary ml-2.5">
-                {" "}
-                {dayjs(parsedData[parsedData.length - 1].closeTime).format(
-                  "DD, MMM, YYYY"
-                )}{" "}
-                {dayjs(parsedData[parsedData.length - 1].closeTime).format(
-                  "HH:MM A"
-                )}{" "}
-              </div>
-            )}
-          </div>
-          <div
-            className="btn_container bg-[#EFF4F5] rounded-default border-1 border-solid border-[#E9EAEB] box-border w-max flex "
-            ref={focusRef}
-          >
-            {intervals.map((interval, idx) => {
-              return (
-                <input
-                  key={idx}
-                  type="button"
-                  value={interval}
-                  onClick={(e) => {
-                    setSelectedInterval((e.target as HTMLInputElement).value);
-                  }}
-                  className="btn_interval__container uppercase"
-                />
-              );
-            })}
-            <input
-              type="button"
-              value="1Y"
-              onClick={(e) => {
-                setSelectedInterval((e.target as HTMLInputElement).value);
-              }}
-              className="btn_interval__container uppercase"
-            />
-          </div>
+          )}
         </div>
-        <AreaChart lines={lines} data={chartData} />
+        <div
+          className="btn_container bg-[#EFF4F5] rounded-default border-1 border-solid border-[#E9EAEB] box-border w-max flex "
+          ref={focusRef}
+        >
+          {intervals.map((interval, idx) => {
+            return (
+              <input
+                key={idx}
+                type="button"
+                value={interval}
+                onClick={(e) => {
+                  setSelectedInterval((e.target as HTMLInputElement).value);
+                }}
+                className="btn_interval__container uppercase"
+              />
+            );
+          })}
+          <input
+            type="button"
+            value="1Y"
+            onClick={(e) => {
+              setSelectedInterval((e.target as HTMLInputElement).value);
+            }}
+            className="btn_interval__container uppercase"
+          />
+        </div>
       </div>
-      <ChartSideCard
-        inputBaseAsset={selectedBaseAsset}
-        inputQuoteAsset={selectedQuoteAsset}
-        baseAssetChange={handleBaseAssetChange}
-        quoteAssetChange={handleQuoteAssetChange}
-      />
+      <AreaChart lines={lines} data={chartData} />
     </div>
   );
 }

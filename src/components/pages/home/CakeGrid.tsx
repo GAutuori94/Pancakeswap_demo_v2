@@ -18,7 +18,7 @@ export function CakeGrid() {
   } = useTicker();
 
   return (
-    <div className=' cake_grid w-full self-center gap-y-[50px]  mt-[70px] grid grid-cols-3 grid-rows-2 '>
+    <div className=' cake_grid self-center gap-y-[50px]  mt-[70px] grid xl:grid-cols-3 md:grid-rows-2 md:grid-cols-2 sm:grid-cols-2 sm:grid-rows-2'> 
       <div className='cake_grid_element'>
         <div className='cake_grid_element_header  text-darkTextSubtle dark:text-darkTextSubtle'>
           <p>Circulating Supply</p>{' '}

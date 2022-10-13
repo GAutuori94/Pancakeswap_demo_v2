@@ -10,6 +10,7 @@ body {
 
 nav {
   position: relative;
+  z-index:-1;   
   background-color: white;
   border-bottom: theme(borderWidth.1) solid grey;
   width: 100%;
@@ -94,7 +95,7 @@ font-weight: 500;
 }
 
 .interactionsContainer {
-  width: 25%;
+  width: 480px ; 
   display: flex;
   flex-flow: row;
   justify-content: space-around;

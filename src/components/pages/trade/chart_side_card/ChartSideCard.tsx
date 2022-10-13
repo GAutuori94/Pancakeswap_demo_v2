@@ -1,53 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { NoGraphIcon } from "./SideCardIcons";
+import { NoGraphIcon } from "./sideCardIcons";
 import { useSymbols } from "../../../context/symbolsContext";
-import { useMarketChange } from "../../../hooks/useMarketChange";
 
 interface ChartSideCardProps {
-  inputBaseAsset: string;
-  inputQuoteAsset: string;
-  baseAssetChange: (baseAsset: string) => void;
-  quoteAssetChange: (quoteAsset: string) => void;
+  children: React.ReactNode;
 }
 
-export default function ChartSideCard({
-  ...props
-}: ChartSideCardProps): JSX.Element {
-  const { dataFetched } = useSymbols();
-
-  const filteredList = (assetType: string) => {
-    const completeAssetsList = dataFetched.symbols?.map((market) => {
-      if (assetType === "baseAsset") {
-        return market.baseAsset;
-      } else if (assetType === "quoteAsset") {
-        return market.quoteAsset;
-      }
-    });
-
-    const filteredAssetsList = completeAssetsList?.filter((asset, index) => {
-      return completeAssetsList.indexOf(asset) === index;
-    });
-
-    return filteredAssetsList;
-  };
-
-  const baseAssetFilteredList = filteredList("baseAsset");
-  const quoteAssetFilteredList = filteredList("quoteAsset");
-
-  const baseAssetList = baseAssetFilteredList?.slice(0, 10).map((baseAsset) => (
-    <option key={baseAsset} value={baseAsset}>
-      {baseAsset}
-    </option>
-  ));
-
-  const quoteAssetList = quoteAssetFilteredList
-    ?.slice(0, 10)
-    .map((quoteAsset) => (
-      <option key={quoteAsset} value={quoteAsset}>
-        {quoteAsset}
-      </option>
-    ));
-
+export default function ChartSideCard(props: ChartSideCardProps): JSX.Element {
   return (
     <div className="flex flex-col">
       <div className="flex shrink-0 h-fit px-10">
@@ -89,28 +48,7 @@ export default function ChartSideCard({
                 <div className="grid auto-rows-auto gap-y-2">
                   <div className="relative">
                     <div className="flex items-center justify-between">
-                      <div className="flex">
-                        <select
-                          value={props.inputBaseAsset}
-                          title="base-asset-selector"
-                          className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
-                          onChange={(e) =>
-                            props.baseAssetChange(e.target.value)
-                          }
-                        >
-                          {baseAssetList}
-                        </select>
-                        <select
-                          value={props.inputQuoteAsset}
-                          title="quote-asset-selector"
-                          className="py-0 px-2 relative items-center border-0 rounded-default cursor-pointer inline-flex text-fontSizeButton font-fontHeavyWeight justify-center tracking-[0.03em] leading-none opacity-100 outline-0 h-8 bg-transparent text-primary shadow-none"
-                          onChange={(e) =>
-                            props.quoteAssetChange(e.target.value)
-                          }
-                        >
-                          {quoteAssetList}
-                        </select>
-                      </div>
+                      <div className="flex">{props.children}</div>
                     </div>
                   </div>
                 </div>

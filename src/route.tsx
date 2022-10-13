@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ChartLayoutComponent from "./components/pages/trade/ChartLayoutComponent";
+import TradeChartContainer from "./components/pages/trade/tradeChartContainer";
 
 export default function Router() {
   return (
     <Routes>
-      <Route path="/trade" element={<ChartLayoutComponent />} />
+      <Route path="/trade" element={<TradeChartContainer />} />
       {/* <Route path='trade' element={<Trade />}>
         <Route path='fetched-data' element={<ResponseRender />} />
         <Route path='fetched-kline' element={<KlineRender />} />

@@ -4,8 +4,9 @@ import dayjs from "dayjs";
 import { intervals } from "../../shared/constants";
 import { useLazyFetch } from "../../hooks/useLazyFetch";
 import { usePercDiff } from "../../hooks/usePercDiff";
-import ChartSideCard from "./chart_side_card/ChartSideCard";
+import ChartSideCard from "./chart_side_card/chartSideCard";
 import { useMarketChange } from "../../hooks/useMarketChange";
+import { CurrencySelectElements } from "./chart_side_card/currencySelect";
 
 type BinanceKline = [
   number,
@@ -32,30 +33,18 @@ export type ParsedBinanceKline = {
   closeTime: number;
 };
 
-export default function ChartLayoutComponent(): JSX.Element {
+interface ChartLayoutProps {
+  selectedMarket: string;
+}
+
+export default function ChartLayoutComponent(
+  props: ChartLayoutProps
+): JSX.Element {
   const [parsedData, setParsedData] = useState<ParsedBinanceKline[]>([]);
   const [chartData, setChartData] = useState<PriceChartProps>([]);
-  const {
-    selectedBaseAsset,
-    setSelectedBaseAsset,
-    selectedQuoteAsset,
-    setSelectedQuoteAsset,
-  } = useMarketChange("BTC", "BUSD");
   const [selectedInterval, setSelectedInterval] = useState<string>(
     intervals[intervals.length - 1]
   );
-
-  const handleBaseAssetChange = (baseAsset: string) => {
-    setSelectedBaseAsset(baseAsset);
-  };
-
-  const handleQuoteAssetChange = (quoteAsset: string) => {
-    setSelectedQuoteAsset(quoteAsset);
-  };
-
-  const selectedMarket = selectedBaseAsset + selectedQuoteAsset;
-
-  console.log("selectedMarket", selectedMarket);
 
   const focusRef = useRef<HTMLInputElement | null>(null);
 
@@ -88,12 +77,12 @@ export default function ChartLayoutComponent(): JSX.Element {
 
   useEffect(() => {
     const reqParams = new URLSearchParams({
-      symbol: selectedMarket,
+      symbol: props.selectedMarket,
       interval: selectedInterval,
     });
 
     fetchNewData({}, reqParams);
-  }, [selectedMarket, selectedInterval]);
+  }, [props.selectedMarket, selectedInterval]);
 
   useEffect(() => {
     setChartData(
@@ -144,7 +133,7 @@ export default function ChartLayoutComponent(): JSX.Element {
                 {bigCloseNumber()}
               </h1>
               <h3 className="text-lg font-semibold  text-lightTextSubtle ml-2.5 ">
-                {selectedMarket}{" "}
+                {props.selectedMarket}{" "}
               </h3>
               {parsedData.length > 2 && percentualDiffNumber()}
             </div>
@@ -189,12 +178,6 @@ export default function ChartLayoutComponent(): JSX.Element {
         </div>
         <AreaChart lines={lines} data={chartData} />
       </div>
-      <ChartSideCard
-        inputBaseAsset={selectedBaseAsset}
-        inputQuoteAsset={selectedQuoteAsset}
-        baseAssetChange={handleBaseAssetChange}
-        quoteAssetChange={handleQuoteAssetChange}
-      />
     </div>
   );
 }

@@ -1,0 +1,56 @@
+/* COLORS VARIABLES*/
+
+/*-------baseColors-----------*/
+
+$primary: #1fc7d4;
+$primaryBright: #53dee9;
+$primaryDark: #0098a1;
+$secondary: #7645d9;
+$success: #31d0aa;
+$warning: #ffb237;
+$failure: #ed4b9e;
+
+/*-------brandColors-----------*/
+
+$binance: #f0b90b;
+
+/*-------lightColors-----------*/
+
+$light_background: #faf9fa;
+$light_backgroundDisabled: #e9eaeb;
+$light_contrast: #191326;
+$light_invertedContrast: #ffffff;
+$light_input: #eeeaf4;
+$light_inputSecondary: #d7caec;
+$light_tertiary: #eff4f5;
+$light_text: #452a7a;
+$light_textDisabled: #bdc2c4;
+$light_textSubtle: #8f80ba;
+$light_borderColor: #e9eaeb;
+$light_card: #ffffff;
+$light_gradientBubblegum: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
+
+/*-------darkColors-----------*/
+
+$dark_secondary: #9a6aff;
+$dark_background: #100c18;
+$dark_backgroundDisabled: #3c3742;
+$dark_contrast: #ffffff;
+$dark_invertedContrast: #191326;
+$dark_input: #483f5a;
+$dark_bgcolor_toggle: #372f47;
+$dark_inputSecondary: #66578d;
+$dark_primaryDark: #0098a1;
+$dark_tertiary: #353547;
+$dark_text: #eae2fc;
+$dark_textDisabled: #666171;
+$dark_textSubtle: #a28bd4;
+$dark_borderColor: #524b63;
+$dark_card: #27262c;
+$dark_gradientBubblegum: linear-gradient(139.73deg, #313d5c 0%, #3d2a54 100%);
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*SHADOWS*/
+
+$boxShadow: 0px -1px 0px 0px inset;

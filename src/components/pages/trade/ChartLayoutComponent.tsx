@@ -8,7 +8,7 @@ import ChartSideCard from "./chart_side_card/chartSideCard";
 import { useMarketChange } from "../../hooks/useMarketChange";
 import { CurrencySelectElements } from "./chart_side_card/currencySelect";
 
-type BinanceKline = [
+export type BinanceKline = [
   number,
   string,
   string,

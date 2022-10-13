@@ -1,10 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { Home } from "./components/pages/home";
 import TradeChartContainer from "./components/pages/trade/tradeChartContainer";
 
 export default function Router() {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/trade" element={<TradeChartContainer />} />
       {/* <Route path='trade' element={<Trade />}>
         <Route path='fetched-data' element={<ResponseRender />} />

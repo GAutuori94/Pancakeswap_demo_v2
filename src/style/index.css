@@ -134,8 +134,17 @@
   .overflow-initial {
     overflow: initial;
   }
-}
 
+  .overflow-unset {
+    overflow: unset;
+  }
+
+  /* APPEARANCE RULES */
+
+  .appearance-textfield {
+    appearance: textfield;
+  }
+}
 @tailwind components;
 
 @layer components {
@@ -819,4 +828,14 @@
     font-size: theme(fontSize.fontSizeCopy);
     color: theme(colors.lightTextSubtle);
   }
+}
+.cake_grid_element {
+  height: 65px;
+ border-left: 0.5px solid theme(colors.darkTextSubtle);
+ padding-left: 10px
+}
+
+.cake_grid_element_content {
+  font-weight:bold;
+
 }
